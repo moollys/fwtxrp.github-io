@@ -1,65 +1,212 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Fort Worth Texas Roleplay</title>
-  <style>
-    /* Reset margin and padding */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: HORIZON, Fatimi, Arial, sans-serif;
-      background-color: #f0f0f0;
-      color: #333;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-
-    header, footer {
-      background-color: #0055cc;
-      color: white;
-      padding: 20px;
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Tallahassee Regulation Index</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f9f9f9;
+    color: #333;
+  }
+  header {
+    background-color: #0055cc;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+  nav {
+    background: white;
+    display: flex;
+    justify-content: center;
+    border-bottom: 2px solid #ddd;
+    flex-wrap: wrap;
+  }
+  nav button {
+    background: none;
+    border: none;
+    padding: 15px 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    border-bottom: 3px solid transparent;
+    transition: border-color 0.3s;
+  }
+  nav button:hover,
+  nav button.active {
+    border-bottom: 3px solid #0055cc;
+    font-weight: bold;
+  }
+  main {
+    max-width: 900px;
+    margin: 30px auto;
+    background: white;
+    padding: 25px 40px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.05);
+    border-radius: 6px;
+  }
+  h2 {
+    margin-top: 0;
+    color: #0055cc;
+  }
+  .tab-content {
+    display: none;
+  }
+  .tab-content.active {
+    display: block;
+  }
+  .search-container {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  .search-container input[type="search"] {
+    width: 60%;
+    max-width: 400px;
+    padding: 8px 12px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  @media (max-width: 600px) {
+    nav button {
+      flex: 1 1 100%;
       text-align: center;
     }
-
-    main {
-      flex: 1;
-      max-width: 800px;
-      margin: 20px auto;
-      background: white;
-      padding: 30px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    .search-container input[type="search"] {
+      width: 90%;
     }
-
-    h1 {
-      margin-bottom: 15px;
-    }
-
-    p {
-      font-size: 18px;
-      line-height: 1.5;
-    }
-  </style>
+  }
+</style>
 </head>
 <body>
 
-  <header>
-    <h1>Fort Worth Texas Roleplay</h1>
-  </header>
+<header>
+  Tallahassee Regulation Index
+</header>
 
-  <main>
-    <p>All rules, regulations, as well as department info can be found here.</p>
-  </main>
+<nav>
+  <button class="tab-button active" data-tab="welcome">Welcome</button>
+  <button class="tab-button" data-tab="ingame">In-Game Regulations</button>
+  <button class="tab-button" data-tab="discord">Discord Regulations</button>
+  <button class="tab-button" data-tab="banned">Banned Guns & Vehicles</button>
+  <button class="tab-button" data-tab="department">Department Regulations</button>
+  <button class="tab-button" data-tab="mafia">Mafia Regulations</button>
+  <button class="tab-button" data-tab="voice">Voice Chat Regulations</button>
+</nav>
 
-  <footer>
-    &copy; 2025 Fort Worth Texas Roleplay
-  </footer>
+<main>
+  <div class="search-container">
+    <input type="search" placeholder="Search..." aria-label="Search regulations" />
+  </div>
+
+  <!-- Welcome Tab Content -->
+  <section id="welcome" class="tab-content active">
+    <h2>Welcome</h2>
+    <p>Welcome to Tallahassee! Before diving into the immersive roleplay experience, please take a moment to review our detailed In-Game and Discord rules. Familiarizing yourself with these rules ensures the highest quality of roleplay for everyone involved.</p>
+    <p>If you need to appeal a moderation action or have any questions, please use the appropriate channels or contact moderators listed in the Discord.</p>
+  </section>
+
+  <!-- In-Game Regulations Tab Content -->
+  <section id="ingame" class="tab-content">
+    <h2>In-Game Regulations</h2>
+    <ol>
+      <li><strong>Random Deathmatch:</strong> No full-kills unless justified. Avoid excessive or mass killings. Killing FD is not allowed.</li>
+      <li><strong>Vehicle Deathmatch:</strong> No random collisions or unrealistic driving. Shooting at other cars without reason is prohibited.</li>
+      <li><strong>Cuff Rushing:</strong> Do not arrest or cuff others randomly. Use -cuffs- responsibly with proper justification.</li>
+      <li><strong>Scenarios:</strong> Do not interfere in roleplay scenes unless you are a participant. Avoid causing disruptions.</li>
+      <li><strong>Uniforms:</strong> Wear only approved or whitelisted uniforms as per your role.</li>
+      <li><strong>Guns:</strong> Use only allowed or role-specific firearms. Choose options suited for the scenario.</li>
+      <li><strong>Liveries:</strong> Use department or whitelisted liveries that align with your role.</li>
+      <li><strong>Terms of Service:</strong> Follow Roblox's Terms of Service.</li>
+      <li><strong>Unrealistic Avatars:</strong> Avoid avatars that obstruct views, provide invisibility, or exploit glitches. Fur suits aren't allowed.</li>
+      <li><strong>New Life Rule:</strong> Do not retain memories from a previous life. Avoid returning to prior scenes or roles.</li>
+      <li><strong>Fail Roleplay:</strong> Avoid unrealistic, disruptive, historically inaccurate, or animal roleplays.</li>
+      <li><strong>Drones:</strong> Drones are allowed but must not interfere with roleplay or interrupt scenes.</li>
+      <li><strong>Safe Zones:</strong> Civilian Spawn, Police Department, Sheriff's Department, Department of Transportation, Fire Department.</li>
+      <li><strong>Booster Perks:</strong> Using perks without @Server Boosters status will result in removal.</li>
+      <li><strong>Grapplers:</strong> Avoid using grapplers, unless you are a whitelisted department member. Failure to abide by this will result in a kick.</li>
+      <li><strong>No Intention to Roleplay:</strong> Avoid standing on top of vehicles, shooting while driving, ignoring all roleplay, etc.</li>
+      <li><strong>GTA Driving:</strong> No reckless driving, such as exceeding speed limits, driving against traffic, or improper use of roadways, is permitted.</li>
+      <li><strong>VC Rules:</strong> It is mandatory to be in a roleplay voice channel while participating in roleplay scenarios.</li>
+    </ol>
+  </section>
+
+  <!-- Discord Regulations Tab Content -->
+  <section id="discord" class="tab-content">
+    <h2>Discord Regulations</h2>
+    <ul>
+      <li><strong>Respect All Members:</strong> No harassment, hate speech, or discrimination of any kind.</li>
+      <li><strong>Appropriate Channels:</strong> Keep discussions in their designated channels and avoid spamming.</li>
+      <li><strong>No Advertising:</strong> Advertising other servers or services without permission is prohibited.</li>
+      <li><strong>Moderation:</strong> Follow instructions from moderators and administrators promptly.</li>
+      <li><strong>Privacy:</strong> Do not share personal information or private conversations without consent.</li>
+    </ul>
+  </section>
+
+  <!-- Banned Guns & Vehicles Tab Content -->
+  <section id="banned" class="tab-content">
+    <h2>Banned Guns & Vehicles</h2>
+    <p>The following items are banned from all in-game use to maintain balance and realism:</p>
+    <ul>
+      <li><strong>Guns:</strong> Rocket Launchers, Flamethrowers, Mini-guns</li>
+      <li><strong>Vehicles:</strong> Military Tanks, Armed Helicopters, Invisibility Vehicles</li>
+      <li>Use of banned items during roleplay will result in immediate disciplinary action.</li>
+    </ul>
+  </section>
+
+  <!-- Department Regulations Tab Content -->
+  <section id="department" class="tab-content">
+    <h2>Department Regulations</h2>
+    <p>Each department must adhere to the following rules to ensure proper roleplay standards:</p>
+    <ul>
+      <li>Departments must conduct roleplay professionally and realistically.</li>
+      <li>All members should wear approved department uniforms and follow chain-of-command protocols.</li>
+      <li>Use of department vehicles and equipment is restricted to roleplay purposes only.</li>
+      <li>Departments should regularly update their SOPs (Standard Operating Procedures) in coordination with administration.</li>
+    </ul>
+  </section>
+
+  <!-- Mafia Regulations Tab Content -->
+  <section id="mafia" class="tab-content">
+    <h2>Mafia Regulations</h2>
+    <ul>
+      <li>Mafia roleplay must stay within agreed boundaries and avoid disrupting overall server experience.</li>
+      <li>Respect law enforcement roleplay; avoid unrealistic or excessive use of force.</li>
+      <li>All major mafia actions must be approved by the event staff to prevent conflicts.</li>
+      <li>Use of weapons and vehicles must comply with banned items list and server guidelines.</li>
+    </ul>
+  </section>
+
+  <!-- Voice Chat Regulations Tab Content -->
+  <section id="voice" class="tab-content">
+    <h2>Voice Chat Regulations</h2>
+    <ul>
+      <li>Keep voice communication clear and respectful at all times.</li>
+      <li>Do not use voice changers or disruptive sound effects.</li>
+      <li>Use push-to-talk when possible to reduce background noise.</li>
+      <li>Voice chat should be used to enhance roleplay, not for casual or disruptive chatting.</li>
+    </ul>
+  </section>
+
+</main>
+
+<script>
+  // Tab switching logic
+  const buttons = document.querySelectorAll('nav button');
+  const tabs = document.querySelectorAll('.tab-content');
+
+  buttons.forEach(button => {
+    button.addEventListener('click', () => {
+      buttons.forEach(btn => btn.classList.remove('active'));
+      tabs.forEach(tab => tab.classList.remove('active'));
+      button.classList.add('active');
+      document.getElementById(button.dataset.tab).classList.add('active');
+    });
+  });
+</script>
 
 </body>
 </html>
