@@ -11,112 +11,102 @@
     background-color: #f9f9f9;
     color: #333;
   }
-header {
-  background-image: url('https://media.discordapp.net/attachments/1137446246555074580/1385017404710457385/fw_banner.png?ex=68548979&is=685337f9&hm=634a6d70600604fe4d37be19d5db0ccb0c43702692450c4ef4383f5625d27234&=&format=webp&quality=lossless');
-  background-size: cover;
-  background-position: center;
-  color: white;
-  padding: 40px 20px;
-  text-align: center;
-  font-size: 2rem;
-  font-weight: bold;
-  box-shadow: inset 0 0 0 1000px rgba(0, 85, 204, 0.5);
-}
-
-nav {
-  background: white;
-  display: flex;
-  justify-content: center;
-  border-bottom: 2px solid #ddd;
-  flex-wrap: wrap;
-}
-nav button {
-  background: none;
-  border: none;
-  padding: 15px 20px;
-  cursor: pointer;
-  font-size: 1rem;
-  border-bottom: 3px solid transparent;
-  transition: border-color 0.3s;
-}
-nav button:hover,
-nav button.active {
-  border-bottom: 3px solid #0055cc;
-  font-weight: bold;
-}
-main {
-  max-width: 900px;
-  margin: 30px auto;
-  background: white;
-  padding: 25px 40px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.05);
-  border-radius: 6px;
-}
-h2 {
-  margin-top: 0;
-  color: #0055cc;
-}
-.tab-content {
-  display: none;
-}
-.tab-content.active {
-  display: block;
-}
-@media (max-width: 600px) {
+  header {
+    background-image: url('https://media.discordapp.net/attachments/1137446246555074580/1385017404710457385/fw_banner.png?ex=68548979&is=685337f9&hm=634a6d70600604fe4d37be19d5db0ccb0c43702692450c4ef4383f5625d27234&=&format=webp&quality=lossless');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    box-shadow: inset 0 0 0 1000px rgba(0, 85, 204, 0.5);
+  }
+  nav {
+    background: white;
+    display: flex;
+    justify-content: center;
+    border-bottom: 2px solid #ddd;
+    flex-wrap: wrap;
+  }
   nav button {
-    flex: 1 1 100%;
+    background: none;
+    border: none;
+    padding: 15px 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    border-bottom: 3px solid transparent;
+    transition: border-color 0.3s;
+  }
+  nav button:hover,
+  nav button.active {
+    border-bottom: 3px solid #0055cc;
+    font-weight: bold;
+  }
+  main {
+    max-width: 900px;
+    margin: 30px auto;
+    background: white;
+    padding: 25px 40px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.05);
+    border-radius: 6px;
+  }
+  h2 {
+    margin-top: 0;
+    color: #0055cc;
+  }
+  .tab-content {
+    display: none;
+  }
+  .tab-content.active {
+    display: block;
+  }
+  @media (max-width: 600px) {
+    nav button {
+      flex: 1 1 100%;
+      text-align: center;
+    }
+  }
+  .slider {
+    position: relative;
+    max-width: 400px;
+    margin-top: 15px;
     text-align: center;
   }
-}
-
-/* Slider styles */
-.slider {
-  position: relative;
-  max-width: 400px;
-  margin-top: 15px;
-  text-align: center;
-}
-
-.slider img {
-  width: 100%;
-  border-radius: 6px;
-  box-shadow: 0 0 8px rgba(0,0,0,0.15);
-}
-
-.prev-btn,
-.next-btn {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(0,85,204,0.7);
-  border: none;
-  color: white;
-  font-size: 24px;
-  padding: 6px 12px;
-  border-radius: 50%;
-  user-select: none;
-}
-
-.prev-btn {
-  left: 5px;
-}
-
-.next-btn {
-  right: 5px;
-}
-
-.prev-btn:hover,
-.next-btn:hover {
-  background-color: #003d99;
-}
+  .slider img {
+    width: 100%;
+    border-radius: 6px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.15);
+  }
+  .prev-btn,
+  .next-btn {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0,85,204,0.7);
+    border: none;
+    color: white;
+    font-size: 24px;
+    padding: 6px 12px;
+    border-radius: 50%;
+    user-select: none;
+  }
+  .prev-btn {
+    left: 5px;
+  }
+  .next-btn {
+    right: 5px;
+  }
+  .prev-btn:hover,
+  .next-btn:hover {
+    background-color: #003d99;
+  }
 </style>
 </head>
 <body>
 
-<header>
- Fort Worth Texas Roleplay
-</header>
+<header>Fort Worth Texas Roleplay</header>
 
 <nav>
   <button class="tab-button active" data-tab="welcome">Welcome</button>
@@ -138,7 +128,7 @@ h2 {
   <section id="ingame" class="tab-content">
     <h2>In-Game Regulations</h2>
     <h3>Roblox Terms of Service</h3>
-    <p>To roleplay here, you must adhere to <a href="https://en.help.roblox.com/hc/en-us/articles/203313410-Roblox-Terms-of-Use" target="_blank">Roblox's Terms of Service</a>. Violating these terms may result in removal from the server.</p>
+    <p>To roleplay here, you must adhere to <a href="https://en.help.roblox.com/hc/en-us/articles/203313410-Roblox-Terms-of-Use" target="_blank" rel="noopener noreferrer">Roblox's Terms of Service</a>. Violating these terms may result in removal from the server.</p>
     <h3>1. Respect</h3>
     <p>Ensure you maintain a fundamental level of respect for your peers within the server. Regardless of your position, respect your peers at all times.</p>
     <h3>2. Random Deathmatch (RDM)</h3>
@@ -179,7 +169,7 @@ h2 {
     <h3>6. Advertising</h3>
     <p>Do not advertise other communities or products without prior approval. Even approved promotions should be short and relevant.</p>
     <h3>7. Terms and Guidelines</h3>
-    <p>Follow <a href="https://discord.com/terms" target="_blank">Discord's Terms of Service</a> and Community Guidelines. Don’t share private information or break platform rules.</p>
+    <p>Follow <a href="https://discord.com/terms" target="_blank" rel="noopener noreferrer">Discord's Terms of Service</a> and Community Guidelines. Don’t share private information or break platform rules.</p>
     <h3>8. Bots</h3>
     <p>Use bots properly and only for their intended purpose. Do not abuse commands or cause spam.</p>
     <h3>9. Feedback</h3>
@@ -250,84 +240,92 @@ h2 {
 </main>
 
 <script>
-  // Tab switching functionality
+  // Tabs
   const tabButtons = document.querySelectorAll('.tab-button');
   const tabContents = document.querySelectorAll('.tab-content');
 
+  function switchTab(tabId) {
+    tabButtons.forEach(btn => {
+      btn.classList.toggle('active', btn.getAttribute('data-tab') === tabId);
+    });
+    tabContents.forEach(tab => {
+      tab.classList.toggle('active', tab.id === tabId);
+    });
+  }
+
   tabButtons.forEach(button => {
     button.addEventListener('click', () => {
-      tabButtons.forEach(btn => btn.classList.remove('active'));
-      tabContents.forEach(tab => tab.classList.remove('active'));
-
-      button.classList.add('active');
       const tabId = button.getAttribute('data-tab');
-      document.getElementById(tabId).classList.add('active');
+      switchTab(tabId);
+      history.replaceState(null, null, `#${tabId}`);
     });
   });
 
-  // Departments data with images for slider
+  // Departments data with images and Discord invites
   const departments = {
     fd: {
       name: "Fort Worth Fire Department (FD)",
-      description: "Fort Worth Fire is there on peoples worse days, we se there to help, there to protect, there to  keep the public safe, and most importantly there so Fort Worth is a better place. We strive to keep a great appearance to the community, we want to make the members of Fort Worth feel safe. We offer multiple ways to involve yourself rather your a employee or just a civilian, that stretches from Internal Affairs, Fire Marshal, Hazardous Operations and Rescue, and our most recent implemented division, Public Information Office.",
+      description: "Fort Worth Fire is there on peoples worse days...",
       divisions: ["Fire Marshal", "Hazardous Operations", "Public Information Office"],
       images: [
-        "https://media.discordapp.net/attachments/1287949438815309925/1385053188088004848/image.png?ex=6854aacd&is=6853594d&hm=209dd06a5107c3a43ab1bfddd227440b9d4e4c0503ce766715abe59f3b190210&=&format=webp&quality=lossless&width=1232&height=727"
+        "https://media.discordapp.net/attachments/1287949438815309925/1385053188088004848/image.png?ex=6854aacd&is=6853594d&hm=209dd06a5107c3a43ab1bfddd227440b9d4e4c0503ce766715abe59f3b190210&=&format=webp&quality=lossless&width=1232&height=727",
         "https://media.discordapp.net/attachments/1287949438815309925/1385053565655056484/image.png?ex=6854ab27&is=685359a7&hm=1ec27fddc63e015e3243064ec45ae8a5018e460d01334d8ed81f3c91842fd760&=&format=webp&quality=lossless",
         "https://media.discordapp.net/attachments/1287949438815309925/1385053473330036826/77NMxs7.png?ex=6854ab11&is=68535991&hm=c69ae42ec05d8e96b64612a35c66e3d0a9c8cb70ed80088edf86288118992cf9&=&format=webp&quality=lossless&width=1232&height=635"
-         discordInvite: { url: "https://discord.gg/BYgcjE8ZFV", emoji: "🔥" }
+      ],
+      discordInvite: { url: "https://discord.gg/BYgcjE8ZFV", emoji: "🔥" }
     },
     pd: {
       name: "Fort Worth Police Department (PD)",
-      description: "The Fort Worth Police Department serves the city of Fort Worth, Texas. It focuses on public safety and community policing.We have Speed Enforcement Unit (SEU), Special Weapons and Tactics team (SWAT), K-9 Gang Enforcement Unit.",
+      description: "The Fort Worth Police Department serves the city...",
       divisions: ["Speed Enforcement Unit", "Special Weapons and Tactics", "K-9 Gang Enforcement Unit"],
       images: [
         "https://media.discordapp.net/attachments/1076243935153901648/1368607814208979056/FWPD_Server_ad.png?ex=68542a5a&is=6852d8da&hm=af489ff50b9f815b37a62e989c9e76b9529b721aa652ca41bab7be10d146db05&=&format=webp&quality=lossless&width=1232&height=693",
         "https://media.discordapp.net/attachments/1324857056943013908/1385124003286618174/752CA736-C671-409C-9ACE-C8B7DDCEA55E.jpg?ex=6854ecc0&is=68539b40&hm=b63f26e7b06a5ee9a73e17ed10083c616eaea1cbbd1318c4aa7f99bd7fab5d1c&=&format=webp&width=1232&height=685",
         "https://i.imgur.com/fuWde9P.jpg"
-        discordInvite: { url: "https://discord.gg/QHzPqBXC5Z", emoji: "👮‍♂️" }
+      ],
+      discordInvite: { url: "https://discord.gg/QHzPqBXC5Z", emoji: "👮‍♂️" }
     },
     dpw: {
       name: "Department of Parks and Wildlife (DPW)",
-      description: "The Department of Parks and Wildlife (DPW) is responsible for managing and protecting natural areas, wildlife, and biodiversity, including national parks and conservation reserves. They work to conserve and protect the environment, with their divisions; TRT [Tactical Response Team] and LED [Law Enforcement Divison]. ",
+      description: "The Department of Parks and Wildlife (DPW)...",
       divisions: ["Tactical Response Team", "Law Enforcement Division"],
       images: [
-        "https://media.discordapp.net/attachments/1297066210726510623/1385041751064186880/Q73LabP9fuP4OkHyGRdiSmoAAAAASUVORK5CYII.png?ex=6854a026&is=68534ea6&hm=b60d4ffa7aed03f2cfbe7e4a5fb5026a28e3f34bb5fae53d43b517e2e5ab9003&=&format=webp&quality=lossless&width=1128&height=651                                                    ",
+        "https://media.discordapp.net/attachments/1297066210726510623/1385041751064186880/Q73LabP9fuP4OkHyGRdiSmoAAAAASUVORK5CYII.png?ex=6854a026&is=68534ea6&hm=b60d4ffa7aed03f2cfbe7e4a5fb5026a28e3f34bb5fae53d43b517e2e5ab9003&=&format=webp&quality=lossless&width=1128&height=651",
         "https://media.discordapp.net/attachments/1353131833415696496/1385046188272910488/image.png?ex=6854a448&is=685352c8&hm=e536043472e39b2043986f4e6605b22f28cfe0ac7ed0262a639b446dc406d6ed&=&format=webp&quality=lossless&width=1128&height=631"
-        discordInvite: { url: "https://discord.gg/VddJMZ7NTX", emoji: "🌲" }
-      
+      ],
+      discordInvite: { url: "https://discord.gg/VddJMZ7NTX", emoji: "🌲" }
     },
     dps: {
       name: "Department of Public Safety (DPS)",
-      description: "Provides statewide law enforcement and highway patrol.",
-      divisions: ["Texas Rangers", "High Speed Unit", "Special Weapons and Tactics"],
+      description: "Department of Public Safety is the overarching body...",
+      divisions: ["SWAT", "HCSO", "PD", "Fire", "DPW", "Medical Services"],
       images: [
-        "https://i.imgur.com/3vDRwLk.jpg",
-        "https://i.imgur.com/4HphipO.jpg"
-      
+        "https://media.discordapp.net/attachments/1381464384114941187/1385125059940595566/FWPD_DPS_Logos_Banner.png?ex=6854edce&is=68539b4e&hm=0625659b43569f5ce3634bdb3f96c84b23e7f86015b624c6f56c582451ee8de5&=&format=webp&quality=lossless&width=1232&height=335"
+      ],
+      discordInvite: { url: "https://discord.gg/hMnPHC6JQC", emoji: "🚔" }
     },
-
     rr: {
       name: "Red Rose (RR)",
-      description: "Fort Worth’s most feared and respected organization is calling. Operate from the shadows with discipline, loyalty, and power. Join divisions like Omega-1, Bounty Hunters, or Elite, and rise through a structured, story-driven underworld. The Red Rose Mafia controls influence, manages internal order, and enforces a strict code that only the strongest survive. Loyalty is not requested it’s demanded. Every move counts. Every member is watched. Only the sharpest rise",
-      divisions: ["Bounty Hunters", "Omega-1"],
+      description: "The Red Rose Organization is an illegal criminal organization...",
+      divisions: ["Operations", "Security", "Rehabilitation"],
       images: [
-        "https://media.discordapp.net/attachments/1288299894821359698/1385079370552578079/Red_Rose_Banner.png?ex=6854c32f&is=685371af&hm=80b0b11c160b7ef0f10b33cf2744653acf5e65f0a162c29f062012fd89949292&=&format=webp&quality=lossless",
-       
+        "https://media.discordapp.net/attachments/1336398201881100319/1385125134278720512/55DBA052-197D-4B11-B4C9-2D4B521FBA4D.png?ex=6854edf7&is=68539b77&hm=2858246670994e1e1b6b3ec5fbe9a35c39278960d5de6867df2c6f6ff0d5b7e7&=&format=webp&quality=lossless&width=1128&height=631"
+      ],
+      discordInvite: { url: "https://discord.gg/F6aqxYk2yy", emoji: "🚩" }
+    }
   };
 
+  // Department slider logic
   const select = document.getElementById('department-select');
   const detailsDiv = document.getElementById('department-details');
-
   let currentSlideIndex = 0;
 
   function renderSlider(images) {
     if (!images || images.length === 0) return '';
-
     return `
-      <div class="slider">
+      <div class="slider" role="region" aria-label="Department images">
         <button class="prev-btn" aria-label="Previous image">&#10094;</button>
-        <img src="${images[0]}" alt="Department Image" class="slider-image" />
+        <img src="${images[0]}" alt="Department image" class="slider-image" />
         <button class="next-btn" aria-label="Next image">&#10095;</button>
       </div>
     `;
@@ -337,7 +335,7 @@ h2 {
     imgElement.src = images[index];
   }
 
-  select.addEventListener('change', () => {
+  select?.addEventListener('change', () => {
     const selected = select.value;
     if (selected && departments[selected]) {
       const dept = departments[selected];
@@ -347,30 +345,40 @@ h2 {
         <h4>${dept.name}</h4>
         <p>${dept.description}</p>
         <strong>Divisions:</strong>
-        <ul>
-          ${dept.divisions.map(div => `<li>${div}</li>`).join('')}
-        </ul>
+        <ul>${dept.divisions.map(div => `<li>${div}</li>`).join('')}</ul>
         ${renderSlider(dept.images)}
+        <p><a href="${dept.discordInvite.url}" target="_blank" rel="noopener noreferrer">Join Department ${dept.discordInvite.emoji}</a></p>
       `;
 
-      if (dept.images && dept.images.length > 0) {
-        const slider = detailsDiv.querySelector('.slider');
-        const img = slider.querySelector('.slider-image');
-        const prevBtn = slider.querySelector('.prev-btn');
-        const nextBtn = slider.querySelector('.next-btn');
+      const slider = detailsDiv.querySelector('.slider');
+      const img = slider?.querySelector('.slider-image');
+      const prevBtn = slider?.querySelector('.prev-btn');
+      const nextBtn = slider?.querySelector('.next-btn');
 
-        prevBtn.addEventListener('click', () => {
-          currentSlideIndex = (currentSlideIndex - 1 + dept.images.length) % dept.images.length;
-          updateSliderImage(dept.images, img, currentSlideIndex);
-        });
+      prevBtn?.addEventListener('click', () => {
+        currentSlideIndex = (currentSlideIndex - 1 + dept.images.length) % dept.images.length;
+        updateSliderImage(dept.images, img, currentSlideIndex);
+      });
 
-        nextBtn.addEventListener('click', () => {
-          currentSlideIndex = (currentSlideIndex + 1) % dept.images.length;
-          updateSliderImage(dept.images, img, currentSlideIndex);
-        });
-      }
+      nextBtn?.addEventListener('click', () => {
+        currentSlideIndex = (currentSlideIndex + 1) % dept.images.length;
+        updateSliderImage(dept.images, img, currentSlideIndex);
+      });
     } else {
       detailsDiv.innerHTML = '<em>Please select a department to see details.</em>';
+    }
+  });
+
+  // Load initial tab and department selection
+  window.addEventListener('DOMContentLoaded', () => {
+    const initialTab = window.location.hash?.substring(1);
+    if (initialTab && document.getElementById(initialTab)) {
+      switchTab(initialTab);
+    }
+    // Pre-select FD on load
+    if (select) {
+      select.value = "fd";
+      select.dispatchEvent(new Event('change'));
     }
   });
 </script>
