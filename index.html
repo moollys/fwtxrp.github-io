@@ -249,90 +249,85 @@ h2 {
   <h2>Department Regulations</h2>
   <p>Each department must adhere to the following rules to ensure proper roleplay standards:</p>
   <ul>
-    <li>Departments must conduct roleplay professionally and realistically.</li>
+   <li>Departments must conduct roleplay professionally and realistically.</li>
     <li>All members should wear approved department uniforms and follow chain-of-command protocols.</li>
     <li>Use of department vehicles and equipment is restricted to roleplay purposes only.</li>
-    <li>Departments should regularly update their SOPs (Standard Operating Procedures) in coordination with administration.</li>
+    <li>If you are not currently whitelisted for a department, you are only permitted to use "Standard Livery" labled uniforms</li>
   </ul>
-  <h3>Departments</h3>
-  <ul class="department-list">
-    <li>Fort Worth Fire Department (FD)
-      <ul>
-        <li>Fire Marshal</li>
-        <li>Hazardous Operations</li>
-        <li>Public Information Office</li>
-      </ul>
-    </li>
-    <li>Fort Worth Police Department (PD)
-      <ul>
-        <li>Speed Enforcement Unit</li>
-        <li>Special Weapons and Tactics</li>
-        <li>K-9 Gang Enforcement Unit</li>
-      </ul>
-    </li>
-    <li>Department of Parks and Wildlife (DPW)
-      <ul>
-        <li>Tactical Response Team</li>
-        <li>Law Enforcement Divison</li>
-      </ul>
-    </li>
-    <li>Department of Public Safety (DPS)
-      <ul>
-        <li>Texas Rangers</li>
-        <li>High Speed Unit</li>
-        <li>Special Weapons and Tactics</li>
-      </ul>
-    </li>
-    <li>Tarrant County Sheriff's Office (TCSO)
-      <ul>
-        <li>High Enforcement and Apprehension Team</li>
-        <li>Special Weapons and Tactics</li>
-      </ul>
-    </li>
-    <li>Red Rose (RR)
-      <ul>
-        <li>Bounty Hunters</li>
-        <li>Omega-1</li>
-      </ul>
-    </li>
-    <li>Department of Homeland Security (DHS)
-      <ul>
-        <li>Border Patrol</li>
-        <li>Security Analysts</li>
-      </ul>
-    </li>
-  </ul>
+
+  <h3>Select a Department</h3>
+  <select id="department-select" aria-label="Select a department">
+    <option value="">-- Choose a Department --</option>
+    <option value="fd"><strong>Fort Worth Fire Department<strong> (FD)</option>
+    <option value="pd"><strong>Fort Worth Police Department<strong> (PD)</option>
+    <option value="dpw"><strong>Department of Parks and Wildlife<strong> (DPW)</option>
+    <option value="dps"<strong>Department of Public Safet<strong>y (DPS)</option>
+    <option value="tcso"><strong>Tarrant County Sheriff's Office<strong> (TCSO)</option>
+    <option value="rr"><strong>Red Rose<strong> (RR)</option>
+    <option value="dhs"><strong>Department of Homeland Security<strong> (DHS)</option>
+  </select>
+
+  <div id="department-details" style="margin-top:20px; border-top: 1px solid #ccc; padding-top: 15px;">
+    <em>Please select a department to see details.</em>
+  </div>
 </section>
 
-  
- 
-  <!-- Voice Chat Regulations Tab Content -->
-  <section id="voice" class="tab-content">
-    <h2>RTO Regulations</h2>
-    <ul>
-      <li>Keep voice communication clear and respectful at all times.</li>
-      <li>Do not use voice changers or disruptive sound effects.</li>
-      <li>Use push-to-talk when possible to reduce background noise.</li>
-      <li>RTO should be used to enhance roleplay, not for casual or disruptive chatting.</li>
-    </ul>
-  </section>
-
-</main>
-
 <script>
-  // Tab switching logic
-  const buttons = document.querySelectorAll('nav button');
-  const tabs = document.querySelectorAll('.tab-content');
+  const departments = {
+    fd: {
+      name: "Fort Worth Fire Department (FD)",
+      description: "Responsible for fire prevention, emergency medical services, and hazardous material response.",
+      divisions: ["Fire Marshal", "Hazardous Operations", "Public Information Office"]
+    },
+    pd: {
+      name: "Fort Worth Police Department (PD)",
+      description: "Handles law enforcement, traffic safety, and public safety within Fort Worth.",
+      divisions: ["Speed Enforcement Unit", "Special Weapons and Tactics", "K-9 Gang Enforcement Unit"]
+    },
+    dpw: {
+      name: "Department of Parks and Wildlife (DPW)",
+      description: "Manages state parks and wildlife conservation efforts.",
+      divisions: ["Tactical Response Team", "Law Enforcement Division"]
+    },
+    dps: {
+      name: "Department of Public Safety (DPS)",
+      description: "Provides statewide law enforcement and highway patrol.",
+      divisions: ["Texas Rangers", "High Speed Unit", "Special Weapons and Tactics"]
+    },
+    tcso: {
+      name: "Tarrant County Sheriff's Office (TCSO)",
+      description: "Responsible for law enforcement and jail management in Tarrant County.",
+      divisions: ["High Enforcement and Apprehension Team", "Special Weapons and Tactics"]
+    },
+    rr: {
+      name: "Red Rose (RR)",
+      description: "A bounty hunter group focusing on apprehending criminals.",
+      divisions: ["Bounty Hunters", "Omega-1"]
+    },
+    dhs: {
+      name: "Department of Homeland Security (DHS)",
+      description: "Protects the nation from threats and manages border security.",
+      divisions: ["Border Patrol", "Security Analysts"]
+    }
+  };
 
-  buttons.forEach(button => {
-    button.addEventListener('click', () => {
-      buttons.forEach(btn => btn.classList.remove('active'));
-      tabs.forEach(tab => tab.classList.remove('active'));
-      button.classList.add('active');
-      document.getElementById(button.dataset.tab).classList.add('active');
-    });
+  const select = document.getElementById('department-select');
+  const detailsDiv = document.getElementById('department-details');
+
+  select.addEventListener('change', () => {
+    const selected = select.value;
+    if (selected && departments[selected]) {
+      const dept = departments[selected];
+      detailsDiv.innerHTML = `
+        <h4>${dept.name}</h4>
+        <p>${dept.description}</p>
+        <strong>Divisions:</strong>
+        <ul>
+          ${dept.divisions.map(div => `<li>${div}</li>`).join('')}
+        </ul>
+      `;
+    } else {
+      detailsDiv.innerHTML = '<em>Please select a department to see details.</em>';
+    }
   });
 </script>
-
-</body>
-</html>
