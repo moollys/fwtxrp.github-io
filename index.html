@@ -12,7 +12,7 @@
     color: #333;
   }
 header {
-  background-image: url('https://media.discordapp.net/attachments/1137446246555074580/1385017404710457385/fw_banner.png?ex=68548979&is=685337f9&hm=634a6d70600604fe4d37be19d5db0ccb0c43702692450c4ef4383f5625d27234&=&format=webp&quality=lossless'); /* Replace with your image URL */
+  background-image: url('https://media.discordapp.net/attachments/1137446246555074580/1385017404710457385/fw_banner.png?ex=68548979&is=685337f9&hm=634a6d70600604fe4d37be19d5db0ccb0c43702692450c4ef4383f5625d27234&=&format=webp&quality=lossless');
   background-size: cover;
   background-position: center;
   color: white;
@@ -20,7 +20,7 @@ header {
   text-align: center;
   font-size: 2rem;
   font-weight: bold;
-  box-shadow: inset 0 0 0 1000px rgba(0, 85, 204, 0.5); /* Optional overlay for better text contrast */
+  box-shadow: inset 0 0 0 1000px rgba(0, 85, 204, 0.5);
 }
 
 nav {
@@ -97,8 +97,6 @@ h2 {
   <button class="tab-button" data-tab="discord">Discord Server Regulations</button>
   <button class="tab-button" data-tab="department">Departments</button>
   <button class="tab-button" data-tab="voice">RTO Regulations</button>
-  
-  <!-- Added Booster tabs -->
   <button class="tab-button" data-tab="boosters">Booster Cars</button>
   <button class="tab-button" data-tab="boosterguns">Booster Guns</button>
 </nav>
@@ -108,18 +106,14 @@ h2 {
     <input type="search" placeholder="Search..." aria-label="Search regulations" />
   </div>
 
-  <!-- Welcome Tab Content -->
   <section id="welcome" class="tab-content active">
     <h2>Welcome</h2>
-    <p>We are an active and growing ER:LC server with 10,000+ members, hosting 24/7 sessions. We are strictly VC Only and currently hiring staff</p>
-    <p>If you are looking to appeal a ban or in-game punishments please open the respective ticket <a href="https://discord.com/channels/1058906660451655741/1077347906656419930">Support Ticket</a></p>
+    <p>Welcome to Fort Worth Texas Roleplay. Please use the tabs above to navigate to different rules and information about our server.</p>
   </section>
 
-  <!-- In-Game Regulations Tab Content -->
   <section id="ingame" class="tab-content">
     <h2>In-Game Regulations</h2>
-
-    <h3>Roblox Terms of Service</h3>
+ <h3>Roblox Terms of Service</h3>
     <p>To roleplay here, you must adhere to <a href="https://en.help.roblox.com/hc/en-us/articles/203313410-Roblox-Terms-of-Use" target="_blank">Roblox's Terms of Service</a>. Violating these terms may result in removal from the server.</p>
 
     <h3>1. Respect</h3>
@@ -156,11 +150,10 @@ h2 {
     <p>If it feels wrong or unrealistic, don’t do it. Use common sense in situations not covered by specific rules. This is a realistic roleplay server.</p>
   </section>
 
-  <!-- Discord Regulations Tab Content -->
   <section id="discord" class="tab-content">
- <h2>Discord Server Regulations</h2>
-
-    <h3>1. Respect</h3>
+    <h2>Discord Server Regulations</h2>
+    <p>Please be respectful and follow all Discord community guidelines. Toxic behavior, spamming, or breaking Discord TOS is not tolerated.</p>
+ <h3>1. Respect</h3>
     <p>Be kind and respectful. Harassment, hate speech, and personal attacks are not tolerated.</p>
 
     <h3>2. Pinging</h3>
@@ -197,82 +190,82 @@ h2 {
     <p>Use the appropriate tickets or message a staff member directly. Do not confront issues publicly in chats.</p>
   </section>
 
-  <!-- Booster Cars Section -->
+  <section id="department" class="tab-content">
+    <h2>Departments</h2>
+    <p>Each department must adhere to the following rules to ensure proper roleplay standards:</p>
+    <ul>
+      <li>Departments must conduct roleplay professionally and realistically.</li>
+      <li>All members should wear approved department uniforms and follow chain-of-command protocols.</li>
+      <li>Use of department vehicles and equipment is restricted to roleplay purposes only.</li>
+      <li>If you are not currently whitelisted for a department, you are only permitted to use "Standard Livery" labeled uniforms.</li>
+    </ul>
+    <h3>Select a Department</h3>
+    <select id="department-select" aria-label="Select a department">
+      <option value="">-- Choose a Department --</option>
+      <option value="fd">Fort Worth Fire Department (FD)</option>
+      <option value="pd">Fort Worth Police Department (PD)</option>
+      <option value="dpw">Department of Parks and Wildlife (DPW)</option>
+      <option value="dps">Department of Public Safety (DPS)</option>
+      <option value="tcso">Tarrant County Sheriff's Office (TCSO)</option>
+      <option value="rr">Red Rose (RR)</option>
+      <option value="dhs">Department of Homeland Security (DHS)</option>
+    </select>
+    <div id="department-details" style="margin-top:20px; border-top: 1px solid #ccc; padding-top: 15px;">
+      <em>Please select a department to see details.</em>
+    </div>
+  </section>
+
+  <section id="voice" class="tab-content">
+    <h2>RTO Regulations</h2>
+    <p>Coming soon...</p>
+  </section>
+
   <section id="boosters" class="tab-content">
-    <h2>Booster Exclusive Cars</h2>
+    <h2>Booster Cars</h2>
     <p>These vehicles are only available to verified boosters. Ensure you have the proper perks active to unlock and use them in-game.</p>
-    
-    <table style="width:100%; border-collapse: collapse;">
-      <thead>
-        <tr style="background:#f0f0f0;">
-          <th style="text-align:left; padding:8px; border-bottom:1px solid #ccc;">Car Name</th>
-          <th style="text-align:right; padding:8px; border-bottom:1px solid #ccc;">Price</th>
-          <th style="text-align:right; padding:8px; border-bottom:1px solid #ccc;">Top Speed</th>
-          <th style="text-align:right; padding:8px; border-bottom:1px solid #ccc;">0–60 mph</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td style="padding:8px;">Chevlon Corvette ZR1 (ZR1-like)</td><td style="text-align:right;">$350,000</td><td style="text-align:right;">151 MPH</td><td style="text-align:right;">4.14 s</td></tr>
-        <tr><td style="padding:8px;">Chevlon Corbeta 8 (2023 Corvette)</td><td style="text-align:right;">$410,000</td><td style="text-align:right;">157 MPH</td><td style="text-align:right;">3.96 s</td></tr>
-        <tr><td style="padding:8px;">Takeo Experience (Acura NSX-like)</td><td style="text-align:right;">$475,000</td><td style="text-align:right;">140 MPH</td><td style="text-align:right;">3.27 s</td></tr>
-        <tr><td style="padding:8px;">Averon R8 (Audi R8-based)</td><td style="text-align:right;">$650,000</td><td style="text-align:right;">146 MPH</td><td style="text-align:right;">4.97 s</td></tr>
-        <tr><td style="padding:8px;">Surrey 650S (McLaren 675LT)</td><td style="text-align:right;">$890,000</td><td style="text-align:right;">150 MPH</td><td style="text-align:right;">3.74 s</td></tr>
-        <tr><td style="padding:8px;">Strugatti Ettore (Bugatti Chiron)</td><td style="text-align:right;">$1,500,000</td><td style="text-align:right;">170 MPH</td><td style="text-align:right;">3.88 s</td></tr>
-        <tr><td style="padding:8px;">Stuttgart Landschaft</td><td style="text-align:right;">$249,000</td><td style="text-align:right;">124 MPH</td><td style="text-align:right;">5.67 s</td></tr>
-        <tr><td style="padding:8px;">Leland LTS5‑V Blackwing</td><td style="text-align:right;">$255,000</td><td style="text-align:right;">122 MPH</td><td style="text-align:right;">4.75 s</td></tr>
-        <tr><td style="padding:8px;">BKM Risen Roadster (EV Exotic)</td><td style="text-align:right;">$164,295</td><td style="text-align:right;">146 MPH</td><td style="text-align:right;">3.93 s</td></tr>
-      </tbody>
-    </table>
+    <ul>
+      <li>Chevlon Corvette ZR1 (ZR1-like)</li>
+      <li>Chevlon Corbeta 8 (2023 Corvette)</li>
+      <li>Takeo Experience (Acura NSX-like)</li>
+      <li>Averon R8 (Audi R8-based)</li>
+      <li>Surrey 650S (McLaren 675LT)</li>
+      <li>Strugatti Ettore (Bugatti Chiron)</li>
+      <li>Stuttgart Landschaft</li>
+      <li>Leland LTS5‑V Blackwing</li>
+      <li>BKM Risen Roadster (EV Exotic)</li>
+    </ul>
   </section>
 
-  <!-- Booster Guns Section -->
   <section id="boosterguns" class="tab-content">
-    <h2>Booster Exclusive Guns</h2>
+    <h2>Booster Guns</h2>
     <p>The following firearms are exclusive to verified boosters:</p>
-
-    <table style="width:100%; border-collapse: collapse;">
-      <thead>
-        <tr style="background:#f0f0f0;">
-          <th style="text-align:left; padding:8px; border-bottom:1px solid #ccc;">Gun Name</th>
-          <th style="text-align:left; padding:8px; border-bottom:1px solid #ccc;">Notes</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td style="padding:8px;">Remington 870</td><td style="padding:8px;">Pump-action shotgun</td></tr>
-        <tr><td style="padding:8px;">Remington MSR</td><td style="padding:8px;">Precision sniper rifle</td></tr>
-        <tr><td style="padding:8px;">M249</td><td style="padding:8px;">Light machine gun</td></tr>
-        <tr><td style="padding:8px;">Remington 700</td><td style="padding:8px;">Bolt-action sniper rifle</td></tr>
-      </tbody>
-    </table>
+    <ul>
+      <li>Remington 870 - Pump-action shotgun</li>
+      <li>Remington MSR - Precision sniper rifle</li>
+      <li>M249 - Light machine gun</li>
+      <li>Remington 700 - Bolt-action sniper rifle</li>
+    </ul>
   </section>
-<section id="department" class="tab-content">
-  <h2>Department Regulations</h2>
-  <p>Each department must adhere to the following rules to ensure proper roleplay standards:</p>
-  <ul>
-   <li>Departments must conduct roleplay professionally and realistically.</li>
-    <li>All members should wear approved department uniforms and follow chain-of-command protocols.</li>
-    <li>Use of department vehicles and equipment is restricted to roleplay purposes only.</li>
-    <li>If you are not currently whitelisted for a department, you are only permitted to use "Standard Livery" labled uniforms</li>
-  </ul>
 
-  <h3>Select a Department</h3>
-  <select id="department-select" aria-label="Select a department">
-    <option value="">-- Choose a Department --</option>
-    <option value="fd"><strong>Fort Worth Fire Department<strong> (FD)</option>
-    <option value="pd"><strong>Fort Worth Police Department<strong> (PD)</option>
-    <option value="dpw"><strong>Department of Parks and Wildlife<strong> (DPW)</option>
-    <option value="dps"<strong>Department of Public Safet<strong>y (DPS)</option>
-    <option value="tcso"><strong>Tarrant County Sheriff's Office<strong> (TCSO)</option>
-    <option value="rr"><strong>Red Rose<strong> (RR)</option>
-    <option value="dhs"><strong>Department of Homeland Security<strong> (DHS)</option>
-  </select>
-
-  <div id="department-details" style="margin-top:20px; border-top: 1px solid #ccc; padding-top: 15px;">
-    <em>Please select a department to see details.</em>
-  </div>
-</section>
+</main>
 
 <script>
+  // Tab switching functionality
+  const tabButtons = document.querySelectorAll('.tab-button');
+  const tabContents = document.querySelectorAll('.tab-content');
+
+  tabButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      tabButtons.forEach(btn => btn.classList.remove('active'));
+      tabContents.forEach(tab => tab.classList.remove('active'));
+
+      button.classList.add('active');
+      const tabId = button.getAttribute('data-tab');
+      document.getElementById(tabId).classList.add('active');
+    });
+  });
+
+  // Department logic
   const departments = {
     fd: {
       name: "Fort Worth Fire Department (FD)",
@@ -330,23 +323,7 @@ h2 {
       detailsDiv.innerHTML = '<em>Please select a department to see details.</em>';
     }
   });
-<script>
-  // Tab switching functionality
-  const tabButtons = document.querySelectorAll('.tab-button');
-  const tabContents = document.querySelectorAll('.tab-content');
-
-  tabButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      // Remove active class from all buttons
-      tabButtons.forEach(btn => btn.classList.remove('active'));
-      // Hide all content
-      tabContents.forEach(tab => tab.classList.remove('active'));
-
-      // Add active class to clicked button
-      button.classList.add('active');
-      // Show the corresponding tab content
-      const tabId = button.getAttribute('data-tab');
-      document.getElementById(tabId).classList.add('active');
-    });
-  });
 </script>
+
+</body>
+</html>
