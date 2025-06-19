@@ -62,26 +62,53 @@ h2 {
 .tab-content.active {
   display: block;
 }
-.search-container {
-  margin-bottom: 20px;
-  text-align: center;
-}
-.search-container input[type="search"] {
-  width: 60%;
-  max-width: 400px;
-  padding: 8px 12px;
-  font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
 @media (max-width: 600px) {
   nav button {
     flex: 1 1 100%;
     text-align: center;
   }
-  .search-container input[type="search"] {
-    width: 90%;
-  }
+}
+
+/* Slider styles */
+.slider {
+  position: relative;
+  max-width: 400px;
+  margin-top: 15px;
+  text-align: center;
+}
+
+.slider img {
+  width: 100%;
+  border-radius: 6px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.15);
+}
+
+.prev-btn,
+.next-btn {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0,85,204,0.7);
+  border: none;
+  color: white;
+  font-size: 24px;
+  padding: 6px 12px;
+  border-radius: 50%;
+  user-select: none;
+}
+
+.prev-btn {
+  left: 5px;
+}
+
+.next-btn {
+  right: 5px;
+}
+
+.prev-btn:hover,
+.next-btn:hover {
+  background-color: #003d99;
 }
 </style>
 </head>
@@ -102,9 +129,6 @@ h2 {
 </nav>
 
 <main>
-  <div class="search-container">
-    <input type="search" placeholder="Search..." aria-label="Search regulations" />
-  </div>
 
   <section id="welcome" class="tab-content active">
     <h2>Welcome</h2>
@@ -113,39 +137,28 @@ h2 {
 
   <section id="ingame" class="tab-content">
     <h2>In-Game Regulations</h2>
- <h3>Roblox Terms of Service</h3>
+    <h3>Roblox Terms of Service</h3>
     <p>To roleplay here, you must adhere to <a href="https://en.help.roblox.com/hc/en-us/articles/203313410-Roblox-Terms-of-Use" target="_blank">Roblox's Terms of Service</a>. Violating these terms may result in removal from the server.</p>
-
     <h3>1. Respect</h3>
     <p>Ensure you maintain a fundamental level of respect for your peers within the server. Regardless of your position, respect your peers at all times.</p>
-
     <h3>2. Random Deathmatch (RDM)</h3>
     <p>Random Deathmatch occurs when a player harms or kills others without justification. RDM disrupts realism and will result in warnings or disciplinary action.</p>
-
     <h3>3. Vehicle Deathmatch (VDM)</h3>
     <p>Vehicle Deathmatch occurs when a player damages or kills others using a vehicle without valid roleplay context. This includes reckless driving or crashing without a scenario.</p>
-
     <h3>4. Fail Roleplay (FRP)</h3>
     <p>FailRP happens when a player acts unrealistically, such as jumping off buildings unharmed or using exploits. You must act as you would in real life.</p>
-
     <h3>5. New Life Rule (NLR)</h3>
     <p>After dying, your character forgets everything from the previous life. Do not return to the same scene, take revenge, or retain memory of what happened.</p>
-
     <h3>6. Unauthorized Organizations</h3>
     <p>Creating or roleplaying as unauthorized mafias, departments, or military groups is prohibited. Doing so may result in a ban without warning.</p>
-
     <h3>7. Character Conduct</h3>
     <p>Your character must simulate real human behavior, including fear, pain, and emotional responses. This adds realism and improves server quality.</p>
-
     <h3>8. Vehicular Conduct</h3>
     <p>Drive realistically. Account for traffic, obey traffic laws, and adjust speed for weather or RP context. Reckless or GTA-style driving is not allowed.</p>
-
     <h3>9. Banned Roleplays</h3>
     <p>Roleplays that violate Roblox ToS are not allowed. This includes erotic RP, terrorism, suicide, or bomb threats. Keep roleplays safe and appropriate.</p>
-
     <h3>10. Safezones</h3>
     <p>Safezones are no-conflict areas such as spawns and Staff HQ. Roleplay can start there but cannot be forcefully initiated without RP context.</p>
-
     <h3>11. Common Sense</h3>
     <p>If it feels wrong or unrealistic, don’t do it. Use common sense in situations not covered by specific rules. This is a realistic roleplay server.</p>
   </section>
@@ -153,39 +166,28 @@ h2 {
   <section id="discord" class="tab-content">
     <h2>Discord Server Regulations</h2>
     <p>Please be respectful and follow all Discord community guidelines. Toxic behavior, spamming, or breaking Discord TOS is not tolerated.</p>
- <h3>1. Respect</h3>
+    <h3>1. Respect</h3>
     <p>Be kind and respectful. Harassment, hate speech, and personal attacks are not tolerated.</p>
-
     <h3>2. Pinging</h3>
     <p>Only ping others when necessary. Do not ping @Management Team or higher without permission.</p>
-
     <h3>3. Language</h3>
     <p>Use respectful, appropriate language. Avoid explicit, offensive, or harmful language.</p>
-
     <h3>4. Common Sense</h3>
     <p>Think before you post. Contribute positively and avoid actions that would obviously be disruptive.</p>
-
     <h3>5. Content</h3>
     <p>Keep discussions in the correct channels. Avoid spam, off-topic posts, or content that doesn’t follow the theme of the channel.</p>
-
     <h3>6. Advertising</h3>
     <p>Do not advertise other communities or products without prior approval. Even approved promotions should be short and relevant.</p>
-
     <h3>7. Terms and Guidelines</h3>
     <p>Follow <a href="https://discord.com/terms" target="_blank">Discord's Terms of Service</a> and Community Guidelines. Don’t share private information or break platform rules.</p>
-
     <h3>8. Bots</h3>
     <p>Use bots properly and only for their intended purpose. Do not abuse commands or cause spam.</p>
-
     <h3>9. Feedback</h3>
     <p>Use the <strong>📩 suggestions</strong> channel to share feedback respectfully. Constructive ideas are welcomed; negativity is not.</p>
-
     <h3>10. Civility in Debates</h3>
     <p>You can disagree, but stay respectful. Arguments, name-calling, or provoking others will not be tolerated.</p>
-
     <h3>11. Multiple Accounts</h3>
     <p>Only one account per user is allowed in the server. Alternate or backup accounts are not permitted.</p>
-
     <h3>12. Reporting Issues</h3>
     <p>Use the appropriate tickets or message a staff member directly. Do not confront issues publicly in chats.</p>
   </section>
@@ -206,9 +208,7 @@ h2 {
       <option value="pd">Fort Worth Police Department (PD)</option>
       <option value="dpw">Department of Parks and Wildlife (DPW)</option>
       <option value="dps">Department of Public Safety (DPS)</option>
-      <option value="tcso">Tarrant County Sheriff's Office (TCSO)</option>
       <option value="rr">Red Rose (RR)</option>
-      <option value="dhs">Department of Homeland Security (DHS)</option>
     </select>
     <div id="department-details" style="margin-top:20px; border-top: 1px solid #ccc; padding-top: 15px;">
       <em>Please select a department to see details.</em>
@@ -265,52 +265,84 @@ h2 {
     });
   });
 
-  // Department logic
+  // Departments data with images for slider
   const departments = {
     fd: {
       name: "Fort Worth Fire Department (FD)",
-      description: "Responsible for fire prevention, emergency medical services, and hazardous material response.",
-      divisions: ["Fire Marshal", "Hazardous Operations", "Public Information Office"]
+      description: "Fort Worth Fire is there on peoples worse days, we se there to help, there to protect, there to  keep the public safe, and most importantly there so Fort Worth is a better place. We strive to keep a great appearance to the community, we want to make the members of Fort Worth feel safe. We offer multiple ways to involve yourself rather your a employee or just a civilian, that stretches from Internal Affairs, Fire Marshal, Hazardous Operations and Rescue, and our most recent implemented division, Public Information Office.",
+      divisions: ["Fire Marshal", "Hazardous Operations", "Public Information Office"],
+      images: [
+        "https://media.discordapp.net/attachments/1287949438815309925/1385053188088004848/image.png?ex=6854aacd&is=6853594d&hm=209dd06a5107c3a43ab1bfddd227440b9d4e4c0503ce766715abe59f3b190210&=&format=webp&quality=lossless&width=1232&height=727"
+        "https://media.discordapp.net/attachments/1287949438815309925/1385053565655056484/image.png?ex=6854ab27&is=685359a7&hm=1ec27fddc63e015e3243064ec45ae8a5018e460d01334d8ed81f3c91842fd760&=&format=webp&quality=lossless",
+        "https://media.discordapp.net/attachments/1287949438815309925/1385053473330036826/77NMxs7.png?ex=6854ab11&is=68535991&hm=c69ae42ec05d8e96b64612a35c66e3d0a9c8cb70ed80088edf86288118992cf9&=&format=webp&quality=lossless&width=1232&height=635"
+         discordInvite: { url: "https://discord.gg/BYgcjE8ZFV", emoji: "🔥" }
     },
     pd: {
       name: "Fort Worth Police Department (PD)",
-      description: "Handles law enforcement, traffic safety, and public safety within Fort Worth.",
-      divisions: ["Speed Enforcement Unit", "Special Weapons and Tactics", "K-9 Gang Enforcement Unit"]
+      description: "The Fort Worth Police Department serves the city of Fort Worth, Texas. It focuses on public safety and community policing.We have Speed Enforcement Unit (SEU), Special Weapons and Tactics team (SWAT), K-9 Gang Enforcement Unit.",
+      divisions: ["Speed Enforcement Unit", "Special Weapons and Tactics", "K-9 Gang Enforcement Unit"],
+      images: [
+        "https://media.discordapp.net/attachments/1076243935153901648/1368607814208979056/FWPD_Server_ad.png?ex=68542a5a&is=6852d8da&hm=af489ff50b9f815b37a62e989c9e76b9529b721aa652ca41bab7be10d146db05&=&format=webp&quality=lossless&width=1232&height=693",
+        "https://media.discordapp.net/attachments/1324857056943013908/1385124003286618174/752CA736-C671-409C-9ACE-C8B7DDCEA55E.jpg?ex=6854ecc0&is=68539b40&hm=b63f26e7b06a5ee9a73e17ed10083c616eaea1cbbd1318c4aa7f99bd7fab5d1c&=&format=webp&width=1232&height=685",
+        "https://i.imgur.com/fuWde9P.jpg"
+        discordInvite: { url: "https://discord.gg/QHzPqBXC5Z", emoji: "👮‍♂️" }
     },
     dpw: {
       name: "Department of Parks and Wildlife (DPW)",
-      description: "Manages state parks and wildlife conservation efforts.",
-      divisions: ["Tactical Response Team", "Law Enforcement Division"]
+      description: "The Department of Parks and Wildlife (DPW) is responsible for managing and protecting natural areas, wildlife, and biodiversity, including national parks and conservation reserves. They work to conserve and protect the environment, with their divisions; TRT [Tactical Response Team] and LED [Law Enforcement Divison]. ",
+      divisions: ["Tactical Response Team", "Law Enforcement Division"],
+      images: [
+        "https://media.discordapp.net/attachments/1297066210726510623/1385041751064186880/Q73LabP9fuP4OkHyGRdiSmoAAAAASUVORK5CYII.png?ex=6854a026&is=68534ea6&hm=b60d4ffa7aed03f2cfbe7e4a5fb5026a28e3f34bb5fae53d43b517e2e5ab9003&=&format=webp&quality=lossless&width=1128&height=651                                                    ",
+        "https://media.discordapp.net/attachments/1353131833415696496/1385046188272910488/image.png?ex=6854a448&is=685352c8&hm=e536043472e39b2043986f4e6605b22f28cfe0ac7ed0262a639b446dc406d6ed&=&format=webp&quality=lossless&width=1128&height=631"
+        discordInvite: { url: "https://discord.gg/VddJMZ7NTX", emoji: "🌲" }
+      
     },
     dps: {
       name: "Department of Public Safety (DPS)",
       description: "Provides statewide law enforcement and highway patrol.",
-      divisions: ["Texas Rangers", "High Speed Unit", "Special Weapons and Tactics"]
+      divisions: ["Texas Rangers", "High Speed Unit", "Special Weapons and Tactics"],
+      images: [
+        "https://i.imgur.com/3vDRwLk.jpg",
+        "https://i.imgur.com/4HphipO.jpg"
+      
     },
-    tcso: {
-      name: "Tarrant County Sheriff's Office (TCSO)",
-      description: "Responsible for law enforcement and jail management in Tarrant County.",
-      divisions: ["High Enforcement and Apprehension Team", "Special Weapons and Tactics"]
-    },
+
     rr: {
       name: "Red Rose (RR)",
-      description: "A bounty hunter group focusing on apprehending criminals.",
-      divisions: ["Bounty Hunters", "Omega-1"]
-    },
-    dhs: {
-      name: "Department of Homeland Security (DHS)",
-      description: "Protects the nation from threats and manages border security.",
-      divisions: ["Border Patrol", "Security Analysts"]
-    }
+      description: "Fort Worth’s most feared and respected organization is calling. Operate from the shadows with discipline, loyalty, and power. Join divisions like Omega-1, Bounty Hunters, or Elite, and rise through a structured, story-driven underworld. The Red Rose Mafia controls influence, manages internal order, and enforces a strict code that only the strongest survive. Loyalty is not requested it’s demanded. Every move counts. Every member is watched. Only the sharpest rise",
+      divisions: ["Bounty Hunters", "Omega-1"],
+      images: [
+        "https://media.discordapp.net/attachments/1288299894821359698/1385079370552578079/Red_Rose_Banner.png?ex=6854c32f&is=685371af&hm=80b0b11c160b7ef0f10b33cf2744653acf5e65f0a162c29f062012fd89949292&=&format=webp&quality=lossless",
+       
   };
 
   const select = document.getElementById('department-select');
   const detailsDiv = document.getElementById('department-details');
 
+  let currentSlideIndex = 0;
+
+  function renderSlider(images) {
+    if (!images || images.length === 0) return '';
+
+    return `
+      <div class="slider">
+        <button class="prev-btn" aria-label="Previous image">&#10094;</button>
+        <img src="${images[0]}" alt="Department Image" class="slider-image" />
+        <button class="next-btn" aria-label="Next image">&#10095;</button>
+      </div>
+    `;
+  }
+
+  function updateSliderImage(images, imgElement, index) {
+    imgElement.src = images[index];
+  }
+
   select.addEventListener('change', () => {
     const selected = select.value;
     if (selected && departments[selected]) {
       const dept = departments[selected];
+      currentSlideIndex = 0;
+
       detailsDiv.innerHTML = `
         <h4>${dept.name}</h4>
         <p>${dept.description}</p>
@@ -318,7 +350,25 @@ h2 {
         <ul>
           ${dept.divisions.map(div => `<li>${div}</li>`).join('')}
         </ul>
+        ${renderSlider(dept.images)}
       `;
+
+      if (dept.images && dept.images.length > 0) {
+        const slider = detailsDiv.querySelector('.slider');
+        const img = slider.querySelector('.slider-image');
+        const prevBtn = slider.querySelector('.prev-btn');
+        const nextBtn = slider.querySelector('.next-btn');
+
+        prevBtn.addEventListener('click', () => {
+          currentSlideIndex = (currentSlideIndex - 1 + dept.images.length) % dept.images.length;
+          updateSliderImage(dept.images, img, currentSlideIndex);
+        });
+
+        nextBtn.addEventListener('click', () => {
+          currentSlideIndex = (currentSlideIndex + 1) % dept.images.length;
+          updateSliderImage(dept.images, img, currentSlideIndex);
+        });
+      }
     } else {
       detailsDiv.innerHTML = '<em>Please select a department to see details.</em>';
     }
