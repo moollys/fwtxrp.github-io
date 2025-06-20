@@ -26,15 +26,14 @@
       background-color: var(--dark-bg);
       color: var(--dark-text);
     }
-   header {
-  width: 100%;
-  aspect-ratio: 960 / 136;
-  background-image: url('https://i.postimg.cc/Gtk9fG4R/fw-banner.jpg');
-  background-size: cover;
-  background-position: center;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-  user-select: none;
-
+    header {
+      width: 100%;
+      aspect-ratio: 960 / 136;
+      background-image: url('https://i.postimg.cc/Gtk9fG4R/fw-banner.jpg');
+      background-size: cover;
+      background-position: center;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+      user-select: none;
     }
     header::before {
       content: none;
@@ -301,7 +300,7 @@
     <section id="boosterguns" class="tab-content">
       <h2>Booster Guns</h2>
       <ul>
-        <li><strong>Remington 870</strong></l>
+        <li><strong>Remington 870</strong></li>
         <li><strong>Remington MSR</strong></li>
         <li><strong>M249</strong></li>
         <li><strong>Remington 700</strong></li>
@@ -313,137 +312,129 @@
     // Theme toggle
     function toggleTheme() {
       document.body.classList.toggle('dark');
-      // Save preference to localStorage (optional)
       if(document.body.classList.contains('dark')) {
         localStorage.setItem('theme', 'dark');
       } else {
         localStorage.setItem('theme', 'light');
       }
     }
-    // On load, set theme from storage
     if(localStorage.getItem('theme') === 'dark') {
       document.body.classList.add('dark');
     }
 
-    // Tab switching
-    const tabButtons = document.querySelectorAll('.tab-button');
-    const tabContents = document.querySelectorAll('.tab-content');
+    document.addEventListener('DOMContentLoaded', () => {
+      // Tab switching
+      const tabButtons = document.querySelectorAll('.tab-button');
+      const tabContents = document.querySelectorAll('.tab-content');
 
-    tabButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        // Remove active from buttons and contents
-        tabButtons.forEach(btn => btn.classList.remove('active'));
-        tabContents.forEach(content => content.classList.remove('active'));
-        // Add active to clicked button and related content
-        button.classList.add('active');
-        document.getElementById(button.dataset.tab).classList.add('active');
+      tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          tabButtons.forEach(btn => btn.classList.remove('active'));
+          tabContents.forEach(content => content.classList.remove('active'));
+
+          button.classList.add('active');
+          document.getElementById(button.dataset.tab).classList.add('active');
+        });
+      });
+
+      // Department info and slider
+      const departmentSelect = document.getElementById('department-select');
+      const departmentDetails = document.getElementById('department-details');
+
+      const departments = {
+        fd: {
+          name: "Fort Worth Fire Department (FD)",
+          description: "Fort Worth Fire is there on peoples worst days, we are there to help, there to protect, there to keep the public safe, and most importantly there so Fort Worth is a better place. We strive to keep a great appearance to the community, we want to make the members of Fort Worth feel safe. We offer multiple ways to involve yourself rather your an employee or just a civilian, that stretches from Internal Affairs, Fire Marshal, Hazardous Operations and Rescue, and our most recent implemented division, Public Information Office.",
+          images: [
+            "https://i.postimg.cc/mkXMj7Jr/fd-banner-1.png",
+            "https://i.postimg.cc/4yS7VsH7/fd-banner-2.png",
+            "https://i.postimg.cc/nLrLK6Zq/fd-banner-3.png",
+            "https://i.postimg.cc/HxS3J2Fk/fd-4.webp"
+          ],
+        },
+        pd: {
+          name: "Fort Worth Police Department (PD)",
+          description: "The Fort Worth Police Department serves the city of Fort Worth, Texas. It focuses on public safety and community policing. We have Speed Enforcement Unit (SEU), Special Weapons and Tactics team (SWAT), K-9 Gang Enforcement Unit.",
+          images: [
+            "https://i.postimg.cc/nVgPY5bB/pd-banner-1.png",
+            "https://i.postimg.cc/X7NpL2fN/pd-banner-2.jpg",
+            "https://i.postimg.cc/D0VBhZG2/pd-3.webp"
+          ],
+        },
+        dpw: {
+          name: "Department of Parks and Wildlife (DPW)",
+          description: "The Department of Parks and Wildlife (DPW) is responsible for managing and protecting natural areas, wildlife, and biodiversity, including national parks and conservation reserves. They work to conserve and protect the environment, with their divisions; TRT [Tactical Response Team] and LED [Law Enforcement Division].",
+          images: [
+            "https://i.postimg.cc/x85G7cpX/dpw-banner-1.png",
+            "https://i.postimg.cc/TPhR5FvF/dpw-2.png",
+            "https://i.postimg.cc/15gcM5c3/dpw-3.png",
+            "https://i.postimg.cc/mkKnFNhC/dpw-4.png"
+          ],
+        },
+        dps: {
+          name: "Department of Public Safety (DPS)",
+          description: "The Department of Public Safety, or DPS, is a law enforcement agency responsible for emergency response, traffic enforcement, tactical response. We mainly patrol the highway, but can and will respond to priorities or backup requests as needed within city limits.",
+          images: [
+            "https://i.postimg.cc/RVzK1QFX/dps-banner-1.png",
+            "https://i.postimg.cc/Y9YjjZb6/dps-banner-2.png",
+            "https://i.postimg.cc/fy8v11gZ/dps-banner-3.png"
+          ],
+        },
+        rr: {
+          name: "Red Rose Mafia (RRM)",
+          description: "Red Rose Mafia is the largest and most powerful criminal group in Fort Worth Texas Roleplay. We are a family and protect our own. If you want to be a part of an organized crime family that works in Fort Worth with your brothers and sisters, Red Rose Mafia is your place to be.",
+          images: [
+            "https://i.postimg.cc/k5V7YPdL/rrm-banner-1.jpg",
+            "https://i.postimg.cc/mgKXBqCs/rrm-banner-2.jpg",
+            "https://i.postimg.cc/J7qjZr4c/rrm-banner-3.jpg"
+          ],
+        }
+      };
+
+      let currentImageIndex = 0;
+      let currentImages = [];
+      let sliderImg, prevBtn, nextBtn;
+
+      function showDepartmentDetails(deptKey) {
+        if(!deptKey || !departments[deptKey]) {
+          departmentDetails.innerHTML = '<em>Please select a department to see details.</em>';
+          return;
+        }
+
+        const dept = departments[deptKey];
+        currentImages = dept.images;
+        currentImageIndex = 0;
+
+        // Build HTML with slider and description
+        departmentDetails.innerHTML = `
+          <h3>${dept.name}</h3>
+          <div class="slider">
+            <button class="prev-btn">&#10094;</button>
+            <img src="${currentImages[0]}" alt="${dept.name} image" />
+            <button class="next-btn">&#10095;</button>
+          </div>
+          <p>${dept.description}</p>
+        `;
+
+        sliderImg = departmentDetails.querySelector('img');
+        prevBtn = departmentDetails.querySelector('.prev-btn');
+        nextBtn = departmentDetails.querySelector('.next-btn');
+
+        prevBtn.addEventListener('click', () => {
+          currentImageIndex = (currentImageIndex - 1 + currentImages.length) % currentImages.length;
+          sliderImg.src = currentImages[currentImageIndex];
+        });
+
+        nextBtn.addEventListener('click', () => {
+          currentImageIndex = (currentImageIndex + 1) % currentImages.length;
+          sliderImg.src = currentImages[currentImageIndex];
+        });
+      }
+
+      departmentSelect.addEventListener('change', () => {
+        showDepartmentDetails(departmentSelect.value);
       });
     });
-
-    // Department info and slider
-    const departmentSelect = document.getElementById('department-select');
-    const departmentDetails = document.getElementById('department-details');
-
-    const departments = {
-      fd: {
-        name: "Fort Worth Fire Department (FD)",
-        description: "Fort Worth Fire is there on peoples worst days, we are there to help, there to protect, there to keep the public safe, and most importantly there so Fort Worth is a better place. We strive to keep a great appearance to the community, we want to make the members of Fort Worth feel safe. We offer multiple ways to involve yourself rather your an employee or just a civilian, that stretches from Internal Affairs, Fire Marshal, Hazardous Operations and Rescue, and our most recent implemented division, Public Information Office.",
-        images: [
-          "https://i.postimg.cc/mkXMj7Jr/fd-banner-1.png",
-          "https://i.postimg.cc/4yS7VsH7/fd-banner-2.png",
-          "https://i.postimg.cc/nLrLK6Zq/fd-banner-3.png",
-          "https://i.postimg.cc/HxS3J2Fk/fd-4.webp"
-
-        ],
-      },
-      pd: {
-        name: "Fort Worth Police Department (PD)",
-        description: "The Fort Worth Police Department serves the city of Fort Worth, Texas. It focuses on public safety and community policing. We have Speed Enforcement Unit (SEU), Special Weapons and Tactics team (SWAT), K-9 Gang Enforcement Unit.",
-        images: [
-          "https://i.postimg.cc/nVgPY5bB/pd-banner-1.png",
-          "https://i.postimg.cc/X7NpL2fN/pd-banner-2.jpg",
-          "https://i.postimg.cc/D0VBhZG2/pd-3.webp"
-        ],
-      },
-      dpw: {
-        name: "Department of Parks and Wildlife (DPW)",
-        description: "The Department of Parks and Wildlife (DPW) is responsible for managing and protecting natural areas, wildlife, and biodiversity, including national parks and conservation reserves. They work to conserve and protect the environment, with their divisions; TRT [Tactical Response Team] and LED [Law Enforcement Division].",
-        images: [
-          "https://i.postimg.cc/x85G7cpX/dpw-banner-1.png",
-          "https://i.postimg.cc/TPhR5FvF/dpw-2.png",
-          "https://i.postimg.cc/15gcM5c3/dpw-3.png",
-          "https://i.postimg.cc/mkKnFNhC/dpw-4.png"
-        ],
-      },
-      dps: {
-        name: "Department of Public Safety (DPS)",
-        description: "The Department of Public Safety, or DPS, is a law enforcement agency responsible for emergency response, traffic enforcement, tactical response. We mainly patrol the highway, but can and will respond to priorities or backup requests as needed within city limits.",
-        images: [
-          "https://i.postimg.cc/RVzK1QFX/dps-banner-1.png",
-          "https://i.postimg.cc/Y9YjjZ1k/dps-banner-2.png",
-          "https://i.postimg.cc/tJppwb9Y/dps-3.webp",
-          "https://i.postimg.cc/xdyqx62j/dps-5.png"
-        ],
-      },
-      rr: {
-        name: "Red Rose Mafia (RRM)",
-        description: "Fort Worth’s most feared and respected organization is calling. Operate from the shadows with discipline, loyalty, and power. Join divisions like Omega-1, Bounty Hunters, or Elite, and rise through a structured, story-driven underworld. The Red Rose Mafia controls influence, manages internal order, and enforces a strict code that only the strongest survive. Loyalty is not requested it’s demanded. Every move counts. Every member is watched. Only the sharpest rise.",
-        images: [
-          "https://i.postimg.cc/G2Cdg2yw/rrm-banner-1.webp"
-          "https://i.postimg.cc/P5SxsP7Y/rrm-2.png"
-        ],
-      }
-    };
-
-    let currentImageIndex = 0;
-    let currentDeptImages = [];
-
-    function updateSlider() {
-      const sliderImg = departmentDetails.querySelector('.slider img');
-      if (!sliderImg) return;
-      sliderImg.src = currentDeptImages[currentImageIndex];
-    }
-
-    function showDepartmentDetails(deptKey) {
-      if (!deptKey || !departments[deptKey]) {
-        departmentDetails.innerHTML = "<em>Please select a department to see details.</em>";
-        currentDeptImages = [];
-        return;
-      }
-
-      const dept = departments[deptKey];
-      currentDeptImages = dept.images;
-      currentImageIndex = 0;
-
-      departmentDetails.innerHTML = `
-        <h3>${dept.name}</h3>
-        <p>${dept.description}</p>
-        <div class="slider">
-          <button class="prev-btn">&#10094;</button>
-          <img src="${currentDeptImages[0]}" alt="${dept.name} banner" />
-          <button class="next-btn">&#10095;</button>
-        </div>
-      `;
-
-      // Add listeners for slider buttons
-      const prevBtn = departmentDetails.querySelector('.prev-btn');
-      const nextBtn = departmentDetails.querySelector('.next-btn');
-
-      prevBtn.addEventListener('click', () => {
-        currentImageIndex = (currentImageIndex - 1 + currentDeptImages.length) % currentDeptImages.length;
-        updateSlider();
-      });
-
-      nextBtn.addEventListener('click', () => {
-        currentImageIndex = (currentImageIndex + 1) % currentDeptImages.length;
-        updateSlider();
-      });
-    }
-
-    departmentSelect.addEventListener('change', () => {
-      showDepartmentDetails(departmentSelect.value);
-    });
-
   </script>
 </body>
 </html>
