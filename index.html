@@ -35,9 +35,6 @@
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
       user-select: none;
     }
-    header::before {
-      content: none;
-    }
     .theme-toggle {
       position: fixed;
       top: 10px;
@@ -193,10 +190,6 @@
       main {
         padding: 20px;
       }
-    }
-    @keyframes fadeIn {
-      0% { opacity: 0; }
-      100% { opacity: 1; }
     }
     @keyframes fadeInUp {
       0% { opacity: 0; transform: translateY(30px); }
@@ -384,8 +377,7 @@
         },
         rr: {
           name: "Red Rose Mafia (RRM)",
-          description: "Fort Worth’s most feared and respected organization is calling. Operate from the shadows with discipline, loyalty, and power. Join divisions like Omega-1, Bounty Hunters, or Elite, and rise through a structured, story-driven underworld. The Red Rose Mafia controls influence, manages internal order, and enforces a strict code that only the strongest survive. Loyalty is not requested it’s demanded. Every move counts. Every member is watched. Only the sharpest rise.
-",
+          description: "Fort Worth’s most feared and respected organization is calling. Operate from the shadows with discipline, loyalty, and power. Join divisions like Omega-1, Bounty Hunters, or Elite, and rise through a structured, story-driven underworld. The Red Rose Mafia controls influence, manages internal order, and enforces a strict code that only the strongest survive. Loyalty is not requested it’s demanded. Every move counts. Every member is watched. Only the sharpest rise.",
           images: [
             "https://i.postimg.cc/k5V7YPdL/rrm-banner-1.jpg",
             "https://i.postimg.cc/mgKXBqCs/rrm-banner-2.jpg",
@@ -412,9 +404,9 @@
         departmentDetails.innerHTML = `
           <h3>${dept.name}</h3>
           <div class="slider">
-            <button class="prev-btn">&#10094;</button>
+            <button class="prev-btn" aria-label="Previous Image">&#10094;</button>
             <img src="${currentImages[0]}" alt="${dept.name} image" />
-            <button class="next-btn">&#10095;</button>
+            <button class="next-btn" aria-label="Next Image">&#10095;</button>
           </div>
           <p>${dept.description}</p>
         `;
