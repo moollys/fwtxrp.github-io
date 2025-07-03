@@ -160,89 +160,123 @@
       <p>This page is dedicated to providing Fort Worth Texas Roleplay staff members with everything needed to succeed in their roles. Use the tabs above to view team structure, policies, resources, and expectations.</p>
     </section>
 
-    <section id="team" class="tab-content">
-      <h2>Staff Team</h2>
+  <section id="team" class="tab-content">
+  <h2>Staff Team</h2>
+  <style>
+    .staff-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
 
-      <div class="section-title">Executive Leadership</div>
-      <div class="staff-grid">
-        <div class="staff-card">
-          <img src="https://i.postimg.cc/NyXwWgMb" alt="DPWF">
-          <div class="staff-name">dpwfootball</div>
-          <div class="staff-role">Director</div>
-        </div>
-        <div class="staff-card">
-          <img src="https://i.postimg.cc/G853CMRx" alt="Bloxy">
-          <div class="staff-name">bloxyboi65</div>
-          <div class="staff-role">Deputy Director</div>
-        </div>
-        <div class="staff-card">
-          <img src="https://i.postimg.cc/Hj98qm8p" alt="Corn">
-          <div class="staff-name">Cornelius_Apple</div>
-          <div class="staff-role">Deputy Director</div>
-        </div>
-        <div class="staff-card">
-          <img src="https://i.postimg.cc/67FCphBt" alt="Ollie">
-          <div class="staff-name">440Qr</div>
-          <div class="staff-role">Assistant Director</div>
-        </div>
-      </div>
+    .staff-card {
+      text-align: center;
+      padding: 20px;
+      background-color: var(--light-bg);
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
-      <div class="section-title">Community Management</div>
-      <div class="staff-grid">
-        <div class="staff-card">
-          <img src="https://i.postimg.cc/t7VfzXJ4" alt="Charlie">
-          <div class="staff-name">Charliethenoob7</div>
-          <div class="staff-role">Community Management</div>
-        </div>
-      </div>
+    .staff-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
 
-      <div class="section-title">Senior Management</div>
-      <div class="staff-grid">
-        <div class="staff-card">
-          <img src="https://i.postimg.cc/WD46Y31q" alt="Branden">
-          <div class="staff-name">281572dab</div>
-          <div class="staff-role">Senior Management</div>
-        </div>
-        <div class="staff-card">
-          <img src="https://i.postimg.cc/F1SXzFV4" alt="NotRose">
-          <div class="staff-name">notroseplays_34</div>
-          <div class="staff-role">Senior Management</div>
-        </div>
-        <div class="staff-card">
-          <img src="https://i.postimg.cc/Js2pjZRd" alt="Hpuck">
-          <div class="staff-name">Hpuck1</div>
-          <div class="staff-role">Senior Management</div>
-        </div>
-      </div>
+    .staff-card img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--primary-color);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
 
-      <div class="section-title">Management</div>
-      <div class="staff-grid">
-        <div class="staff-card">
-          <img src="https://i.postimg.cc/G9HQFzMP" alt="Golde">
-          <div class="staff-name">elyxsteria</div>
-          <div class="staff-role">Management</div>
-        </div>
-        <div class="staff-card">
-          <img src="https://i.postimg.cc/k6t24VcS" alt="Fireshot">
-          <div class="staff-name">Fireshot_5010</div>
-          <div class="staff-role">Management</div>
-        </div>
-      </div>
+    .staff-name {
+      margin-top: 12px;
+      font-weight: 700;
+      font-size: 1.05rem;
+    }
 
-      <div class="section-title">Junior Management</div>
-      <div class="staff-grid">
-        <div class="staff-card">
-          <img src="https://i.postimg.cc/7GgqdS9K" alt="Cookies">
-          <div class="staff-name">cookiesforthelife</div>
-          <div class="staff-role">Junior Management</div>
-        </div>
-        <div class="staff-card">
-          <img src="https://i.postimg.cc/zLTBYmXw" alt="YY">
-          <div class="staff-name">yygeez</div>
-          <div class="staff-role">Junior Management</div>
-        </div>
-      </div>
-    </section>
+    .staff-role {
+      font-size: 0.9rem;
+      color: gray;
+    }
+  </style>
+
+  <div class="staff-grid">
+    <!-- Executive Leadership -->
+    <div class="staff-card">
+      <img src="https://i.postimg.cc/NyXwWgMb/dpw.png" alt="DPWF">
+      <div class="staff-name">dpwfootball (Dpw)</div>
+      <div class="staff-role">Director</div>
+    </div>
+    <div class="staff-card">
+      <img src="https://i.postimg.cc/G853CMRx/bloxy.png" alt="Bloxy">
+      <div class="staff-name">bloxyboi65 (Bloxy)</div>
+      <div class="staff-role">Deputy Director</div>
+    </div>
+    <div class="staff-card">
+      <img src="https://i.postimg.cc/Hj98qm8p/corn.png" alt="Corn">
+      <div class="staff-name">Cornelius_Apple (Corn)</div>
+      <div class="staff-role">Deputy Director</div>
+    </div>
+    <div class="staff-card">
+      <img src="https://i.postimg.cc/67FCphBt/440.png" alt="Ollie">
+      <div class="staff-name">440Qr (Ollie)</div>
+      <div class="staff-role">Assistant Director</div>
+    </div>
+
+    <!-- Community Management -->
+    <div class="staff-card">
+      <img src="https://i.postimg.cc/t7VfzXJ4/charlie.png" alt="Charlie">
+      <div class="staff-name">Charliethenoob7 (Charlie)</div>
+      <div class="staff-role">Community Management</div>
+    </div>
+
+    <!-- Senior Management -->
+    <div class="staff-card">
+      <img src="https://i.postimg.cc/WD46Y31q/branden.png" alt="Branden">
+      <div class="staff-name">281572dab (Branden)</div>
+      <div class="staff-role">Senior Management</div>
+    </div>
+    <div class="staff-card">
+      <img src="https://i.postimg.cc/F1SXzFV4/notrose.png" alt="NotRose">
+      <div class="staff-name">notroseplays_34 (Rose)</div>
+      <div class="staff-role">Senior Management</div>
+    </div>
+    <div class="staff-card">
+      <img src="https://i.postimg.cc/Js2pjZRd/hpuck.png" alt="Hpuck">
+      <div class="staff-name">Hpuck1 (Hpuck)</div>
+      <div class="staff-role">Senior Management</div>
+    </div>
+
+    <!-- Management -->
+    <div class="staff-card">
+      <img src="https://i.postimg.cc/G9HQFzMP/elyxs.png" alt="Golde">
+      <div class="staff-name">elyxsteria (Golde)</div>
+      <div class="staff-role">Management</div>
+    </div>
+    <div class="staff-card">
+      <img src="https://i.postimg.cc/k6t24VcS/fireshot.png" alt="Fireshot">
+      <div class="staff-name">Fireshot_5010 (Fireshot)</div>
+      <div class="staff-role">Management</div>
+    </div>
+
+    <!-- Junior Management -->
+    <div class="staff-card">
+      <img src="https://i.postimg.cc/7GgqdS9K/cookies.png" alt="Cookies">
+      <div class="staff-name">cookiesforthelife (Cookies)</div>
+      <div class="staff-role">Junior Management</div>
+    </div>
+    <div class="staff-card">
+      <img src="https://i.postimg.cc/zLTBYmXw/yygez.png" alt="YY">
+      <div class="staff-name">yygeez (Yy)</div>
+      <div class="staff-role">Junior Management</div>
+    </div>
+  </div>
+</section>
 
     <!-- Keep your other tabs (roles, expectations, etc.) as they are -->
   </main>
