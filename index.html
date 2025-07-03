@@ -4,10 +4,173 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Fort Worth Texas Roleplay | Staff Hub</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
-    /* KEEP ALL ORIGINAL STYLES - including dark mode, nav, sliders, and department styles */
-    /* ... full style from your provided code remains here ... */
+    :root {
+      --primary-color: #2563eb;
+      --accent-color: #1e3a8a;
+      --light-bg: #f3f4f6;
+      --dark-bg: #1f2937;
+      --light-text: #1f2937;
+      --dark-text: #f9fafb;
+      --font-main: 'Manrope', 'Inter', sans-serif;
+    }
+    body {
+      font-family: var(--font-main);
+      margin: 0;
+      background-color: var(--light-bg);
+      color: var(--light-text);
+      transition: background 0.3s, color 0.3s;
+    }
+    body.dark {
+      background-color: var(--dark-bg);
+      color: var(--dark-text);
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: var(--accent-color);
+    }
+    h1 { font-size: 2.25rem; }
+    h2 { font-size: 1.75rem; }
+    h3 { font-size: 1.5rem; }
+    h4 { font-size: 1.25rem; }
+    p, ul, ol, li, a {
+      font-size: 1.05rem;
+      line-height: 1.75;
+      letter-spacing: 0.02em;
+      font-weight: 400;
+    }
+    ul, ol {
+      padding-left: 1.5rem;
+    }
+    main {
+      font-weight: 400;
+    }
+
+    /* Continue your main site styles here */
+    .theme-toggle {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      padding: 8px 12px;
+      background: var(--primary-color);
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      z-index: 1000;
+    }
+
+    header {
+      width: 100%;
+      aspect-ratio: 960 / 136;
+      background-image: url('https://i.postimg.cc/Gtk9fG4R/fw-banner.jpg');
+      background-size: cover;
+      background-position: center;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    nav {
+      background: white;
+      display: flex;
+      justify-content: center;
+      border-bottom: 2px solid #e5e7eb;
+      flex-wrap: wrap;
+    }
+    body.dark nav {
+      background: #111827;
+      border-bottom-color: #374151;
+    }
+    nav button {
+      background: none;
+      border: none;
+      padding: 16px 24px;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: 600;
+      border-bottom: 3px solid transparent;
+      transition: border-color 0.3s, color 0.3s;
+      color: inherit;
+    }
+    nav button:hover,
+    nav button.active {
+      border-bottom: 3px solid var(--primary-color);
+      color: var(--primary-color);
+    }
+
+    main {
+      max-width: 950px;
+      margin: 40px auto;
+      background: white;
+      padding: 35px 50px;
+      border-radius: 12px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.07);
+    }
+    body.dark main {
+      background: #1f2937;
+    }
+
+    .tab-content {
+      display: none;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.4s ease-in-out;
+    }
+    .tab-content.active {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .slider img, .welcome-slider img {
+      width: 100%;
+      border-radius: 8px;
+      max-height: 300px;
+      object-fit: cover;
+    }
+
+    .slider, .welcome-slider {
+      position: relative;
+      max-width: 100%;
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .prev-btn, .next-btn, .welcome-prev, .welcome-next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0,0,0,0.5);
+      color: white;
+      border: none;
+      font-size: 24px;
+      padding: 8px 12px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    .prev-btn { left: 10px; }
+    .next-btn { right: 10px; }
+    .welcome-prev { left: 10px; font-size: 28px; }
+    .welcome-next { right: 10px; font-size: 28px; }
+
+    select {
+      padding: 12px 16px;
+      font-size: 1rem;
+      border: 2px solid var(--primary-color);
+      border-radius: 8px;
+      background-color: white;
+      color: var(--light-text);
+      width: 100%;
+      box-sizing: border-box;
+    }
+    body.dark select {
+      background-color: #374151;
+      color: var(--dark-text);
+    }
   </style>
 </head>
 <body>
@@ -16,145 +179,72 @@
 
   <nav>
     <button class="tab-button active" data-tab="welcome">Welcome</button>
-    <button class="tab-button" data-tab="roles">Roles</button>
-    <button class="tab-button" data-tab="expectations">Expectations</button>
-    <button class="tab-button" data-tab="hiring">Hiring</button>
-    <button class="tab-button" data-tab="resources">Resources</button>
-    <button class="tab-button" data-tab="contacts">Contacts</button>
+    <button class="tab-button" data-tab="ingame">In-Game Rules</button>
+    <button class="tab-button" data-tab="discord">Discord Rules</button>
+    <button class="tab-button" data-tab="department">Departments</button>
+    <button class="tab-button" data-tab="voice">RTO</button>
+    <button class="tab-button" data-tab="boosters">Booster Cars</button>
+    <button class="tab-button" data-tab="boosterguns">Booster Guns</button>
   </nav>
 
   <main>
     <section id="welcome" class="tab-content active">
-      <h2>Welcome to Staff Hub</h2>
-      <p>This portal contains everything FWTXRP staff need—roles, rules, tools, expectations, and escalation flow. Be sure to read carefully, check resources often, and stay up to date.</p>
+      <h2>Welcome</h2>
+      <p>We are an active and growing ER:LC server with 10,000+ members, hosting 24/7 sessions. Strictly VC Only and currently hiring staff.</p>
       <div class="welcome-slider">
-        <button class="welcome-prev" aria-label="Previous Image">&#10094;</button>
-        <img src="https://i.postimg.cc/RqrhQxxg/staff-1.png" alt="Staff Image" />
-        <button class="welcome-next" aria-label="Next Image">&#10095;</button>
+        <button class="welcome-prev">&#10094;</button>
+        <img src="https://i.postimg.cc/Fzp5ktYj/welcome-1.jpg" alt="Welcome" />
+        <button class="welcome-next">&#10095;</button>
       </div>
     </section>
 
-    <section id="roles" class="tab-content">
-      <h2>Staff Roles</h2>
-      <ul>
-        <li><strong>Trial Moderator</strong> – Starter rank to learn moderation basics.</li>
-        <li><strong>Moderator</strong> – Handles rule enforcement, reports, and moderation tickets.</li>
-        <li><strong>Senior Moderator</strong> – Reviews punishment logs, handles appeals, and trains Trials.</li>
-        <li><strong>Administrator</strong> – Oversees staff operations, escalated tickets, and event moderation.</li>
-        <li><strong>Management</strong> – Final authority on bans, policies, and leadership.</li>
-      </ul>
-    </section>
+    <!-- Other tab sections like #ingame, #discord, #department, #voice, etc. go here -->
+    <!-- You already have these written — you can paste them back inside <main> -->
 
-    <section id="expectations" class="tab-content">
-      <h2>Staff Expectations</h2>
-      <ul>
-        <li>Remain professional in all interactions—on duty or off duty.</li>
-        <li>Be active in patrols, VC moderation, and Discord involvement.</li>
-        <li>Do not abuse permissions—logs are monitored regularly.</li>
-        <li>Resolve issues with members respectfully and quickly.</li>
-        <li>Communicate clearly with your team and higher-ups.</li>
-      </ul>
-    </section>
-
-    <section id="hiring" class="tab-content">
-      <h2>Hiring & Promotion</h2>
-      <p>How we bring in and evaluate new staff:</p>
-      <ul>
-        <li>Submit an application through the Discord Staff Ticket System.</li>
-        <li>Attend a voice interview with Senior+ staff.</li>
-        <li>Go through a 2-week trial phase monitored by Seniors.</li>
-        <li>Receive promotion or dismissal based on logs and reports.</li>
-      </ul>
-    </section>
-
-    <section id="resources" class="tab-content">
-      <h2>Staff Resources</h2>
-      <ul>
-        <li><a href="#">Punishment Guidelines</a></li>
-        <li><a href="#">Staff Handbook</a></li>
-        <li><a href="#">Ban Log Sheet</a></li>
-        <li><a href="#">Ticket Flowchart</a></li>
-        <li><a href="#">Staff VC Attendance</a></li>
-      </ul>
-    </section>
-
-    <section id="contacts" class="tab-content">
-      <h2>Escalation & Contacts</h2>
-      <p>Unsure who to contact? Follow this chain:</p>
-      <ol>
-        <li>Trial → Ask your assigned mentor or Senior Moderator</li>
-        <li>Mod → Contact Admin or escalate to Management</li>
-        <li>All staff → Use tickets or DM Management for emergencies</li>
-      </ol>
-    </section>
   </main>
 
   <script>
-    // KEEP ALL JS from original: theme toggle, tab switching, welcome image slider
-
+    // Theme
     function toggleTheme() {
       document.body.classList.toggle('dark');
       localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
     }
-    if (localStorage.getItem('theme') === 'dark') document.body.classList.add('dark');
+    if (localStorage.getItem('theme') === 'dark') {
+      document.body.classList.add('dark');
+    }
 
-    document.addEventListener('DOMContentLoaded', () => {
-      const tabButtons = document.querySelectorAll('.tab-button');
-      const tabContents = document.querySelectorAll('.tab-content');
-
-      tabButtons.forEach(button => {
-        button.addEventListener('click', () => {
-          tabButtons.forEach(btn => btn.classList.remove('active'));
-          tabContents.forEach(content => content.classList.remove('active'));
-          button.classList.add('active');
-          document.getElementById(button.dataset.tab).classList.add('active');
-        });
+    // Tab switching
+    document.querySelectorAll('.tab-button').forEach(button => {
+      button.addEventListener('click', () => {
+        document.querySelectorAll('.tab-button').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.tab-content').forEach(tc => tc.classList.remove('active'));
+        button.classList.add('active');
+        document.getElementById(button.dataset.tab).classList.add('active');
       });
-
-      // Welcome slider
-      const welcomeImages = [
-        "https://i.postimg.cc/RqrhQxxg/staff-1.png",
-        "https://i.postimg.cc/g21wGhTC/dot.png",
-        "https://i.postimg.cc/RhC1wf9P/staff-2.png",
-        "https://i.postimg.cc/V1xcyDHd/staff-4.png",
-        "https://i.postimg.cc/NFjKbvFt/pd-4.png",
-        "https://i.postimg.cc/qqDxxLkm/fd-5.png",
-        "https://i.postimg.cc/B6TqFYC0/front-1.png",
-        "https://i.postimg.cc/W31vDNtM/view.png",
-        "https://i.postimg.cc/T29XVWnn/staff-5.png",
-        "https://i.postimg.cc/brkX2s0F/front-2.png",
-        "https://i.postimg.cc/t4grKsZQ/dot-2.png",
-        "https://i.postimg.cc/wjJtTVsh/front-3.png"
-      ];
-
-      let welcomeIndex = 0;
-      const welcomeSlider = document.querySelector('.welcome-slider img');
-      const welcomePrev = document.querySelector('.welcome-prev');
-      const welcomeNext = document.querySelector('.welcome-next');
-
-      function showWelcomeImage(index) {
-        welcomeSlider.style.opacity = 0;
-        setTimeout(() => {
-          welcomeSlider.src = welcomeImages[index];
-          welcomeSlider.style.opacity = 1;
-        }, 300);
-      }
-
-      welcomePrev.addEventListener('click', () => {
-        welcomeIndex = (welcomeIndex - 1 + welcomeImages.length) % welcomeImages.length;
-        showWelcomeImage(welcomeIndex);
-      });
-
-      welcomeNext.addEventListener('click', () => {
-        welcomeIndex = (welcomeIndex + 1) % welcomeImages.length;
-        showWelcomeImage(welcomeIndex);
-      });
-
-      setInterval(() => {
-        welcomeIndex = (welcomeIndex + 1) % welcomeImages.length;
-        showWelcomeImage(welcomeIndex);
-      }, 5000);
     });
+
+    // Welcome slider
+    const welcomeImages = [
+      "https://i.postimg.cc/RqrhQxxg/staff-1.png",
+      "https://i.postimg.cc/g21wGhTC/dot.png",
+      "https://i.postimg.cc/RhC1wf9P/staff-2.png",
+      "https://i.postimg.cc/V1xcyDHd/staff-4.png",
+      "https://i.postimg.cc/NFjKbvFt/pd-4.png"
+    ];
+    let welcomeIndex = 0;
+    const welcomeImg = document.querySelector('.welcome-slider img');
+    document.querySelector('.welcome-prev').onclick = () => {
+      welcomeIndex = (welcomeIndex - 1 + welcomeImages.length) % welcomeImages.length;
+      welcomeImg.src = welcomeImages[welcomeIndex];
+    };
+    document.querySelector('.welcome-next').onclick = () => {
+      welcomeIndex = (welcomeIndex + 1) % welcomeImages.length;
+      welcomeImg.src = welcomeImages[welcomeIndex];
+    };
+    setInterval(() => {
+      welcomeIndex = (welcomeIndex + 1) % welcomeImages.length;
+      welcomeImg.src = welcomeImages[welcomeIndex];
+    }, 5000);
   </script>
 </body>
 </html>
