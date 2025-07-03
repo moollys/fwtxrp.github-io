@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Fort Worth Texas Roleplay | Staff Hub</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
       --primary-color: #2563eb;
@@ -13,7 +13,7 @@
       --dark-bg: #1f2937;
       --light-text: #1f2937;
       --dark-text: #f9fafb;
-      --font-main: 'Manrope', 'Inter', sans-serif;
+      --font-main: 'Inter', sans-serif;
     }
     body {
       font-family: var(--font-main);
@@ -26,30 +26,15 @@
       background-color: var(--dark-bg);
       color: var(--dark-text);
     }
-    h1, h2, h3, h4, h5, h6 {
-      font-weight: 700;
-      line-height: 1.2;
-      letter-spacing: -0.02em;
-      color: var(--accent-color);
+    header {
+      width: 100%;
+      aspect-ratio: 960 / 136;
+      background-image: url('https://i.postimg.cc/Gtk9fG4R/fw-banner.jpg');
+      background-size: cover;
+      background-position: center;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+      user-select: none;
     }
-    h1 { font-size: 2.25rem; }
-    h2 { font-size: 1.75rem; }
-    h3 { font-size: 1.5rem; }
-    h4 { font-size: 1.25rem; }
-    p, ul, ol, li, a {
-      font-size: 1.05rem;
-      line-height: 1.75;
-      letter-spacing: 0.02em;
-      font-weight: 400;
-    }
-    ul, ol {
-      padding-left: 1.5rem;
-    }
-    main {
-      font-weight: 400;
-    }
-
-    /* Continue your main site styles here */
     .theme-toggle {
       position: fixed;
       top: 10px;
@@ -63,16 +48,6 @@
       font-weight: 600;
       z-index: 1000;
     }
-
-    header {
-      width: 100%;
-      aspect-ratio: 960 / 136;
-      background-image: url('https://i.postimg.cc/Gtk9fG4R/fw-banner.jpg');
-      background-size: cover;
-      background-position: center;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-    }
-
     nav {
       background: white;
       display: flex;
@@ -92,58 +67,48 @@
       font-size: 1rem;
       font-weight: 600;
       border-bottom: 3px solid transparent;
-      transition: border-color 0.3s, color 0.3s;
       color: inherit;
     }
-    nav button:hover,
     nav button.active {
       border-bottom: 3px solid var(--primary-color);
       color: var(--primary-color);
     }
-
     main {
-      max-width: 950px;
+      max-width: 900px;
       margin: 40px auto;
       background: white;
-      padding: 35px 50px;
+      padding: 30px;
       border-radius: 12px;
       box-shadow: 0 10px 20px rgba(0,0,0,0.07);
     }
     body.dark main {
       background: #1f2937;
     }
-
     .tab-content {
       display: none;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.4s ease-in-out;
     }
     .tab-content.active {
       display: block;
-      opacity: 1;
-      transform: translateY(0);
     }
-
-    .slider img, .welcome-slider img {
-      width: 100%;
+    .welcome-slider {
+      position: relative;
+      max-width: 100%;
+      margin-top: 20px;
       border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .welcome-slider img {
+      width: 100%;
+      height: auto;
       max-height: 300px;
       object-fit: cover;
     }
-
-    .slider, .welcome-slider {
-      position: relative;
-      max-width: 100%;
-      text-align: center;
-      margin: 20px 0;
-    }
-
-    .prev-btn, .next-btn, .welcome-prev, .welcome-next {
+    .welcome-prev, .welcome-next {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      background-color: rgba(0,0,0,0.5);
+      background: rgba(0,0,0,0.5);
       color: white;
       border: none;
       font-size: 24px;
@@ -151,26 +116,8 @@
       cursor: pointer;
       border-radius: 4px;
     }
-
-    .prev-btn { left: 10px; }
-    .next-btn { right: 10px; }
-    .welcome-prev { left: 10px; font-size: 28px; }
-    .welcome-next { right: 10px; font-size: 28px; }
-
-    select {
-      padding: 12px 16px;
-      font-size: 1rem;
-      border: 2px solid var(--primary-color);
-      border-radius: 8px;
-      background-color: white;
-      color: var(--light-text);
-      width: 100%;
-      box-sizing: border-box;
-    }
-    body.dark select {
-      background-color: #374151;
-      color: var(--dark-text);
-    }
+    .welcome-prev { left: 10px; }
+    .welcome-next { right: 10px; }
   </style>
 </head>
 <body>
@@ -179,32 +126,83 @@
 
   <nav>
     <button class="tab-button active" data-tab="welcome">Welcome</button>
-    <button class="tab-button" data-tab="ingame">In-Game Rules</button>
-    <button class="tab-button" data-tab="discord">Discord Rules</button>
-    <button class="tab-button" data-tab="department">Departments</button>
-    <button class="tab-button" data-tab="voice">RTO</button>
-    <button class="tab-button" data-tab="boosters">Booster Cars</button>
-    <button class="tab-button" data-tab="boosterguns">Booster Guns</button>
+    <button class="tab-button" data-tab="team">Staff Team</button>
+    <button class="tab-button" data-tab="roles">Staff Roles</button>
+    <button class="tab-button" data-tab="expectations">Expectations</button>
+    <button class="tab-button" data-tab="discipline">Strike Policy</button>
+    <button class="tab-button" data-tab="resources">Resources</button>
   </nav>
 
   <main>
     <section id="welcome" class="tab-content active">
-      <h2>Welcome</h2>
-      <p>We are an active and growing ER:LC server with 10,000+ members, hosting 24/7 sessions. Strictly VC Only and currently hiring staff.</p>
+      <h2>Welcome to the Staff Hub</h2>
+      <p>This page is dedicated to providing Fort Worth Texas Roleplay staff members with everything needed to succeed in their roles. Use the tabs above to view team structure, policies, resources, and expectations.</p>
       <div class="welcome-slider">
         <button class="welcome-prev">&#10094;</button>
-        <img src="https://i.postimg.cc/Fzp5ktYj/welcome-1.jpg" alt="Welcome" />
+        <img src="https://i.postimg.cc/RqrhQxxg/staff-1.png" alt="Staff Banner">
         <button class="welcome-next">&#10095;</button>
       </div>
     </section>
 
-    <!-- Other tab sections like #ingame, #discord, #department, #voice, etc. go here -->
-    <!-- You already have these written — you can paste them back inside <main> -->
+    <section id="team" class="tab-content">
+      <h2>Staff Team</h2>
+      <ul>
+        <li><strong>Executive Team</strong> – Oversees all operations and high-level decisions.</li>
+        <li><strong>Management Team</strong> – Handles day-to-day server operations, staff coordination, and internal reviews.</li>
+        <li><strong>Moderation Team</strong> – Enforces server rules and handles community reports.</li>
+        <li><strong>Event Team</strong> – Plans, creates, and runs server events and roleplay scenarios.</li>
+        <li><strong>Support Team</strong> – Responds to tickets and assists users with questions or issues.</li>
+      </ul>
+    </section>
 
+    <section id="roles" class="tab-content">
+      <h2>Staff Roles</h2>
+      <p>Each staff member has a designated role based on their skills and responsibilities:</p>
+      <ul>
+        <li><strong>Trial Moderator</strong> – New staff learning the basics of moderation.</li>
+        <li><strong>Moderator</strong> – Actively enforces rules and handles player issues.</li>
+        <li><strong>Senior Moderator</strong> – Leads moderation and mentors newer staff.</li>
+        <li><strong>Admin</strong> – Manages staff actions, reviews bans, and approves disciplinary actions.</li>
+        <li><strong>Event Planner</strong> – Organizes public and department events.</li>
+      </ul>
+    </section>
+
+    <section id="expectations" class="tab-content">
+      <h2>Staff Expectations</h2>
+      <ul>
+        <li>Remain active in both the game and Discord server.</li>
+        <li>Maintain professionalism in all interactions.</li>
+        <li>Do not abuse staff permissions or powers.</li>
+        <li>Use correct procedures when moderating or assisting members.</li>
+        <li>Report serious incidents to Management promptly.</li>
+      </ul>
+    </section>
+
+    <section id="discipline" class="tab-content">
+      <h2>Strike Policy</h2>
+      <p>The strike system is used to hold staff accountable:</p>
+      <ul>
+        <li><strong>1 Strike</strong> – Verbal/written warning.</li>
+        <li><strong>2 Strikes</strong> – Temporary suspension of staff duties.</li>
+        <li><strong>3 Strikes</strong> – Removal from the staff team.</li>
+      </ul>
+      <p>All strikes are reviewed by Management or Executives and may be appealed via ticket.</p>
+    </section>
+
+    <section id="resources" class="tab-content">
+      <h2>Staff Resources</h2>
+      <p>Useful links and tools for staff members:</p>
+      <ul>
+        <li><a href="#">Staff Handbook</a></li>
+        <li><a href="#">Punishment Guidelines</a></li>
+        <li><a href="#">Ban Appeal Tracker</a></li>
+        <li><a href="#">Event Templates</a></li>
+        <li><a href="#">Department Affairs Discord</a></li>
+      </ul>
+    </section>
   </main>
 
   <script>
-    // Theme
     function toggleTheme() {
       document.body.classList.toggle('dark');
       localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
@@ -213,37 +211,40 @@
       document.body.classList.add('dark');
     }
 
-    // Tab switching
-    document.querySelectorAll('.tab-button').forEach(button => {
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const tabContents = document.querySelectorAll('.tab-content');
+    tabButtons.forEach(button => {
       button.addEventListener('click', () => {
-        document.querySelectorAll('.tab-button').forEach(b => b.classList.remove('active'));
-        document.querySelectorAll('.tab-content').forEach(tc => tc.classList.remove('active'));
+        tabButtons.forEach(b => b.classList.remove('active'));
+        tabContents.forEach(tab => tab.classList.remove('active'));
         button.classList.add('active');
         document.getElementById(button.dataset.tab).classList.add('active');
       });
     });
 
-    // Welcome slider
     const welcomeImages = [
       "https://i.postimg.cc/RqrhQxxg/staff-1.png",
       "https://i.postimg.cc/g21wGhTC/dot.png",
       "https://i.postimg.cc/RhC1wf9P/staff-2.png",
       "https://i.postimg.cc/V1xcyDHd/staff-4.png",
-      "https://i.postimg.cc/NFjKbvFt/pd-4.png"
+      "https://i.postimg.cc/NFjKbvFt/pd-4.png",
+      "https://i.postimg.cc/qqDxxLkm/fd-5.png",
+      "https://i.postimg.cc/B6TqFYC0/front-1.png",
+      "https://i.postimg.cc/W31vDNtM/view.png"
     ];
     let welcomeIndex = 0;
-    const welcomeImg = document.querySelector('.welcome-slider img');
-    document.querySelector('.welcome-prev').onclick = () => {
+    const welcomeSlider = document.querySelector('.welcome-slider img');
+    document.querySelector('.welcome-prev').addEventListener('click', () => {
       welcomeIndex = (welcomeIndex - 1 + welcomeImages.length) % welcomeImages.length;
-      welcomeImg.src = welcomeImages[welcomeIndex];
-    };
-    document.querySelector('.welcome-next').onclick = () => {
+      welcomeSlider.src = welcomeImages[welcomeIndex];
+    });
+    document.querySelector('.welcome-next').addEventListener('click', () => {
       welcomeIndex = (welcomeIndex + 1) % welcomeImages.length;
-      welcomeImg.src = welcomeImages[welcomeIndex];
-    };
+      welcomeSlider.src = welcomeImages[welcomeIndex];
+    });
     setInterval(() => {
       welcomeIndex = (welcomeIndex + 1) % welcomeImages.length;
-      welcomeImg.src = welcomeImages[welcomeIndex];
+      welcomeSlider.src = welcomeImages[welcomeIndex];
     }, 5000);
   </script>
 </body>
