@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -191,13 +191,20 @@
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     }
     .staff-name {
+      color: #111;
       margin-top: 12px;
       font-weight: 700;
       font-size: 1.05rem;
     }
     .staff-role {
+      color: #555;
       font-size: 0.9rem;
-      color: gray;
+    }
+    body.dark .staff-name {
+      color: #e0e0e0;
+    }
+    body.dark .staff-role {
+      color: #a0a0a0;
     }
     .section-header {
       font-size: 1.4rem;
@@ -210,8 +217,8 @@
     }
   </style>
 
-  <!-- Board of Directors -->
-  <div class="section-header">Executive Leadership</div>
+  <!-- Executive Leadership -->
+  <div class="section-header">Board of Directors</div>
   <div class="staff-grid">
     <div class="staff-card">
       <img src="https://i.postimg.cc/NyXwWgMb/dpw.png" alt="DPWF" />
@@ -295,6 +302,7 @@
     </div>
   </div>
 </section>
+
 
 
     <!-- Keep your other tabs (roles, expectations, etc.) as they are -->
