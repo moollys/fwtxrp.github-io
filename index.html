@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Fort Worth Texas Roleplay | Staff Hub</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <!-- FontAwesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
     :root {
       --primary-color: #2563eb;
@@ -90,34 +92,68 @@
     .tab-content.active {
       display: block;
     }
-    .welcome-slider {
-      position: relative;
-      max-width: 100%;
-      margin-top: 20px;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    /* Staff Team styles */
+    #team ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 30px 0;
     }
-    .welcome-slider img {
-      width: 100%;
-      height: auto;
-      max-height: 300px;
-      object-fit: cover;
+    .staff-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
     }
-    .welcome-prev, .welcome-next {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(0,0,0,0.5);
+    .staff-card {
+      background: var(--light-bg);
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+      width: 250px;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      transition: background 0.3s, color 0.3s;
+    }
+    body.dark .staff-card {
+      background: #374151;
+      color: var(--dark-text);
+    }
+    .icon-circle {
+      width: 60px;
+      height: 60px;
+      background: var(--primary-color);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       color: white;
-      border: none;
-      font-size: 24px;
-      padding: 8px 12px;
-      cursor: pointer;
-      border-radius: 4px;
+      font-size: 28px;
+      flex-shrink: 0;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+      transition: background 0.3s;
     }
-    .welcome-prev { left: 10px; }
-    .welcome-next { right: 10px; }
+    body.dark .icon-circle {
+      background: var(--accent-color);
+    }
+    .staff-info h3 {
+      margin: 0 0 5px 0;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--accent-color);
+    }
+    body.dark .staff-info h3 {
+      color: #93c5fd;
+    }
+    .staff-info p {
+      margin: 0;
+      font-weight: 500;
+      font-size: 0.9rem;
+      color: var(--primary-color);
+    }
+    body.dark .staff-info p {
+      color: #bfdbfe;
+    }
   </style>
 </head>
 <body>
@@ -139,20 +175,98 @@
       <p>This page is dedicated to providing Fort Worth Texas Roleplay staff members with everything needed to succeed in their roles. Use the tabs above to view team structure, policies, resources, and expectations.</p>
       <div class="welcome-slider">
         <button class="welcome-prev">&#10094;</button>
-        <img src="https://i.postimg.cc/RqrhQxxg/staff-1.png" alt="Staff Banner">
+        <img src="https://i.postimg.cc/RqrhQxxg/staff-1.png" alt="Staff Banner" />
         <button class="welcome-next">&#10095;</button>
       </div>
     </section>
 
     <section id="team" class="tab-content">
       <h2>Staff Team</h2>
-      <ul>
-        <li><strong>Executive Team</strong> – Oversees all operations and high-level decisions.</li>
-        <li><strong>Management Team</strong> – Handles day-to-day server operations, staff coordination, and internal reviews.</li>
-        <li><strong>Moderation Team</strong> – Enforces server rules and handles community reports.</li>
-        <li><strong>Event Team</strong> – Plans, creates, and runs server events and roleplay scenarios.</li>
-        <li><strong>Support Team</strong> – Responds to tickets and assists users with questions or issues.</li>
-      </ul>
+      <div class="staff-list">
+        <!-- Director -->
+        <div class="staff-card">
+          <div class="icon-circle"><i class="fa-solid fa-crown"></i></div>
+          <div class="staff-info">
+            <h3>DPWF</h3>
+            <p>Director</p>
+          </div>
+        </div>
+        <!-- Deputy Directors -->
+        <div class="staff-card">
+          <div class="icon-circle"><i class="fa-solid fa-star"></i></div>
+          <div class="staff-info">
+            <h3>Bloxy</h3>
+            <p>Deputy Director</p>
+          </div>
+        </div>
+        <div class="staff-card">
+          <div class="icon-circle"><i class="fa-solid fa-star"></i></div>
+          <div class="staff-info">
+            <h3>Corn</h3>
+            <p>Deputy Director</p>
+          </div>
+        </div>
+        <!-- Assistant Director -->
+        <div class="staff-card">
+          <div class="icon-circle"><i class="fa-solid fa-handshake-angle"></i></div>
+          <div class="staff-info">
+            <h3>Ollie</h3>
+            <p>Assistant Director</p>
+          </div>
+        </div>
+        <!-- Management Team -->
+        <div class="staff-card">
+          <div class="icon-circle"><i class="fa-solid fa-gear"></i></div>
+          <div class="staff-info">
+            <h3>Golde</h3>
+            <p>Management</p>
+          </div>
+        </div>
+        <div class="staff-card">
+          <div class="icon-circle"><i class="fa-solid fa-gear"></i></div>
+          <div class="staff-info">
+            <h3>Fireshot</h3>
+            <p>Management</p>
+          </div>
+        </div>
+        <!-- Senior Management Team -->
+        <div class="staff-card">
+          <div class="icon-circle"><i class="fa-solid fa-shield-halved"></i></div>
+          <div class="staff-info">
+            <h3>Branden</h3>
+            <p>Senior Management</p>
+          </div>
+        </div>
+        <div class="staff-card">
+          <div class="icon-circle"><i class="fa-solid fa-shield-halved"></i></div>
+          <div class="staff-info">
+            <h3>NotRose</h3>
+            <p>Senior Management</p>
+          </div>
+        </div>
+        <div class="staff-card">
+          <div class="icon-circle"><i class="fa-solid fa-shield-halved"></i></div>
+          <div class="staff-info">
+            <h3>Hpuck</h3>
+            <p>Senior Management</p>
+          </div>
+        </div>
+        <!-- Junior Management -->
+        <div class="staff-card">
+          <div class="icon-circle"><i class="fa-solid fa-user"></i></div>
+          <div class="staff-info">
+            <h3>Cookies</h3>
+            <p>Junior Management</p>
+          </div>
+        </div>
+        <div class="staff-card">
+          <div class="icon-circle"><i class="fa-solid fa-user"></i></div>
+          <div class="staff-info">
+            <h3>YY</h3>
+            <p>Junior Management</p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section id="roles" class="tab-content">
