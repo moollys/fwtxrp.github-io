@@ -3,99 +3,100 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Fort Worth Texas Roleplay | Staff</title>
+  <title>Fort Worth Texas Roleplay | Staff Hub</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
-    /* Reuse your entire styling from the original code */
+    /* KEEP ALL ORIGINAL STYLES - including dark mode, nav, sliders, and department styles */
+    /* ... full style from your provided code remains here ... */
   </style>
 </head>
 <body>
   <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
   <header></header>
+
   <nav>
-    <button class="tab-button active" data-tab="overview">Staff Overview</button>
-    <button class="tab-button" data-tab="roles">Roles & Permissions</button>
-    <button class="tab-button" data-tab="hiring">Hiring Process</button>
-    <button class="tab-button" data-tab="expectations">Staff Expectations</button>
-    <button class="tab-button" data-tab="tools">Tools & Resources</button>
-    <button class="tab-button" data-tab="contact">Contact Chain</button>
+    <button class="tab-button active" data-tab="welcome">Welcome</button>
+    <button class="tab-button" data-tab="roles">Roles</button>
+    <button class="tab-button" data-tab="expectations">Expectations</button>
+    <button class="tab-button" data-tab="hiring">Hiring</button>
+    <button class="tab-button" data-tab="resources">Resources</button>
+    <button class="tab-button" data-tab="contacts">Contacts</button>
   </nav>
 
   <main>
-    <section id="overview" class="tab-content active">
-      <h2>Staff Overview</h2>
-      <p>Welcome to the Fort Worth Texas Roleplay staff hub. This site provides essential info, tools, and expectations for team members. Use the tabs to navigate key areas including roles, onboarding, guidelines, and escalation paths.</p>
+    <section id="welcome" class="tab-content active">
+      <h2>Welcome to Staff Hub</h2>
+      <p>This portal contains everything FWTXRP staff need—roles, rules, tools, expectations, and escalation flow. Be sure to read carefully, check resources often, and stay up to date.</p>
+      <div class="welcome-slider">
+        <button class="welcome-prev" aria-label="Previous Image">&#10094;</button>
+        <img src="https://i.postimg.cc/RqrhQxxg/staff-1.png" alt="Staff Image" />
+        <button class="welcome-next" aria-label="Next Image">&#10095;</button>
+      </div>
     </section>
 
     <section id="roles" class="tab-content">
-      <h2>Roles & Permissions</h2>
+      <h2>Staff Roles</h2>
       <ul>
-        <li><strong>Trial Moderator:</strong> Entry-level staff, monitors basic VC & chat behavior.</li>
-        <li><strong>Moderator:</strong> Handles reports, kicks, basic punishments, and daily moderation tasks.</li>
-        <li><strong>Senior Moderator:</strong> Reviews appeals, trains trials, helps with advanced moderation cases.</li>
-        <li><strong>Administrator:</strong> Manages staff coordination, leads team meetings, oversees moderation policies.</li>
-        <li><strong>Management:</strong> Approves bans, handles department changes, addresses major community decisions.</li>
-      </ul>
-    </section>
-
-    <section id="hiring" class="tab-content">
-      <h2>Hiring Process</h2>
-      <p>Our process for hiring new staff includes:</p>
-      <ul>
-        <li>Application submission via Discord</li>
-        <li>Initial review by Senior Mod/Admin</li>
-        <li>Interview via VC</li>
-        <li>Trial period monitoring (2 weeks min.)</li>
-        <li>Performance review and promotion to Mod if successful</li>
+        <li><strong>Trial Moderator</strong> – Starter rank to learn moderation basics.</li>
+        <li><strong>Moderator</strong> – Handles rule enforcement, reports, and moderation tickets.</li>
+        <li><strong>Senior Moderator</strong> – Reviews punishment logs, handles appeals, and trains Trials.</li>
+        <li><strong>Administrator</strong> – Oversees staff operations, escalated tickets, and event moderation.</li>
+        <li><strong>Management</strong> – Final authority on bans, policies, and leadership.</li>
       </ul>
     </section>
 
     <section id="expectations" class="tab-content">
       <h2>Staff Expectations</h2>
       <ul>
-        <li>Maintain professionalism and maturity in all actions</li>
-        <li>Remain active in VC and patrols</li>
-        <li>Log all disciplinary actions properly</li>
-        <li>Treat all members fairly, without bias</li>
-        <li>Report major issues to higher staff or management</li>
+        <li>Remain professional in all interactions—on duty or off duty.</li>
+        <li>Be active in patrols, VC moderation, and Discord involvement.</li>
+        <li>Do not abuse permissions—logs are monitored regularly.</li>
+        <li>Resolve issues with members respectfully and quickly.</li>
+        <li>Communicate clearly with your team and higher-ups.</li>
       </ul>
     </section>
 
-    <section id="tools" class="tab-content">
-      <h2>Tools & Resources</h2>
-      <p>Useful links and tools:</p>
+    <section id="hiring" class="tab-content">
+      <h2>Hiring & Promotion</h2>
+      <p>How we bring in and evaluate new staff:</p>
       <ul>
-        <li><a href="#">Staff Handbook (Google Doc)</a></li>
-        <li><a href="#">Ban Log Spreadsheet</a></li>
-        <li><a href="#">Ticketing System</a></li>
-        <li><a href="#">Staff VC + Patrol Tracker</a></li>
-        <li><a href="#">Punishment Guidelines</a></li>
+        <li>Submit an application through the Discord Staff Ticket System.</li>
+        <li>Attend a voice interview with Senior+ staff.</li>
+        <li>Go through a 2-week trial phase monitored by Seniors.</li>
+        <li>Receive promotion or dismissal based on logs and reports.</li>
       </ul>
     </section>
 
-    <section id="contact" class="tab-content">
-      <h2>Contact Chain</h2>
-      <p>If you're unsure who to contact, follow this chain of communication:</p>
+    <section id="resources" class="tab-content">
+      <h2>Staff Resources</h2>
+      <ul>
+        <li><a href="#">Punishment Guidelines</a></li>
+        <li><a href="#">Staff Handbook</a></li>
+        <li><a href="#">Ban Log Sheet</a></li>
+        <li><a href="#">Ticket Flowchart</a></li>
+        <li><a href="#">Staff VC Attendance</a></li>
+      </ul>
+    </section>
+
+    <section id="contacts" class="tab-content">
+      <h2>Escalation & Contacts</h2>
+      <p>Unsure who to contact? Follow this chain:</p>
       <ol>
-        <li>Trial/Mod issues → Senior Moderator</li>
-        <li>Disputes or advanced moderation → Administrator</li>
-        <li>Major server concerns or bans → Management</li>
+        <li>Trial → Ask your assigned mentor or Senior Moderator</li>
+        <li>Mod → Contact Admin or escalate to Management</li>
+        <li>All staff → Use tickets or DM Management for emergencies</li>
       </ol>
     </section>
   </main>
 
   <script>
+    // KEEP ALL JS from original: theme toggle, tab switching, welcome image slider
+
     function toggleTheme() {
       document.body.classList.toggle('dark');
-      if(document.body.classList.contains('dark')) {
-        localStorage.setItem('theme', 'dark');
-      } else {
-        localStorage.setItem('theme', 'light');
-      }
+      localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
     }
-    if(localStorage.getItem('theme') === 'dark') {
-      document.body.classList.add('dark');
-    }
+    if (localStorage.getItem('theme') === 'dark') document.body.classList.add('dark');
 
     document.addEventListener('DOMContentLoaded', () => {
       const tabButtons = document.querySelectorAll('.tab-button');
@@ -105,11 +106,54 @@
         button.addEventListener('click', () => {
           tabButtons.forEach(btn => btn.classList.remove('active'));
           tabContents.forEach(content => content.classList.remove('active'));
-
           button.classList.add('active');
           document.getElementById(button.dataset.tab).classList.add('active');
         });
       });
+
+      // Welcome slider
+      const welcomeImages = [
+        "https://i.postimg.cc/RqrhQxxg/staff-1.png",
+        "https://i.postimg.cc/g21wGhTC/dot.png",
+        "https://i.postimg.cc/RhC1wf9P/staff-2.png",
+        "https://i.postimg.cc/V1xcyDHd/staff-4.png",
+        "https://i.postimg.cc/NFjKbvFt/pd-4.png",
+        "https://i.postimg.cc/qqDxxLkm/fd-5.png",
+        "https://i.postimg.cc/B6TqFYC0/front-1.png",
+        "https://i.postimg.cc/W31vDNtM/view.png",
+        "https://i.postimg.cc/T29XVWnn/staff-5.png",
+        "https://i.postimg.cc/brkX2s0F/front-2.png",
+        "https://i.postimg.cc/t4grKsZQ/dot-2.png",
+        "https://i.postimg.cc/wjJtTVsh/front-3.png"
+      ];
+
+      let welcomeIndex = 0;
+      const welcomeSlider = document.querySelector('.welcome-slider img');
+      const welcomePrev = document.querySelector('.welcome-prev');
+      const welcomeNext = document.querySelector('.welcome-next');
+
+      function showWelcomeImage(index) {
+        welcomeSlider.style.opacity = 0;
+        setTimeout(() => {
+          welcomeSlider.src = welcomeImages[index];
+          welcomeSlider.style.opacity = 1;
+        }, 300);
+      }
+
+      welcomePrev.addEventListener('click', () => {
+        welcomeIndex = (welcomeIndex - 1 + welcomeImages.length) % welcomeImages.length;
+        showWelcomeImage(welcomeIndex);
+      });
+
+      welcomeNext.addEventListener('click', () => {
+        welcomeIndex = (welcomeIndex + 1) % welcomeImages.length;
+        showWelcomeImage(welcomeIndex);
+      });
+
+      setInterval(() => {
+        welcomeIndex = (welcomeIndex + 1) % welcomeImages.length;
+        showWelcomeImage(welcomeIndex);
+      }, 5000);
     });
   </script>
 </body>
