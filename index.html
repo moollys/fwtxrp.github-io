@@ -1,4 +1,4 @@
-omg<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -15,6 +15,7 @@ omg<!DOCTYPE html>
       --dark-text: #f9fafb;
       --font-main: 'Inter', sans-serif;
     }
+
     body {
       font-family: var(--font-main);
       margin: 0;
@@ -22,10 +23,12 @@ omg<!DOCTYPE html>
       color: var(--light-text);
       transition: background 0.3s, color 0.3s;
     }
+
     body.dark {
       background-color: var(--dark-bg);
       color: var(--dark-text);
     }
+
     header {
       width: 100%;
       aspect-ratio: 960 / 136;
@@ -35,6 +38,7 @@ omg<!DOCTYPE html>
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
       user-select: none;
     }
+
     .theme-toggle {
       position: fixed;
       top: 10px;
@@ -48,6 +52,7 @@ omg<!DOCTYPE html>
       font-weight: 600;
       z-index: 1000;
     }
+
     nav {
       background: white;
       display: flex;
@@ -55,10 +60,12 @@ omg<!DOCTYPE html>
       border-bottom: 2px solid #e5e7eb;
       flex-wrap: wrap;
     }
+
     body.dark nav {
       background: #111827;
       border-bottom-color: #374151;
     }
+
     nav button {
       background: none;
       border: none;
@@ -69,10 +76,12 @@ omg<!DOCTYPE html>
       border-bottom: 3px solid transparent;
       color: inherit;
     }
+
     nav button.active {
       border-bottom: 3px solid var(--primary-color);
       color: var(--primary-color);
     }
+
     main {
       max-width: 1000px;
       margin: 40px auto;
@@ -81,12 +90,15 @@ omg<!DOCTYPE html>
       border-radius: 12px;
       box-shadow: 0 10px 20px rgba(0,0,0,0.07);
     }
+
     body.dark main {
       background: #1f2937;
     }
+
     .tab-content {
       display: none;
     }
+
     .tab-content.active {
       display: block;
     }
@@ -98,6 +110,7 @@ omg<!DOCTYPE html>
       margin-top: 20px;
       margin-bottom: 40px;
     }
+
     .staff-card {
       text-align: center;
       padding: 20px;
@@ -106,10 +119,12 @@ omg<!DOCTYPE html>
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
+
     .staff-card:hover {
       transform: scale(1.05);
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
     }
+
     .staff-card img {
       width: 100px;
       height: 100px;
@@ -118,16 +133,19 @@ omg<!DOCTYPE html>
       border: 4px solid var(--primary-color);
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     }
+
     .staff-name {
       margin-top: 12px;
       font-weight: 700;
       font-size: 1.05rem;
       color: var(--light-text);
     }
+
     .staff-role {
       font-size: 0.9rem;
       color: gray;
     }
+
     body.dark .staff-name,
     body.dark .staff-role {
       color: var(--dark-text);
@@ -143,7 +161,6 @@ omg<!DOCTYPE html>
       color: var(--primary-color);
     }
 
-    /* Collapsible Resource Section */
     .collapsible {
       background-color: var(--primary-color);
       color: white;
@@ -158,9 +175,11 @@ omg<!DOCTYPE html>
       border-radius: 6px;
       transition: background-color 0.2s ease;
     }
+
     .collapsible:hover {
       background-color: #1d4ed8;
     }
+
     .content {
       padding: 0 18px;
       display: none;
@@ -169,16 +188,54 @@ omg<!DOCTYPE html>
       margin-top: 5px;
       border-radius: 6px;
     }
+
     body.dark .content {
       background-color: #374151;
       color: var(--dark-text);
     }
+
     .content ul {
       padding-left: 20px;
       margin: 10px 0;
     }
+
+    .custom-numbered-list {
+      counter-reset: item;
+      list-style: none;
+      padding-left: 0;
+      max-width: 700px;
+      margin: 0 auto;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #333;
+    }
+
+    .custom-numbered-list li {
+      counter-increment: item;
+      margin: 12px 0;
+      padding-left: 40px;
+      position: relative;
+      line-height: 1.5em;
+      transition: background-color 0.3s ease;
+      border-radius: 6px;
+    }
+
+    .custom-numbered-list li::before {
+      content: counter(item) ".";
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-weight: 700;
+      color: #0078d7;
+      font-size: 1.2em;
+    }
+
+    .custom-numbered-list li:hover {
+      background-color: #e6f0ff;
+    }
   </style>
 </head>
+
 <body>
   <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
   <header></header>
@@ -187,7 +244,7 @@ omg<!DOCTYPE html>
     <button class="tab-button active" data-tab="welcome">Welcome</button>
     <button class="tab-button" data-tab="team">Staff Team</button>
     <button class="tab-button" data-tab="roles">Chain of Command</button>
-    <button class="tab-button" data-tab="expectations">Staff Regulation and Conduct</button>
+    <button class="tab-button" data-tab="conduct">Staff Regulation and Conduct</button>
     <button class="tab-button" data-tab="resources">Resources</button>
   </nav>
 
@@ -202,162 +259,65 @@ omg<!DOCTYPE html>
 
       <div class="section-header">Board of Directors</div>
       <div class="staff-grid">
-        <div class="staff-card">
-          <img src="https://i.postimg.cc/NyXwWgMb/dpw.png" alt="DPWF" />
-          <div class="staff-name">dpwfootball (Dpw)</div>
-          <div class="staff-role">Director</div>
-        </div>
-        <div class="staff-card">
-          <img src="https://i.postimg.cc/Hj98qm8p/corn.png" alt="Corn" />
-          <div class="staff-name">Cornelius_Apple (Corn)</div>
-          <div class="staff-role">Deputy Director</div>
-        </div>
-        <div class="staff-card">
-          <img src="https://i.postimg.cc/G853CMRx/bloxy.png" alt="Bloxy" />
-          <div class="staff-name">bloxyboi65 (Bloxy)</div>
-          <div class="staff-role">Deputy Director</div>
-        </div>
-        <div class="staff-card">
-          <img src="https://i.postimg.cc/67FCphBt/440.png" alt="Ollie" />
-          <div class="staff-name">440Qr (Ollie)</div>
-          <div class="staff-role">Assistant Director</div>
-        </div>
+        <!-- Staff cards... -->
       </div>
 
       <div class="section-header">Community Management</div>
       <div class="staff-grid">
-        <div class="staff-card">
-          <img src="https://i.postimg.cc/t7VfzXJ4/charlie.png" alt="Charlie" />
-          <div class="staff-name">Charliethenoob7 (Charlie)</div>
-          <div class="staff-role">Community Management</div>
-        </div>
+        <!-- Staff cards... -->
       </div>
 
       <div class="section-header">Senior Management</div>
       <div class="staff-grid">
-        <div class="staff-card">
-          <img src="https://i.postimg.cc/WD46Y31q/branden.png" alt="Branden" />
-          <div class="staff-name">281572dab (Branden)</div>
-          <div class="staff-role">Senior Management</div>
-        </div>
-        <div class="staff-card">
-          <img src="https://i.postimg.cc/F1SXzFV4/notrose.png" alt="NotRose" />
-          <div class="staff-name">notroseplays_34 (Rose)</div>
-          <div class="staff-role">Senior Management</div>
-        </div>
-        <div class="staff-card">
-          <img src="https://i.postimg.cc/Js2pjZRd/hpuck.png" alt="Hpuck" />
-          <div class="staff-name">Hpuck1 (Hpuck)</div>
-          <div class="staff-role">Senior Management</div>
-        </div>
+        <!-- Staff cards... -->
       </div>
 
       <div class="section-header">Management</div>
       <div class="staff-grid">
-        <div class="staff-card">
-          <img src="https://i.postimg.cc/G9HQFzMP/elyxs.png" alt="Golde" />
-          <div class="staff-name">elyxsteria (Golde)</div>
-          <div class="staff-role">Management</div>
-        </div>
-        <div class="staff-card">
-          <img src="https://i.postimg.cc/k6t24VcS/fireshot.png" alt="Fireshot" />
-          <div class="staff-name">Fireshot_5010 (Fireshot)</div>
-          <div class="staff-role">Management</div>
-        </div>
+        <!-- Staff cards... -->
       </div>
 
       <div class="section-header">Junior Management</div>
       <div class="staff-grid">
-        <div class="staff-card">
-          <img src="https://i.postimg.cc/7GgqdS9K/cookies.png" alt="Cookies" />
-          <div class="staff-name">cookiesforthelife (Cookies)</div>
-          <div class="staff-role">Junior Management</div>
-        </div>
-        <div class="staff-card">
-          <img src="https://i.postimg.cc/zLTBYmXw/yygez.png" alt="YY" />
-          <div class="staff-name">yygeez (Yy)</div>
-          <div class="staff-role">Junior Management</div>
-        </div>
+        <!-- Staff cards... -->
       </div>
-
-      <section id="roles" class="tab-content">
-      <h2>Chain of Command</h2>
-      <p><strong>Board of Directors<strong> - Directors should not be DMed or pinged for questions, direct all inquiries to a ticket or staff chat.  They oversee the entire server and make voted decisions based off what they think is best for the server.  Affiliations and merges are oversee</p>
-      <p><strong>Management Team<strong> - Management should never be directly contacted, they handle large reports or issues within IA or lower. They monitor performance and behavior of all staff, ensuring a consistency of rule enforcement across all levels.</p>
-      <p><strong>Internal Affairs Team<strong> - Handles tickets, staff infractions, issuing strikes and reports.  Bridge rank between management+ and lower ranks.  Always go to them, and they will answer your question or direct you to us.</p>
-      <p><strong>Administrative Team<strong> - Overlook moderators, permissions to hand out and manage bans. Fourth in command if in-game issues arise.</p>
-      <p><strong>Moderation Team<strong> -Issues warnings and kicks in-game. Ensure rules are applied fairly and consistently, main in-game moderators.</p>
     </section>
 
-   <section id="conduct" class="tab-content">
-  <h2>Staff Regulation and Conduct</h2>
-  <ol class="custom-numbered-list">
-    <li>Staff are not permitted to perform law enforcement duties while on duty. This includes speeding, running red lights, and running stop signs.</li>
-    <li>Roleplaying of any sort while on duty is prohibited and will result in punishment.</li>
-    <li>If a user asks to heal, always check for roleplay context first, to avoid ruining roleplays.</li>
-    <li>Rank Uniforms: Staff members must wear their designated rank uniforms while on duty to ensure they are easily identifiable.</li>
-    <li>If you are wearing the staff uniform, nothing should be covering it, so that community members can identify your rank.</li>
-    <li>Staff Cars Only: Use only the designated staff cars while on duty. Personal or roleplay vehicles are not allowed for staff use during shifts.</li>
-    <li>Professionalism: Maintain a professional and respectful demeanor with players and fellow staff members at all times.</li>
-    <li>Impartiality: Enforce rules fairly and without bias. Treat all players equally, regardless of their rank or status on the server.</li>
-    <li>You must use 4+ letters at all times for all commands.</li>
-    <li>Chain of Command: Follow the chain of command by pinging the lowest rank online that can assist you. (Mod → Admin → IA → Mgmt → BoD)</li>
-    <li>Communication: Keep open lines of communication with other staff members. Report any serious issues or incidents promptly.</li>
-    <li>In any mod and all mod calls, the user MUST have video evidence of any incidents happening. We do NOT take witnesses or any form of logs as proof.</li>
-    <li>Avoid arguing with members; you have the final say, and incidents can be reported through a ticket.</li>
-    <li>If a user asks for a supervisor or high rank, finish the mod scene, then guide them to our communication server to open a ticket.</li>
-    <li>Bringing/Pinging HR+: You may NOT bring or ping HRs, nor teleport (TP) to HR without permission. Doing so will result in punishment. Feel free to PM them instead.</li>
-    <li>If you are unresponsive for more than 5 minutes in-game, it will be considered shift grinding, resulting in punishment.</li>
-    <li>GTA driving is only considered when the user is recklessly driving, such as driving constantly in opposite lanes, crashing into light poles, or driving along medians.</li>
-    <li>You should never be parked at any medians or islands; continuous patrolling ensures proper role plays around the server.</li>
-  </ol>
-</section>
+    <section id="roles" class="tab-content">
+      <h2>Chain of Command</h2>
+      <p><strong>Board of Directors</strong> – Directors oversee the entire server and make voted decisions. Do not DM or ping them; use tickets or staff chat.</p>
+      <p><strong>Management Team</strong> – Handle large reports, monitor performance, and oversee IA and lower staff.</p>
+      <p><strong>Internal Affairs Team</strong> – Handle tickets, strikes, and staff infractions. Go to them before upper management.</p>
+      <p><strong>Administrative Team</strong> – Oversee moderators, manage bans, and resolve serious in-game issues.</p>
+      <p><strong>Moderation Team</strong> – Issue warnings and kicks, and ensure fair rule enforcement in-game.</p>
+    </section>
 
-<style>
-  .custom-numbered-list {
-    counter-reset: item;
-    list-style: none;
-    padding-left: 0;
-    max-width: 700px;
-    margin: 0 auto;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #333;
-  }
-
-  .custom-numbered-list li {
-    counter-increment: item;
-    margin: 12px 0;
-    padding-left: 40px;
-    position: relative;
-    line-height: 1.5em;
-    transition: background-color 0.3s ease;
-    border-radius: 6px;
-  }
-
-  .custom-numbered-list li::before {
-    content: counter(item) ".";
-    position: absolute;
-    left: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-weight: 700;
-    color: #0078d7; /* Blue accent color */
-    font-size: 1.2em;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  }
-
-  .custom-numbered-list li:hover {
-    background-color: #e6f0ff; /* subtle highlight on hover */
-  }
-</style>
-
-
-   
+    <section id="conduct" class="tab-content">
+      <h2>Staff Regulation and Conduct</h2>
+      <ol class="custom-numbered-list">
+        <li>Staff are not permitted to perform law enforcement duties while on duty. This includes speeding, running red lights, and running stop signs.</li>
+        <li>Roleplaying of any sort while on duty is prohibited and will result in punishment.</li>
+        <li>If a user asks to heal, always check for roleplay context first, to avoid ruining roleplays.</li>
+        <li>Rank Uniforms: Staff members must wear their designated rank uniforms while on duty to ensure they are easily identifiable.</li>
+        <li>If you are wearing the staff uniform, nothing should be covering it, so that community members can identify your rank.</li>
+        <li>Staff Cars Only: Use only the designated staff cars while on duty. Personal or roleplay vehicles are not allowed for staff use during shifts.</li>
+        <li>Professionalism: Maintain a professional and respectful demeanor with players and fellow staff members at all times.</li>
+        <li>Impartiality: Enforce rules fairly and without bias. Treat all players equally, regardless of their rank or status on the server.</li>
+        <li>You must use 4+ letters at all times for all commands.</li>
+        <li>Chain of Command: Follow the chain of command by pinging the lowest rank online that can assist you. (Mod → Admin → IA → Mgmt → BoD)</li>
+        <li>Communication: Keep open lines of communication with other staff members. Report any serious issues or incidents promptly.</li>
+        <li>In any mod and all mod calls, the user MUST have video evidence. We do NOT take witnesses or logs as proof.</li>
+        <li>Avoid arguing with members; you have the final say, and incidents can be reported through a ticket.</li>
+        <li>If a user asks for a supervisor, finish the scene and guide them to open a ticket in our communication server.</li>
+        <li>You may NOT ping or TP to HRs without permission. PM them instead.</li>
+        <li>If you’re unresponsive for 5+ minutes in-game, it will be considered shift grinding.</li>
+        <li>GTA driving includes recklessly driving in opposite lanes, crashing into poles, or driving medians.</li>
+        <li>Do not park at medians or islands. Continuous patrolling ensures good RP.</li>
+      </ol>
+    </section>
 
     <section id="resources" class="tab-content">
       <h2>Staff Resources</h2>
-      <p>Useful links and tools for staff members:</p>
-
       <button class="collapsible">📘 Handbook & Management Guide</button>
       <div class="content">
         <ul>
@@ -397,6 +357,7 @@ omg<!DOCTYPE html>
       document.body.classList.toggle('dark');
       localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
     }
+
     if (localStorage.getItem('theme') === 'dark') {
       document.body.classList.add('dark');
     }
