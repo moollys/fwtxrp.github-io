@@ -5,8 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Fort Worth Texas Roleplay | Staff Hub</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-  <!-- FontAwesome for icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
     :root {
       --primary-color: #2563eb;
@@ -76,7 +74,7 @@
       color: var(--primary-color);
     }
     main {
-      max-width: 900px;
+      max-width: 1000px;
       margin: 40px auto;
       background: white;
       padding: 30px;
@@ -92,97 +90,8 @@
     .tab-content.active {
       display: block;
     }
-    /* Staff Team styles */
-    #team ul {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 30px 0;
-    }
-    .staff-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-    }
-    .staff-card {
-      background: var(--light-bg);
-      border-radius: 12px;
-      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-      width: 250px;
-      padding: 20px;
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      transition: background 0.3s, color 0.3s;
-    }
-    body.dark .staff-card {
-      background: #374151;
-      color: var(--dark-text);
-    }
-    .icon-circle {
-      width: 60px;
-      height: 60px;
-      background: var(--primary-color);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 28px;
-      flex-shrink: 0;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-      transition: background 0.3s;
-    }
-    body.dark .icon-circle {
-      background: var(--accent-color);
-    }
-    .staff-info h3 {
-      margin: 0 0 5px 0;
-      font-size: 1.2rem;
-      font-weight: 700;
-      color: var(--accent-color);
-    }
-    body.dark .staff-info h3 {
-      color: #93c5fd;
-    }
-    .staff-info p {
-      margin: 0;
-      font-weight: 500;
-      font-size: 0.9rem;
-      color: var(--primary-color);
-    }
-    body.dark .staff-info p {
-      color: #bfdbfe;
-    }
-  </style>
-</head>
-<body>
-  <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
-  <header></header>
 
-  <nav>
-    <button class="tab-button active" data-tab="welcome">Welcome</button>
-    <button class="tab-button" data-tab="team">Staff Team</button>
-    <button class="tab-button" data-tab="roles">Staff Roles</button>
-    <button class="tab-button" data-tab="expectations">Expectations</button>
-    <button class="tab-button" data-tab="discipline">Strike Policy</button>
-    <button class="tab-button" data-tab="resources">Resources</button>
-  </nav>
-
-  <main>
-    <section id="welcome" class="tab-content active">
-      <h2>Welcome to the Staff Hub</h2>
-      <p>This page is dedicated to providing Fort Worth Texas Roleplay staff members with everything needed to succeed in their roles. Use the tabs above to view team structure, policies, resources, and expectations.</p>
-      <div class="welcome-slider">
-        <button class="welcome-prev">&#10094;</button>
-        <img src="https://i.postimg.cc/RqrhQxxg/staff-1.png" alt="Staff Banner" />
-        <button class="welcome-next">&#10095;</button>
-      </div>
-    </section>
-
-   <section id="team" class="tab-content">
-  <h2>Staff Team</h2>
-  <style>
+    /* Staff Grid */
     .staff-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -192,7 +101,7 @@
 
     .staff-card {
       text-align: center;
-      padding: 10px;
+      padding: 15px;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       border-radius: 12px;
     }
@@ -222,134 +131,120 @@
       font-size: 0.9rem;
       color: gray;
     }
+
+    .section-title {
+      margin-top: 40px;
+      font-size: 1.3rem;
+      font-weight: 700;
+      border-bottom: 2px solid var(--primary-color);
+      padding-bottom: 5px;
+    }
   </style>
+</head>
+<body>
+  <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
+  <header></header>
 
-  <div class="staff-grid">
-    <!-- Executive Leadership -->
-    <div class="staff-card">
-      <img src="https://i.postimg.cc/NyXwWgMb" alt="DPWF">
-      <div class="staff-name">dpwfootball (Dpw)</div>
-      <div class="staff-role">Director</div>
-    </div>
+  <nav>
+    <button class="tab-button active" data-tab="welcome">Welcome</button>
+    <button class="tab-button" data-tab="team">Staff Team</button>
+    <button class="tab-button" data-tab="roles">Staff Roles</button>
+    <button class="tab-button" data-tab="expectations">Expectations</button>
+    <button class="tab-button" data-tab="discipline">Strike Policy</button>
+    <button class="tab-button" data-tab="resources">Resources</button>
+  </nav>
 
-    <div class="staff-card">
-      <img src="https://i.postimg.cc/G853CMRx" alt="Bloxy">
-      <div class="staff-name">bloxyboi65 (Bloxy)</div>
-      <div class="staff-role">Deputy Director</div>
-    </div>
-
-    <div class="staff-card">
-      <img src="https://i.postimg.cc/Hj98qm8p" alt="Corn">
-      <div class="staff-name">Cornelius_Apple (Corn)</div>
-      <div class="staff-role">Deputy Director</div>
-    </div>
-
-    <div class="staff-card">
-      <img src="https://i.postimg.cc/67FCphBt" alt="Ollie">
-      <div class="staff-name">440Qr (Ollie)</div>
-      <div class="staff-role">Assistant Director</div>
-    </div>
-
-    <!-- Community Management -->
-    <div class="staff-card">
-      <img src="https://i.postimg.cc/t7VfzXJ4" alt="Charlie">
-      <div class="staff-name">Charliethenoob7 (Charlie)</div>
-      <div class="staff-role">Community Management</div>
-    </div>
-
-    <!-- Senior Management -->
-    <div class="staff-card">
-      <img src="https://i.postimg.cc/WD46Y31q" alt="Branden">
-      <div class="staff-name">281572dab (Branden)</div>
-      <div class="staff-role">Senior Management</div>
-    </div>
-
-    <div class="staff-card">
-      <img src="https://i.postimg.cc/F1SXzFV4" alt="NotRose">
-      <div class="staff-name">notroseplays_34 (Rose)</div>
-      <div class="staff-role">Senior Management</div>
-    </div>
-
-    <div class="staff-card">
-      <img src="https://i.postimg.cc/Js2pjZRd" alt="Hpuck">
-      <div class="staff-name">Hpuck1 (Hpuck)<1/div>
-      <div class="staff-role">Senior Management</div>
-    </div>
-
-    <!-- Management -->
-    <div class="staff-card">
-      <img src="https://i.postimg.cc/G9HQFzMP" alt="Golde">
-      <div class="staff-name">elyxsteria (Golde)</div>
-      <div class="staff-role">Management</div>
-    </div>
-
-    <div class="staff-card">
-      <img src="https://i.postimg.cc/k6t24VcS" alt="Fireshot">
-      <div class="staff-name">Fireshot_5010 (Fireshot)</div>
-      <div class="staff-role">Management</div>
-    </div>
-
-    <!-- Junior Management -->
-    <div class="staff-card">
-      <img src="https://i.postimg.cc/7GgqdS9K" alt="Cookies">
-      <div class="staff-name">cookiesforthelife (Cookies)</div>
-      <div class="staff-role">Junior Management</div>
-    </div>
-
-    <div class="staff-card">
-      <img src="https://i.postimg.cc/zLTBYmXw" alt="YY">
-      <div class="staff-name">yygeez (Yy)</div>
-      <div class="staff-role">Junior Management</div>
-    </div>
-  </div>
-</section>
-
-
-    <section id="roles" class="tab-content">
-      <h2>Staff Roles</h2>
-      <p>Each staff member has a designated role based on their skills and responsibilities:</p>
-      <ul>
-        <li><strong>Trial Moderator</strong> – New staff learning the basics of moderation.</li>
-        <li><strong>Moderator</strong> – Actively enforces rules and handles player issues.</li>
-        <li><strong>Senior Moderator</strong> – Leads moderation and mentors newer staff.</li>
-        <li><strong>Admin</strong> – Manages staff actions, reviews bans, and approves disciplinary actions.</li>
-        <li><strong>Event Planner</strong> – Organizes public and department events.</li>
-      </ul>
+  <main>
+    <section id="welcome" class="tab-content active">
+      <h2>Welcome to the Staff Hub</h2>
+      <p>This page is dedicated to providing Fort Worth Texas Roleplay staff members with everything needed to succeed in their roles. Use the tabs above to view team structure, policies, resources, and expectations.</p>
     </section>
 
-    <section id="expectations" class="tab-content">
-      <h2>Staff Expectations</h2>
-      <ul>
-        <li>Remain active in both the game and Discord server.</li>
-        <li>Maintain professionalism in all interactions.</li>
-        <li>Do not abuse staff permissions or powers.</li>
-        <li>Use correct procedures when moderating or assisting members.</li>
-        <li>Report serious incidents to Management promptly.</li>
-      </ul>
+    <section id="team" class="tab-content">
+      <h2>Staff Team</h2>
+
+      <div class="section-title">Executive Leadership</div>
+      <div class="staff-grid">
+        <div class="staff-card">
+          <img src="https://i.postimg.cc/NyXwWgMb" alt="DPWF">
+          <div class="staff-name">dpwfootball</div>
+          <div class="staff-role">Director</div>
+        </div>
+        <div class="staff-card">
+          <img src="https://i.postimg.cc/G853CMRx" alt="Bloxy">
+          <div class="staff-name">bloxyboi65</div>
+          <div class="staff-role">Deputy Director</div>
+        </div>
+        <div class="staff-card">
+          <img src="https://i.postimg.cc/Hj98qm8p" alt="Corn">
+          <div class="staff-name">Cornelius_Apple</div>
+          <div class="staff-role">Deputy Director</div>
+        </div>
+        <div class="staff-card">
+          <img src="https://i.postimg.cc/67FCphBt" alt="Ollie">
+          <div class="staff-name">440Qr</div>
+          <div class="staff-role">Assistant Director</div>
+        </div>
+      </div>
+
+      <div class="section-title">Community Management</div>
+      <div class="staff-grid">
+        <div class="staff-card">
+          <img src="https://i.postimg.cc/t7VfzXJ4" alt="Charlie">
+          <div class="staff-name">Charliethenoob7</div>
+          <div class="staff-role">Community Management</div>
+        </div>
+      </div>
+
+      <div class="section-title">Senior Management</div>
+      <div class="staff-grid">
+        <div class="staff-card">
+          <img src="https://i.postimg.cc/WD46Y31q" alt="Branden">
+          <div class="staff-name">281572dab</div>
+          <div class="staff-role">Senior Management</div>
+        </div>
+        <div class="staff-card">
+          <img src="https://i.postimg.cc/F1SXzFV4" alt="NotRose">
+          <div class="staff-name">notroseplays_34</div>
+          <div class="staff-role">Senior Management</div>
+        </div>
+        <div class="staff-card">
+          <img src="https://i.postimg.cc/Js2pjZRd" alt="Hpuck">
+          <div class="staff-name">Hpuck1</div>
+          <div class="staff-role">Senior Management</div>
+        </div>
+      </div>
+
+      <div class="section-title">Management</div>
+      <div class="staff-grid">
+        <div class="staff-card">
+          <img src="https://i.postimg.cc/G9HQFzMP" alt="Golde">
+          <div class="staff-name">elyxsteria</div>
+          <div class="staff-role">Management</div>
+        </div>
+        <div class="staff-card">
+          <img src="https://i.postimg.cc/k6t24VcS" alt="Fireshot">
+          <div class="staff-name">Fireshot_5010</div>
+          <div class="staff-role">Management</div>
+        </div>
+      </div>
+
+      <div class="section-title">Junior Management</div>
+      <div class="staff-grid">
+        <div class="staff-card">
+          <img src="https://i.postimg.cc/7GgqdS9K" alt="Cookies">
+          <div class="staff-name">cookiesforthelife</div>
+          <div class="staff-role">Junior Management</div>
+        </div>
+        <div class="staff-card">
+          <img src="https://i.postimg.cc/zLTBYmXw" alt="YY">
+          <div class="staff-name">yygeez</div>
+          <div class="staff-role">Junior Management</div>
+        </div>
+      </div>
     </section>
 
-    <section id="discipline" class="tab-content">
-      <h2>Strike Policy</h2>
-      <p>The strike system is used to hold staff accountable:</p>
-      <ul>
-        <li><strong>1 Strike</strong> – Verbal/written warning.</li>
-        <li><strong>2 Strikes</strong> – Temporary suspension of staff duties.</li>
-        <li><strong>3 Strikes</strong> – Removal from the staff team.</li>
-      </ul>
-      <p>All strikes are reviewed by Management or Executives and may be appealed via ticket.</p>
-    </section>
-
-    <section id="resources" class="tab-content">
-      <h2>Staff Resources</h2>
-      <p>Useful links and tools for staff members:</p>
-      <ul>
-        <li><a href="#">Staff Handbook</a></li>
-        <li><a href="#">Punishment Guidelines</a></li>
-        <li><a href="#">Ban Appeal Tracker</a></li>
-        <li><a href="#">Event Templates</a></li>
-        <li><a href="#">Department Affairs Discord</a></li>
-      </ul>
-    </section>
+    <!-- Keep your other tabs (roles, expectations, etc.) as they are -->
   </main>
 
   <script>
@@ -371,31 +266,6 @@
         document.getElementById(button.dataset.tab).classList.add('active');
       });
     });
-
-    const welcomeImages = [
-      "https://i.postimg.cc/RqrhQxxg/staff-1.png",
-      "https://i.postimg.cc/g21wGhTC/dot.png",
-      "https://i.postimg.cc/RhC1wf9P/staff-2.png",
-      "https://i.postimg.cc/V1xcyDHd/staff-4.png",
-      "https://i.postimg.cc/NFjKbvFt/pd-4.png",
-      "https://i.postimg.cc/qqDxxLkm/fd-5.png",
-      "https://i.postimg.cc/B6TqFYC0/front-1.png",
-      "https://i.postimg.cc/W31vDNtM/view.png"
-    ];
-    let welcomeIndex = 0;
-    const welcomeSlider = document.querySelector('.welcome-slider img');
-    document.querySelector('.welcome-prev').addEventListener('click', () => {
-      welcomeIndex = (welcomeIndex - 1 + welcomeImages.length) % welcomeImages.length;
-      welcomeSlider.src = welcomeImages[welcomeIndex];
-    });
-    document.querySelector('.welcome-next').addEventListener('click', () => {
-      welcomeIndex = (welcomeIndex + 1) % welcomeImages.length;
-      welcomeSlider.src = welcomeImages[welcomeIndex];
-    });
-    setInterval(() => {
-      welcomeIndex = (welcomeIndex + 1) % welcomeImages.length;
-      welcomeSlider.src = welcomeImages[welcomeIndex];
-    }, 5000);
   </script>
 </body>
 </html>
