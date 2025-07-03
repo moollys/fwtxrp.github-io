@@ -3,361 +3,88 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Fort Worth Texas Roleplay</title>
+  <title>Fort Worth Texas Roleplay | Staff</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
-    :root {
-      --primary-color: #2563eb;
-      --accent-color: #1e3a8a;
-      --light-bg: #f3f4f6;
-      --dark-bg: #1f2937;
-      --light-text: #1f2937;
-      --dark-text: #f9fafb;
-      --font-main: 'Inter', sans-serif;
-    }
-    body {
-      font-family: var(--font-main);
-      margin: 0;
-      background-color: var(--light-bg);
-      color: var(--light-text);
-      transition: background 0.3s, color 0.3s;
-    }
-    body.dark {
-      background-color: var(--dark-bg);
-      color: var(--dark-text);
-    }
-    header {
-      width: 100%;
-      aspect-ratio: 960 / 136;
-      background-image: url('https://i.postimg.cc/Gtk9fG4R/fw-banner.jpg');
-      background-size: cover;
-      background-position: center;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-      user-select: none;
-    }
-    header::before {
-      content: none;
-    }
-    .theme-toggle {
-      position: fixed;
-      top: 10px;
-      right: 10px;
-      padding: 8px 12px;
-      background: var(--primary-color);
-      color: white;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      font-weight: 600;
-      z-index: 1000;
-      transition: background 0.3s;
-    }
-    .theme-toggle:hover {
-      background: var(--accent-color);
-    }
-    nav {
-      background: white;
-      display: flex;
-      justify-content: center;
-      border-bottom: 2px solid #e5e7eb;
-      flex-wrap: wrap;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-      animation: slideDown 0.5s ease-out;
-      user-select: none;
-    }
-    body.dark nav {
-      background: #111827;
-      border-bottom-color: #374151;
-    }
-    nav button {
-      background: none;
-      border: none;
-      padding: 16px 24px;
-      cursor: pointer;
-      font-size: 1rem;
-      font-weight: 600;
-      border-bottom: 3px solid transparent;
-      transition: border-color 0.3s, color 0.3s;
-      color: inherit;
-    }
-    nav button:hover,
-    nav button.active {
-      border-bottom: 3px solid var(--primary-color);
-      color: var(--primary-color);
-    }
-    main {
-      max-width: 950px;
-      margin: 40px auto;
-      background: white;
-      padding: 35px 50px;
-      border-radius: 12px;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.07);
-      animation: fadeInUp 0.8s ease-in-out;
-    }
-    body.dark main {
-      background: #1f2937;
-    }
-    h2, h3, h4 {
-      color: var(--accent-color);
-    }
-    p, ul, li, em {
-      font-size: 1rem;
-      line-height: 1.6;
-    }
-    ul {
-      padding-left: 1.25rem;
-    }
-    .tab-content {
-      display: none;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.4s ease-in-out;
-    }
-    .tab-content.active {
-      display: block;
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .slider {
-      position: relative;
-      max-width: 100%;
-      margin: 20px 0;
-      text-align: center;
-    }
-    .slider img {
-      width: 100%;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      max-height: 300px;
-      object-fit: cover;
-      user-select: none;
-    }
-    .prev-btn, .next-btn {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background-color: rgba(0,0,0,0.5);
-      color: white;
-      border: none;
-      font-size: 24px;
-      padding: 8px 12px;
-      cursor: pointer;
-      border-radius: 4px;
-      user-select: none;
-      transition: background-color 0.3s;
-    }
-    .prev-btn:hover, .next-btn:hover {
-      background-color: rgba(0,0,0,0.7);
-    }
-    .prev-btn { left: 10px; }
-    .next-btn { right: 10px; }
-    .department-select-wrapper {
-      margin-top: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      max-width: 320px;
-    }
-    label {
-      font-weight: 600;
-      color: var(--accent-color);
-    }
-    select {
-      padding: 12px 16px;
-      font-size: 1rem;
-      border: 2px solid var(--primary-color);
-      border-radius: 8px;
-      background-color: white;
-      color: var(--light-text);
-      appearance: none;
-      transition: border 0.3s, background 0.3s, color 0.3s;
-      width: 100%;
-      box-sizing: border-box;
-      cursor: pointer;
-    }
-    body.dark select {
-      background-color: #374151;
-      color: var(--dark-text);
-      border-color: #60a5fa;
-    }
-    select:focus {
-      outline: none;
-      border-color: var(--accent-color);
-      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.3);
-    }
-
-    /* Welcome slider styles */
-    .welcome-slider {
-      position: relative;
-      max-width: 100%;
-      margin: 20px 0 0 0;
-      text-align: center;
-      border-radius: 8px;
-      overflow: hidden;
-      max-height: 300px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      user-select: none;
-    }
-    .welcome-slider img {
-      width: 100%;
-      max-height: 300px;
-      object-fit: cover;
-      opacity: 1;
-      transition: opacity 0.5s ease-in-out;
-    }
-    .welcome-prev, .welcome-next {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background-color: rgba(0,0,0,0.5);
-      color: white;
-      border: none;
-      font-size: 28px;
-      padding: 8px 14px;
-      cursor: pointer;
-      border-radius: 4px;
-      user-select: none;
-      transition: background-color 0.3s;
-    }
-    .welcome-prev:hover, .welcome-next:hover {
-      background-color: rgba(0,0,0,0.7);
-    }
-    .welcome-prev { left: 10px; }
-    .welcome-next { right: 10px; }
-
-    @media (max-width: 600px) {
-      nav button {
-        flex: 1 1 100%;
-        text-align: center;
-      }
-      main {
-        padding: 20px;
-      }
-    }
-    @keyframes fadeIn {
-      0% { opacity: 0; }
-      100% { opacity: 1; }
-    }
-    @keyframes fadeInUp {
-      0% { opacity: 0; transform: translateY(30px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes slideDown {
-      0% { transform: translateY(-100%); opacity: 0; }
-      100% { transform: translateY(0); opacity: 1; }
-    }
+    /* Reuse your entire styling from the original code */
   </style>
 </head>
 <body>
   <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
-  
   <header></header>
-
   <nav>
-    <button class="tab-button active" data-tab="welcome">Welcome</button>
-    <button class="tab-button" data-tab="ingame">In-Game Regulations</button>
-    <button class="tab-button" data-tab="discord">Discord Regulations</button>
-    <button class="tab-button" data-tab="department">Departments</button>
-    <button class="tab-button" data-tab="voice">RTO Regulations</button>
-    <button class="tab-button" data-tab="boosters">Booster Cars</button>
-    <button class="tab-button" data-tab="boosterguns">Booster Guns</button>
+    <button class="tab-button active" data-tab="overview">Staff Overview</button>
+    <button class="tab-button" data-tab="roles">Roles & Permissions</button>
+    <button class="tab-button" data-tab="hiring">Hiring Process</button>
+    <button class="tab-button" data-tab="expectations">Staff Expectations</button>
+    <button class="tab-button" data-tab="tools">Tools & Resources</button>
+    <button class="tab-button" data-tab="contact">Contact Chain</button>
   </nav>
 
   <main>
-    <section id="welcome" class="tab-content active">
-      <h2>Welcome</h2>
-      <p>We are an active and growing ER:LC server with 10,000+ members, hosting 24/7 sessions. We are strictly VC Only and currently hiring staff.  You can find all of our discord regulations, in-game rules, as well some basic insight on our departments in our tabs above.</p>
-
-      <div class="welcome-slider">
-        <button class="welcome-prev" aria-label="Previous Image">&#10094;</button>
-        <img src="https://i.postimg.cc/Fzp5ktYj/welcome-1.jpg" alt="Welcome Image 1" />
-        <button class="welcome-next" aria-label="Next Image">&#10095;</button>
-      </div>
+    <section id="overview" class="tab-content active">
+      <h2>Staff Overview</h2>
+      <p>Welcome to the Fort Worth Texas Roleplay staff hub. This site provides essential info, tools, and expectations for team members. Use the tabs to navigate key areas including roles, onboarding, guidelines, and escalation paths.</p>
     </section>
 
-    <section id="ingame" class="tab-content">
-      <h2>In-Game Regulations</h2>
-      <p><strong>2. Random DeathMatch</strong> – No full-kills unless justified. Avoid excessive or mass killings. Killing FD is not allowed</p>
-      <p><strong>3. Vehicle DeathMatch</strong> – No random collisions or unrealistic driving. Shooting at other cars without reason is prohibited.</p>
-      <p><strong>4. Cuff Rushing</strong> – Do not arrest or cuff others randomly. Use <strong>-cuffs-</strong> responsibly with proper justification.</p>
-      <p><strong>5. NLR</strong> – After dying, forget the previous life. Don’t return to the scene until 5 minutes after your death.</p>
-      <p><strong>6. Avatars</strong> – Avoid avatars that obstruct views, provide invisibility, or exploit glitches, fur suits aren't allowed.  All avatars must resemble human-like attributes.</p>
-      <p><strong>7. Safe Zones</strong> – No killing, crimes, or arrests can be made within our safezones. These include; Both civilian spawns, both LEO spawns, DOT spawn, and FD spawn.</p>
-      <p><strong>8. Driving</strong> – Obey traffic laws and drive realistically. Excessive breakage of traffic laws will result in punishments.</p>
-      <p><strong>9. Banned Roleplays</strong> – Bomb, drug, DUI, and all roleplays that violate Roblox's ToS will result in an instant ban.</p>
-      <p><strong>10. VC Rules</strong> – It is mandatory to be in a roleplay voice channel while participating in roleplay scenarios.</p>
-      <p><strong>11. ToS</strong> – Everything you say and do must follow Roblox's Terms of Service.</p>
-    </section>
-
-    <section id="discord" class="tab-content">
-      <h2>Discord Server Regulations</h2>
-      <p><strong>1. Respect</strong> – No harassment, discrimination, or personal attacks.</p>
-      <p><strong>2. Pinging</strong> – Avoid unnecessary pings. Do not ping @Management Team or higher without permission.</p>
-      <p><strong>3. Language</strong> – No excessive swearing or inappropriate content.</p>
-      <p><strong>4. Content</strong> – Stick to appropriate channels. No spamming, self-promotion, or off-topic content.</p>
-      <p><strong>5. Advertising</strong> – No self-promo or advertising other servers without approval.</p>
-      <p><strong>6. Common Sense</strong> – Don’t try to game the rules. Be civil and constructive.</p>
-      <p><strong>7. Reporting Issues</strong> – Report problems to moderators and through tickets instead of addressing them publicly.</p>
-    </section>
-
-    <section id="department" class="tab-content">
-      <h2>Departments</h2>
-
-      <p>Welcome to the Fort Worth Texas Roleplay whitelisted departments! Here, you can choose from a wide range of departments to join. You’re required to join the Department Affairs server, as it provides all department updates, announcements, documents, and other important resources you’ll need.</p>
-
-      <div class="department-select-wrapper">
-        <label for="department-select">Select a Department:</label>
-        <select id="department-select">
-          <option value="">-- Choose a Department --</option>
-          <option value="fd">Fort Worth Fire Department (FD)</option>
-          <option value="pd">Fort Worth Police Department (PD)</option>
-          <option value="dpw">Department of Parks and Wildlife (DPW)</option>
-          <option value="dps">Department of Public Safety (DPS)</option>
-          <option value="rr">Red Rose Mafia (RRM)</option>
-        </select>
-      </div>
-      <div id="department-details" style="margin-top:20px; border-top: 1px solid #ccc; padding-top: 15px;">
-        <em>Please select a department to see details.</em>
-      </div>
-    </section>
-
-    <section id="voice" class="tab-content">
-      <h2>RTO Regulations</h2>
-      <p>1. If topics or communication is not related to in-game events or callouts, you will be removed from the VC without warning. If you continue speaking off topic, moderation actions can be taken.</p>
-      <p>2. Remain respectful to all LEO within the RTO at all times, arguing or trying to speak louder than others will only lead to punishments.</p>
-      <p>3. Work together and communicate clearly and properly.</p>
-    </section>
-
-    <section id="boosters" class="tab-content">
-      <h2>Booster Cars</h2>
-      <p>All cars listed below are strictly for users who server boost our discord only.  If you are caught driving these restricted cars without proper permission, you will be punished.</p>
+    <section id="roles" class="tab-content">
+      <h2>Roles & Permissions</h2>
       <ul>
-        <li><strong>Chevlon Corvette ZR1</strong></li>
-        <li><strong>Chevlon Corbeta 8</strong></li>
-        <li><strong>Takeo Experience</strong></li>
-        <li><strong>Audi R8</strong></li>
-        <li><strong>Surrey 650S</strong></li>
-        <li><strong>Strugatti Ettore</strong></li>
-        <li><strong>Stuttgart Landschaft</strong></li>
-        <li><strong>Leland LTS5‑V Blackwing</strong></li>
-        <li><strong>BKM Risen Roadster</strong></li>
+        <li><strong>Trial Moderator:</strong> Entry-level staff, monitors basic VC & chat behavior.</li>
+        <li><strong>Moderator:</strong> Handles reports, kicks, basic punishments, and daily moderation tasks.</li>
+        <li><strong>Senior Moderator:</strong> Reviews appeals, trains trials, helps with advanced moderation cases.</li>
+        <li><strong>Administrator:</strong> Manages staff coordination, leads team meetings, oversees moderation policies.</li>
+        <li><strong>Management:</strong> Approves bans, handles department changes, addresses major community decisions.</li>
       </ul>
     </section>
 
-    <section id="boosterguns" class="tab-content">
-      <h2>Booster Guns</h2>
-      <p>All guns listed below are strictly for users who boost our server only.  If you are caught using these restricted guns without proper permission, you will be punished.</p>
+    <section id="hiring" class="tab-content">
+      <h2>Hiring Process</h2>
+      <p>Our process for hiring new staff includes:</p>
       <ul>
-        <li><strong>Remington 870</strong></li>
-        <li><strong>Remington MSR</strong></li>
-        <li><strong>M249</strong></li>
-        <li><strong>Remington 700</strong></li>
+        <li>Application submission via Discord</li>
+        <li>Initial review by Senior Mod/Admin</li>
+        <li>Interview via VC</li>
+        <li>Trial period monitoring (2 weeks min.)</li>
+        <li>Performance review and promotion to Mod if successful</li>
       </ul>
+    </section>
+
+    <section id="expectations" class="tab-content">
+      <h2>Staff Expectations</h2>
+      <ul>
+        <li>Maintain professionalism and maturity in all actions</li>
+        <li>Remain active in VC and patrols</li>
+        <li>Log all disciplinary actions properly</li>
+        <li>Treat all members fairly, without bias</li>
+        <li>Report major issues to higher staff or management</li>
+      </ul>
+    </section>
+
+    <section id="tools" class="tab-content">
+      <h2>Tools & Resources</h2>
+      <p>Useful links and tools:</p>
+      <ul>
+        <li><a href="#">Staff Handbook (Google Doc)</a></li>
+        <li><a href="#">Ban Log Spreadsheet</a></li>
+        <li><a href="#">Ticketing System</a></li>
+        <li><a href="#">Staff VC + Patrol Tracker</a></li>
+        <li><a href="#">Punishment Guidelines</a></li>
+      </ul>
+    </section>
+
+    <section id="contact" class="tab-content">
+      <h2>Contact Chain</h2>
+      <p>If you're unsure who to contact, follow this chain of communication:</p>
+      <ol>
+        <li>Trial/Mod issues → Senior Moderator</li>
+        <li>Disputes or advanced moderation → Administrator</li>
+        <li>Major server concerns or bans → Management</li>
+      </ol>
     </section>
   </main>
 
   <script>
-    // Theme toggle
     function toggleTheme() {
       document.body.classList.toggle('dark');
       if(document.body.classList.contains('dark')) {
@@ -371,7 +98,6 @@
     }
 
     document.addEventListener('DOMContentLoaded', () => {
-      // Tab switching
       const tabButtons = document.querySelectorAll('.tab-button');
       const tabContents = document.querySelectorAll('.tab-content');
 
@@ -384,163 +110,6 @@
           document.getElementById(button.dataset.tab).classList.add('active');
         });
       });
-
-      // Department info and slider
-      const departmentSelect = document.getElementById('department-select');
-      const departmentDetails = document.getElementById('department-details');
-
-      const departments = {
-        fd: {
-          name: "Fort Worth Fire Department (FD)",
-          description: "Fort Worth Fire is there on peoples worst days, we are there to help, there to protect, there to keep the public safe, and most importantly there so Fort Worth is a better place. We strive to keep a great appearance to the community, we want to make the members of Fort Worth feel safe. We offer multiple ways to involve yourself rather your an employee or just a civilian, that stretches from Internal Affairs, Fire Marshal, Hazardous Operations and Rescue, and our most recent implemented division, Public Information Office.",
-          images: [
-            "https://i.postimg.cc/mkXMj7Jr/fd-banner-1.png",
-            "https://i.postimg.cc/4yS7VsH7/fd-banner-2.png",
-            "https://i.postimg.cc/GtbY5TKc/fd-banner-3.png"
-          ]
-        },
-        pd: {
-          name: "Fort Worth Police Department (PD)",
-          description: "Our mission is to protect life and property while safeguarding individual rights and freedoms. We employ over 80 officers, with highly trained specialized units including Traffic Enforcement, SWAT, K9, and Cyber Crimes. Fort Worth PD is committed to community policing and maintaining public trust through transparency and professionalism.",
-          images: [
-            "https://i.postimg.cc/BbQj7r96/pd-banner-1.png",
-            "https://i.postimg.cc/7ZtGd29d/pd-banner-2.png",
-            "https://i.postimg.cc/dVf2FGBJ/pd-banner-3.png"
-          ]
-        },
-        dpw: {
-          name: "Department of Parks and Wildlife (DPW)",
-          description: "DPW manages the natural resources and recreational areas in Fort Worth. Our duties include wildlife protection, environmental education, park maintenance, and enforcing state conservation laws. Join us to help preserve Fort Worth's natural beauty and promote outdoor activities.",
-          images: [
-            "https://i.postimg.cc/d0f3Q0YX/dpw-banner-1.png",
-            "https://i.postimg.cc/sX6GJC0q/dpw-banner-2.png",
-            "https://i.postimg.cc/4NzvHDt1/dpw-banner-3.png"
-          ]
-        },
-        dps: {
-          name: "Department of Public Safety (DPS)",
-          description: "The DPS provides highway patrol, driver licensing, and emergency management services to ensure the safety and security of all citizens. We are committed to professionalism, integrity, and service excellence.",
-          images: [
-            "https://i.postimg.cc/rpRFybvB/dps-banner-1.png",
-            "https://i.postimg.cc/VvGBdQj3/dps-banner-2.png",
-            "https://i.postimg.cc/hvLgR8wd/dps-banner-3.png"
-          ]
-        },
-        rr: {
-          name: "Red Rose Mafia (RRM)",
-          description: "Red Rose Mafia is one of the most active and well-known criminal organizations in Fort Worth. We offer a unique roleplaying experience with a strong community focus, providing various roles and dynamic scenarios for members.",
-          images: [
-            "https://i.postimg.cc/7Z6Dy5zG/rrm-banner-1.png",
-            "https://i.postimg.cc/0NBpHhzR/rrm-banner-2.png",
-            "https://i.postimg.cc/7LMT2W3r/rrm-banner-3.png"
-          ]
-        }
-      };
-
-      let deptSliderIndex = 0;
-      let deptSliderInterval;
-
-      function showDepartmentDetails(key) {
-        if (!departments[key]) {
-          departmentDetails.innerHTML = '<em>Please select a department to see details.</em>';
-          return;
-        }
-        const dept = departments[key];
-        deptSliderIndex = 0;
-
-        departmentDetails.innerHTML = `
-          <h3>${dept.name}</h3>
-          <p>${dept.description}</p>
-          <div class="slider">
-            <button class="prev-btn" aria-label="Previous Department Image">&#10094;</button>
-            <img src="${dept.images[deptSliderIndex]}" alt="${dept.name} Image" />
-            <button class="next-btn" aria-label="Next Department Image">&#10095;</button>
-          </div>
-        `;
-
-        const slider = departmentDetails.querySelector('.slider img');
-        const prevBtn = departmentDetails.querySelector('.prev-btn');
-        const nextBtn = departmentDetails.querySelector('.next-btn');
-
-        function showDeptImage(index) {
-          slider.style.opacity = 0;
-          setTimeout(() => {
-            slider.src = dept.images[index];
-            slider.style.opacity = 1;
-          }, 250);
-        }
-
-        prevBtn.addEventListener('click', () => {
-          deptSliderIndex = (deptSliderIndex - 1 + dept.images.length) % dept.images.length;
-          showDeptImage(deptSliderIndex);
-          resetDeptInterval();
-        });
-        nextBtn.addEventListener('click', () => {
-          deptSliderIndex = (deptSliderIndex + 1) % dept.images.length;
-          showDeptImage(deptSliderIndex);
-          resetDeptInterval();
-        });
-
-        function nextImageAuto() {
-          deptSliderIndex = (deptSliderIndex + 1) % dept.images.length;
-          showDeptImage(deptSliderIndex);
-        }
-
-        function resetDeptInterval() {
-          clearInterval(deptSliderInterval);
-          deptSliderInterval = setInterval(nextImageAuto, 5000);
-        }
-
-        deptSliderInterval = setInterval(nextImageAuto, 5000);
-      }
-
-      departmentSelect.addEventListener('change', () => {
-        showDepartmentDetails(departmentSelect.value);
-      });
-
-      // Welcome slider images and logic
-    const welcomeImages = [
-  "https://i.postimg.cc/RqrhQxxg/staff-1.png",
-  "https://i.postimg.cc/g21wGhTC/dot.png",
-  "https://i.postimg.cc/RhC1wf9P/staff-2.png",
-  "https://i.postimg.cc/V1xcyDHd/staff-4.png",
-  "https://i.postimg.cc/NFjKbvFt/pd-4.png",
-  "https://i.postimg.cc/qqDxxLkm/fd-5.png",
-  "https://i.postimg.cc/B6TqFYC0/front-1.png",
-  "https://i.postimg.cc/W31vDNtM/view.png",
-  "https://i.postimg.cc/T29XVWnn/staff-5.png",
-  "https://i.postimg.cc/brkX2s0F/front-2.png",
-  "https://i.postimg.cc/t4grKsZQ/dot-2.png",
-  "https://i.postimg.cc/wjJtTVsh/front-3.png"
-];
-
-      let welcomeIndex = 0;
-      const welcomeSlider = document.querySelector('.welcome-slider img');
-      const welcomePrev = document.querySelector('.welcome-prev');
-      const welcomeNext = document.querySelector('.welcome-next');
-
-      function showWelcomeImage(index) {
-        welcomeSlider.style.opacity = 0;
-        setTimeout(() => {
-          welcomeSlider.src = welcomeImages[index];
-          welcomeSlider.style.opacity = 1;
-        }, 300);
-      }
-
-      welcomePrev.addEventListener('click', () => {
-        welcomeIndex = (welcomeIndex - 1 + welcomeImages.length) % welcomeImages.length;
-        showWelcomeImage(welcomeIndex);
-      });
-
-      welcomeNext.addEventListener('click', () => {
-        welcomeIndex = (welcomeIndex + 1) % welcomeImages.length;
-        showWelcomeImage(welcomeIndex);
-      });
-
-      setInterval(() => {
-        welcomeIndex = (welcomeIndex + 1) % welcomeImages.length;
-        showWelcomeImage(welcomeIndex);
-      }, 5000);
     });
   </script>
 </body>
