@@ -167,9 +167,9 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
       gap: 30px;
-      margin-top: 30px;
+      margin-top: 20px;
+      margin-bottom: 40px;
     }
-
     .staff-card {
       text-align: center;
       padding: 20px;
@@ -178,12 +178,10 @@
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-
     .staff-card:hover {
       transform: scale(1.05);
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
     }
-
     .staff-card img {
       width: 100px;
       height: 100px;
@@ -192,21 +190,29 @@
       border: 4px solid var(--primary-color);
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     }
-
     .staff-name {
       margin-top: 12px;
       font-weight: 700;
       font-size: 1.05rem;
     }
-
     .staff-role {
       font-size: 0.9rem;
       color: gray;
     }
+    .section-header {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-top: 40px;
+      margin-bottom: 15px;
+      border-bottom: 2px solid var(--primary-color);
+      padding-bottom: 6px;
+      color: var(--primary-color);
+    }
   </style>
 
+  <!-- Board of Directors -->
+  <div class="section-header">Executive Leadership</div>
   <div class="staff-grid">
-    <!-- Executive Leadership -->
     <div class="staff-card">
       <img src="https://i.postimg.cc/NyXwWgMb/dpw.png" alt="DPWF" />
       <div class="staff-name">dpwfootball (Dpw)</div>
@@ -227,15 +233,21 @@
       <div class="staff-name">440Qr (Ollie)</div>
       <div class="staff-role">Assistant Director</div>
     </div>
+  </div>
 
-    <!-- Community Management -->
+  <!-- Community Management -->
+  <div class="section-header">Community Management</div>
+  <div class="staff-grid">
     <div class="staff-card">
       <img src="https://i.postimg.cc/t7VfzXJ4/charlie.png" alt="Charlie" />
       <div class="staff-name">Charliethenoob7 (Charlie)</div>
       <div class="staff-role">Community Management</div>
     </div>
+  </div>
 
-    <!-- Senior Management -->
+  <!-- Senior Management -->
+  <div class="section-header">Senior Management</div>
+  <div class="staff-grid">
     <div class="staff-card">
       <img src="https://i.postimg.cc/WD46Y31q/branden.png" alt="Branden" />
       <div class="staff-name">281572dab (Branden)</div>
@@ -251,8 +263,11 @@
       <div class="staff-name">Hpuck1 (Hpuck)</div>
       <div class="staff-role">Senior Management</div>
     </div>
+  </div>
 
-    <!-- Management -->
+  <!-- Management -->
+  <div class="section-header">Management</div>
+  <div class="staff-grid">
     <div class="staff-card">
       <img src="https://i.postimg.cc/G9HQFzMP/elyxs.png" alt="Golde" />
       <div class="staff-name">elyxsteria (Golde)</div>
@@ -263,8 +278,11 @@
       <div class="staff-name">Fireshot_5010 (Fireshot)</div>
       <div class="staff-role">Management</div>
     </div>
+  </div>
 
-    <!-- Junior Management -->
+  <!-- Junior Management -->
+  <div class="section-header">Junior Management</div>
+  <div class="staff-grid">
     <div class="staff-card">
       <img src="https://i.postimg.cc/7GgqdS9K/cookies.png" alt="Cookies" />
       <div class="staff-name">cookiesforthelife (Cookies)</div>
