@@ -476,43 +476,31 @@
           </tbody>
         </table>
       </div>
-        <p>This section explains moderation tools, warnings, and strikes.</p>
-      </div>
 
       <button class="collapsible">
-        <img src="https://i.postimg.cc/ZYwTX35y/discord-icon.png" alt="Discord Checks Icon" style="width: 18px; height: 18px; vertical-align: middle; margin-right: 8px;">
+        <img src="https://i.postimg.cc/1zTLLH6B/discord-checks-guide.png" alt="Discord Checks Icon" style="width: 18px; height: 18px; vertical-align: middle; margin-right: 8px;">
         Discord Checks Guide
       </button>
       <div class="content">
-        <p>
-          1. Are They in the Discord Server & VC?<br/>
-          Use the command /erlc membercheck. This will pull up all players in-game and show their Discord status.<br/>
-          It will tell you:<br/>
-          - If they are in the Discord<br/>
-          - If they are in a Voice Channel (VC)<br/>
-          This works through Central or Melonly.<br/>
-          Use Melonly as the main tool.<br/>
-          If Melonly is down, switch to Central to complete the check.<br/><br/>
-
-          2. If Melonly or Central Are Down Completely:<br/>
-          You may teleport to the player ONLY to bring them to the Staff Base.<br/>
-          Ask them if they are in the Discord and in a VC (if required by rules).<br/>
-          If they aren’t, or they lie/refuse to answer, you may jail them if under 39/40. If it’s 39/40, you may kick them.<br/>
-          Stay professional and consistent. These checks are for staff use only; no abuse will be tolerated.
-        </p>
+        <p>Always do a voice channel check with all players and a text channel check.</p>
+        <ul>
+          <li>Make sure all members have their account linked and verified.</li>
+          <li>Check if the user has read and accepted all server rules.</li>
+          <li>Ensure no inappropriate content in usernames or profiles.</li>
+          <li>Respond politely and professionally to questions or issues.</li>
+        </ul>
       </div>
 
       <button class="collapsible">
-        <img src="https://i.postimg.cc/hP5xWnZ1/staffbase-icon.png" alt="Staff Base Icon" style="width: 18px; height: 18px; vertical-align: middle; margin-right: 8px;">
-        Staff Base Guide
+        <img src="https://i.postimg.cc/yY6j8Tdh/handbook-guide.png" alt="Handbook Icon" style="width: 18px; height: 18px; vertical-align: middle; margin-right: 8px;">
+        Handbook & Management Guide
       </button>
       <div class="content">
-        <p>
-          This section includes resources about our staff base operations, including scheduling, shift duties, and communication protocols.
-        </p>
+        <p>This guide contains all staff rules, policies, and operational procedures. Always refer to this handbook for clarification.</p>
       </div>
     </section>
 
+    <!-- Staff Outposts Section -->
     <section id="outposts" class="tab-content">
       <h2>Staff Outposts</h2>
       <p>
@@ -532,86 +520,83 @@
         You must also conduct discord & voice chat checks at these staff outposts.
       </p>
 
-      <h3>Guide:</h3>
+      <h3 style="margin-top: 30px;">Guide:</h3>
       <p>While on duty at the corresponding staff bases, you must do the following:</p>
-      <ol>
+      <ol style="margin-left: 20px; margin-bottom: 20px;">
         <li>Supervise River City Civilian Spawn, and surrounding areas.</li>
         <li>Supervise Gun Store, Fire Department, and surrounding areas.</li>
         <li>Supervise Mod Shop, the intersections nearby, the Bank, the Fire department, and surrounding areas.</li>
         <li>Supervise the City Center, the City itself, the Shopping Plaza, and Three Guys.</li>
       </ol>
 
-      <h3>What you shouldn’t do:</h3>
-      <ol>
+      <h3 style="margin-top: 30px;">What you shouldn’t do:</h3>
+      <ol style="margin-left: 20px; margin-bottom: 20px;">
         <li>You should NEVER just be standing still, you should either be conducting discord checks or handling rule-breaking near your outpost.</li>
         <li>You should NEVER interfere with roleplay. You should remain at your outpost unless you witness any rule-breaking near your outpost.</li>
         <li>You should NEVER help with police chases. In a police chase, there really aren't any instances of GTA-Driving, so lay low on that unless there is any rule-breaking involved.</li>
       </ol>
 
-      <h3>Staff Outposts Images and Locations:</h3>
+      <h3 style="margin-top: 30px;">Staff Outposts Images and Locations:</h3>
 
-      <h4>Outpost 1: Spawn</h4>
+      <h4 style="margin-top: 25px;">Outpost 1: Spawn</h4>
       <p>
         Spawn is the most crime-filled area and should be closely supervised, this is our main priority for moderation as it is where most trolling and other rule-breaking happens. (expect to get VDMed)
       </p>
 
-      <h4>Outpost 2: Gun Store</h4>
+      <h4 style="margin-top: 20px;">Outpost 2: Gun Store</h4>
       <p>
         Gun store is typically where the most RDM happens because of the quick access to guns and people to fight, expect a lot of RDM logs.
       </p>
 
-      <h4>Outpost 3: Mod Shop</h4>
+      <h4 style="margin-top: 20px;">Outpost 3: Mod Shop</h4>
       <p>
         Mod shop has the very important job of supervising the intersection, FD station, and bank to ensure RDM and other fail roleplay is not happening. They should be always on alert for gunshots to investigate.
       </p>
 
-      <h4>Outpost 4: Three Guys</h4>
+      <h4 style="margin-top: 20px;">Outpost 4: Three Guys</h4>
       <p>
         Outpost 4 is the least active of the 4, your job here is to supervise the city center, jewelry, and the city that you can see from the location. You should be a lot calmer here so prioritize discord checks and VC checks.
       </p>
 
-      <p>
+      <p style="margin-top: 20px;">
         Please remember for all of these locations that your priorities should be supervising and doing discord/VC checks. Always make sure you are doing mod calls when they appear and to come back when finished.
       </p>
     </section>
   </main>
 
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const buttons = document.querySelectorAll('nav button.tab-button');
-      const tabs = document.querySelectorAll('main section.tab-content');
+    // Tab functionality
+    const tabs = document.querySelectorAll('.tab-button');
+    const contents = document.querySelectorAll('.tab-content');
 
-      buttons.forEach(button => {
-        button.addEventListener('click', () => {
-          const target = button.getAttribute('data-tab');
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
 
-          buttons.forEach(btn => btn.classList.remove('active'));
-          tabs.forEach(tab => tab.classList.remove('active'));
-
-          button.classList.add('active');
-
-          const tabToShow = document.getElementById(target);
-          if (tabToShow) {
-            tabToShow.classList.add('active');
-          }
+        contents.forEach(content => {
+          content.classList.remove('active');
         });
-      });
-
-      // Collapsible sections
-      const collapsibles = document.querySelectorAll('.collapsible');
-      collapsibles.forEach(coll => {
-        coll.addEventListener('click', () => {
-          coll.classList.toggle('active');
-          const content = coll.nextElementSibling;
-          if (content.style.display === 'block') {
-            content.style.display = 'none';
-          } else {
-            content.style.display = 'block';
-          }
-        });
+        const target = tab.getAttribute('data-tab');
+        document.getElementById(target).classList.add('active');
       });
     });
 
+    // Collapsible content for resources
+    const collapsibles = document.querySelectorAll('.collapsible');
+    collapsibles.forEach(button => {
+      button.addEventListener('click', () => {
+        button.classList.toggle('active');
+        const content = button.nextElementSibling;
+        if (content.style.display === "block") {
+          content.style.display = "none";
+        } else {
+          content.style.display = "block";
+        }
+      });
+    });
+
+    // Theme toggle
     function toggleTheme() {
       document.body.classList.toggle('dark');
     }
