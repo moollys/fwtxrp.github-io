@@ -180,14 +180,16 @@
       background-color: #1d4ed8;
     }
 
-    .content {
-      padding: 0 18px;
-      display: none;
-      overflow: hidden;
-      background-color: var(--light-bg);
-      margin-top: 5px;
-      border-radius: 6px;
-    }
+   .content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  background-color: var(--light-bg);
+  margin-top: 5px;
+  border-radius: 6px;
+  transition: max-height 0.3s ease;
+}
+
 
     body.dark .content {
       background-color: #374151;
