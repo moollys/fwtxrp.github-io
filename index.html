@@ -515,75 +515,48 @@
 </section>
 
 
-<div class="content">
-  <h3>Information:</h3>
-  <ul>
-    <li>Outposts are numbered from most to least important. Go to the highest-priority one available.</li>
-    <li>Staff outposts are marked 1–4 on the image below.</li>
-    <li>You <strong>must</strong> be conducting Discord checks or handling mod calls while stationed at an outpost.</li>
-    <li>Maximum <strong>2 on-duty staff</strong> per outpost.</li>
-    <li>Keep a low profile — do <strong>not</strong> make it obvious it’s a staff base. Only have your car with you.</li>
-    <li>If you're harassed or interfered with, you are permitted to <strong>load</strong> offenders.</li>
-    <li>Continuously watch your post and surrounding areas to ensure smooth roleplay.</li>
-    <li>Perform Discord and Voice Chat checks regularly while stationed.</li>
-  </ul>
+<section id="resources" class="tab-content">
+  <h2>Staff Resources</h2>
 
-  <h3>Staff Outposts Map:</h3>
-  <img src="https://postimg.cc/KkNNdQMx.png" alt="Staff Outposts Map" style="width: 100%; border-radius: 8px; margin: 15px 0;" />
+  <button class="collapsible">
+    <img src="https://i.postimg.cc/MfnfSC60/staff-outposts.png" alt="Staff Outposts Icon" style="width: 18px; height: 18px; vertical-align: middle; margin-right: 8px;">
+    Staff Outposts
+  </button>
 
-  <h3>Guide:</h3>
-  <p>While on duty at the corresponding staff bases, you must do the following:</p>
-  <ul>
-    <li><strong>Outpost 1:</strong> Supervise River City Civilian Spawn and surrounding areas.</li>
-    <li><strong>Outpost 2:</strong> Supervise Gun Store, Fire Department, and surrounding areas.</li>
-    <li><strong>Outpost 3:</strong> Supervise Mod Shop, nearby intersections, Bank, and FD.</li>
-    <li><strong>Outpost 4:</strong> Supervise City Center, City itself, Shopping Plaza, and Three Guys.</li>
-  </ul>
+  <div class="content">
+    <h3>Information:</h3>
+    <ul>
+      <li>Outposts are numbered from most to least important. Go to the highest-priority one available.</li>
+      <li>Staff outposts are marked 1–4 on the image below.</li>
+      <li>You <strong>must</strong> be conducting Discord checks or handling mod calls while stationed at an outpost.</li>
+      <li>Maximum <strong>2 on-duty staff</strong> per outpost.</li>
+      <li>Keep a low profile — do <strong>not</strong> make it obvious it’s a staff base. Only have your car with you.</li>
+      <li>If you're harassed or interfered with, you are permitted to <strong>load</strong> offenders.</li>
+      <li>Continuously watch your post and surrounding areas to ensure smooth roleplay.</li>
+      <li>Perform Discord and Voice Chat checks regularly while stationed.</li>
+    </ul>
 
-  <h3>What You <u>Shouldn’t</u> Do:</h3>
-  <ul>
-    <li>❌ Never just stand still — always be conducting checks or moderating the area.</li>
-    <li>❌ Never interfere with roleplays unless rule-breaking is observed.</li>
-    <li>❌ Never assist with police chases — these are not your responsibility unless rule-breaking is involved.</li>
-  </ul>
+    <h3>Staff Outposts Map:</h3>
+    <img src="https://postimg.cc/KkNNdQMx.png" alt="Staff Outposts Map" style="width: 100%; border-radius: 8px; margin: 15px 0;" />
 
-  <p><em>Please remember:</em> Prioritize supervision and Discord/VC checks. Always handle mod calls when they come in, and return to your outpost when done.</p>
+    <h3>Guide:</h3>
+    <p>While on duty at the corresponding staff bases, you must do the following:</p>
+    <ul>
+      <li><strong>Outpost 1:</strong> Supervise River City Civilian Spawn and surrounding areas.</li>
+      <li><strong>Outpost 2:</strong> Supervise Gun Store, Fire Department, and surrounding areas.</li>
+      <li><strong>Outpost 3:</strong> Supervise Mod Shop, nearby intersections, Bank, and FD.</li>
+      <li><strong>Outpost 4:</strong> Supervise City Center, City itself, Shopping Plaza, and Three Guys.</li>
+    </ul>
 
-  <p><strong>Thank you for reading through.</strong><br />
-</div>
+    <h3>What You <u>Shouldn’t</u> Do:</h3>
+    <ul>
+      <li>❌ Never just stand still — always be conducting checks or moderating the area.</li>
+      <li>❌ Never interfere with roleplays unless rule-breaking is observed.</li>
+      <li>❌ Never assist with police chases — these are not your responsibility unless rule-breaking is involved.</li>
+    </ul>
 
-    </section>
-  </main>
+    <p><em>Please remember:</em> Prioritize supervision and Discord/VC checks. Always handle mod calls when they come in, and return to your outpost when done.</p>
+    <p><strong>Thank you for reading through.</strong></p>
+  </div>
+</section>
 
-  <script>
-    function toggleTheme() {
-      document.body.classList.toggle('dark');
-      localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
-    }
-
-    if (localStorage.getItem('theme') === 'dark') {
-      document.body.classList.add('dark');
-    }
-
-    const tabButtons = document.querySelectorAll('.tab-button');
-    const tabContents = document.querySelectorAll('.tab-content');
-    tabButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        tabButtons.forEach(b => b.classList.remove('active'));
-        tabContents.forEach(tab => tab.classList.remove('active'));
-        button.classList.add('active');
-        document.getElementById(button.dataset.tab).classList.add('active');
-      });
-    });
-
-    const collapsibles = document.querySelectorAll(".collapsible");
-    collapsibles.forEach(button => {
-      button.addEventListener("click", function () {
-        this.classList.toggle("active");
-        const content = this.nextElementSibling;
-        content.style.display = content.style.display === "block" ? "none" : "block";
-      });
-    });
-  </script>
-</body>
-</html>
