@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Fort Worth Texas Roleplay</title>
+<style>
+ body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #f9f9f9;
+  color: #333;
+  font-weight: 450; /* Added to make font thicker */
+}
+
+header {
+  background-image: url('https://media.discordapp.net/attachments/1137446246555074580/1385017404710457385/fw_banner.png?ex=68548979&is=685337f9&hm=634a6d70600604fe4d37be19d5db0ccb0c43702692450c4ef4383f5625d27234&=&format=webp&quality=lossless');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  box-shadow: inset 0 0 0 1000px rgba(0, 85, 204, 0.5);
+}
+
+nav {
+  background: white;
+  display: flex;
+  justify-content: center;
+  border-bottom: 2px solid #ddd;
+  flex-wrap: wrap;
+}
+nav button {
+  background: none;
+  border: none;
+  padding: 15px 20px;
+  cursor: pointer;
+  font-size: 1rem;
+  border-bottom: 3px solid transparent;
+  transition: border-color 0.3s;
+}
+nav button:hover,
+nav button.active {
+  border-bottom: 3px solid #0055cc;
+  font-weight: bold;
+}
+main {
+  max-width: 900px;
+  margin: 30px auto;
+  background: white;
+  padding: 25px 40px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.05);
+  border-radius: 6px;
+}
+h2 {
+  margin-top: 0;
+  color: #0055cc;
+}
+.tab-content {
+  display: none;
+}
+.tab-content.active {
+  display: block;
+}
+.search-container {
+  margin-bottom: 20px;
+  text-align: center;
+}
+.search-container input[type="search"] {
+  width: 60%;
+  max-width: 400px;
+  padding: 8px 12px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+@media (max-width: 600px) {
+  nav button {
+    flex: 1 1 100%;
+    text-align: center;
+  }
+  .search-container input[type="search"] {
+    width: 90%;
+  }
+}
+
+/* Styles for department dropdown */
+.department-list {
+  list-style: none;
+  padding-left: 0;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.department-list > li {
+  background: #e9f0ff;
+  margin: 5px 0;
+  border-radius: 4px;
+  padding: 10px 15px;
+  cursor: pointer;
+  user-select: none;
+  font-weight: 600;
+  color: #003d99;
+  position: relative;
+}
+
+.department-list > li:hover {
+  background: #c6d9ff;
+}
+
+.department-list ul {
+  list-style: disc;
+  margin-left: 20px;
+  margin-top: 8px;
+  display: none; /* Hidden by default */
+  padding-left: 15px;
+  color: #333;
+  font-weight: normal;
+  background: #f0f6ff;
+  border-radius: 4px;
+}
+
+.department-list li.expanded > ul {
+  display: block;
+}
+
+/* Add little arrow for dropdown */
+.department-list > li::after {
+  content: "▶";
+  position: absolute;
+  right: 15px;
+  transition: transform 0.3s ease;
+}
+
+.department-list > li.expanded::after {
+  transform: rotate(90deg);
+}
+</style>
+</head>
+<body>
+
+<header>
+ Fort Worth Texas Roleplay
+</header>
+
+<nav>
+  <button class="tab-button active" data-tab="welcome">Welcome</button>
+  <button class="tab-button" data-tab="ingame">In-Game Regulations</button>
+  <button class="tab-button" data-tab="discord">Discord Server Regulations</button>
+  <button class="tab-button" data-tab="department">Departments</button>
+  
+  <!-- Added Booster tabs -->
+  <button class="tab-button" data-tab="boosters">Booster Cars</button>
+  <button class="tab-button" data-tab="boosterguns">Booster Guns</button>
+</nav>
+
+<main>
+  <div class="search-container">
+    <input type="search" placeholder="Search..." aria-label="Search regulations" />
+  </div>
+
+  <!-- Welcome Tab Content -->
+  <section id="welcome" class="tab-content active">
+    <h2>Welcome</h2>
+    <p>We are an active and growing ER:LC server with 10,000+ members, hosting 24/7 sessions. We are strictly VC Only and currently hiring staff</p>
+    <p>If you are looking to appeal a ban or in-game punishments please open the respective ticket <a href="https://discord.com/channels/1058906660451655741/1077347906656419930">Support Ticket</a></p>
+  </section>
+
+  <!-- In-Game Regulations Tab Content -->
+  <section id="ingame" class="tab-content">
+  <h2>In-Game Regulations</h2>
+
+    <h3>Roblox Terms of Service</h3>
+    <p>To roleplay here, you must adhere to <a href="https://en.help.roblox.com/hc/en-us/articles/203313410-Roblox-Terms-of-Use" target="_blank">Roblox's Terms of Service</a>. Violating these terms may result in removal from the server.</p>
+
+    <h3>1. Respect</h3>
+    <p>Ensure you maintain a fundamental level of respect for your peers within the server. Regardless of your position, respect your peers at all times.</p>
+
+    <h3>2. Random Deathmatch (RDM)</h3>
+    <p>Random Deathmatch occurs when a player harms or kills others without justification. RDM disrupts realism and will result in warnings or disciplinary action.</p>
+
+    <h3>3. Vehicle Deathmatch (VDM)</h3>
+    <p>Vehicle Deathmatch occurs when a player damages or kills others using a vehicle without valid roleplay context. This includes reckless driving or crashing without a scenario.</p>
+
+    <h3>4. Fail Roleplay (FRP)</h3>
+    <p>FailRP happens when a player acts unrealistically, such as jumping off buildings unharmed or using exploits. You must act as you would in real life.</p>
+
+    <h3>5. New Life Rule (NLR)</h3>
+    <p>After dying, your character forgets everything from the previous life. Do not return to the same scene, take revenge, or retain memory of what happened.</p>
+
+    <h3>6. Unauthorized Organizations</h3>
+    <p>Creating or roleplaying as unauthorized mafias, departments, or military groups is prohibited. Doing so may result in a ban without warning.</p>
+
+    <h3>7. Character Conduct</h3>
+    <p>Your character must simulate real human behavior, including fear, pain, and emotional responses. This adds realism and improves server quality.</p>
+
+    <h3>8. Vehicular Conduct</h3>
+    <p>Drive realistically. Account for traffic, obey traffic laws, and adjust speed for weather or RP context. Reckless or GTA-style driving is not allowed.</p>
+
+    <h3>9. Banned Roleplays</h3>
+    <p>Roleplays that violate Roblox ToS are not allowed. This includes erotic RP, terrorism, suicide, or bomb threats. Keep roleplays safe and appropriate.</p>
+
+    <h3>10. Safezones</h3>
+    <p>Safezones are no-conflict areas such as spawns and Staff HQ. Roleplay can start there but cannot be forcefully initiated without RP context.</p>
+
+    <h3>11. Common Sense</h3>
+    <p>If it feels wrong or unrealistic, don’t do it. Use common sense in situations not covered by specific rules. This is a realistic roleplay server.</p>
+  </section>
+
+  <!-- Discord Regulations Tab Content -->
+  <section id="discord" class="tab-content">
+   <h2>Discord Server Regulations</h2>
+
+    <h3>1. Respect</h3>
+    <p>Be kind and respectful. Harassment, hate speech, and personal attacks are not tolerated.</p>
+
+    <h3>2. Pinging</h3>
+    <p>Only ping others when necessary. Do not ping @Management Team or higher without permission.</p>
+
+    <h3>3. Language</h3>
+    <p>Use respectful, appropriate language. Avoid explicit, offensive, or harmful language.</p>
+
+    <h3>4. Common Sense</h3>
+    <p>Think before you post. Contribute positively and avoid actions that would obviously be disruptive.</p>
+
+    <h3>5. Content</h3>
+    <p>Keep discussions in the correct channels. Avoid spam, off-topic posts, or content that doesn’t follow the theme of the channel.</p>
+
+    <h3>6. Advertising</h3>
+    <p>Do not advertise other communities or products without prior approval. Even approved promotions should be short and relevant.</p>
+
+    <h3>7. Terms and Guidelines</h3>
+    <p>Follow <a href="https://discord.com/terms" target="_blank">Discord's Terms of Service</a> and Community Guidelines. Don’t share private information or break platform rules.</p>
+
+    <h3>8. Bots</h3>
+    <p>Use bots properly and only for their intended purpose. Do not abuse commands or cause spam.</p>
+
+    <h3>9. Feedback</h3>
+    <p>Use the <strong>📩 suggestions</strong> channel to share feedback respectfully. Constructive ideas are welcomed; negativity is not.</p>
+
+    <h3>10. Civility in Debates</h3>
+    <p>You can disagree, but stay respectful. Arguments, name-calling, or provoking others will not be tolerated.</p>
+
+    <h3>11. Multiple Accounts</h3>
+    <p>Only one account per user is allowed in the server. Alternate or backup accounts are not permitted.</p>
+
+    <h3>12. Reporting Issues</h3>
+    <p>Use the appropriate tickets or message a staff member directly. Do not confront issues publicly in chats.</p>
+  </section>
+
+  <!-- Booster Cars Section -->
+  <section id="boosters" class="tab-content">
+    <h2>Booster Exclusive Cars</h2>
+    <p>These vehicles are only available to verified boosters. Ensure you have the proper perks active to unlock and use them in-game.</p>
+    
+    <table style="width:100%; border-collapse: collapse;">
+      <thead>
+        <tr style="background:#f0f0f0;">
+          <th style="text-align:left; padding:8px; border-bottom:1px solid #ccc;">Car Name</th>
+          <th style="text-align:right; padding:8px; border-bottom:1px solid #ccc;">Price</th>
+          <th style="text-align:right; padding:8px; border-bottom:1px solid #ccc;">Top Speed</th>
+          <th style="text-align:right; padding:8px; border-bottom:1px solid #ccc;">0–60 mph</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td style="padding:8px;">Chevlon Corvette ZR1 (ZR1-like)</td><td style="text-align:right;">$350,000</td><td style="text-align:right;">151 MPH</td><td style="text-align:right;">4.14 s</td></tr>
+        <tr><td style="padding:8px;">Chevlon Corbeta 8 (2023 Corvette)</td><td style="text-align:right;">$410,000</td><td style="text-align:right;">157 MPH</td><td style="text-align:right;">3.96 s</td></tr>
+        <tr><td style="padding:8px;">Takeo Experience (Acura NSX-like)</td><td style="text-align:right;">$475,000</td><td style="text-align:right;">140 MPH</td><td style="text-align:right;">3.27 s</td></tr>
+        <tr><td style="padding:8px;">Averon R8 (Audi R8-based)</td><td style="text-align:right;">$650,000</td><td style="text-align:right;">146 MPH</td><td style="text-align:right;">4.97 s</td></tr>
+        <tr><td style="padding:8px;">Surrey 650S (McLaren 675LT)</td><td style="text-align:right;">$890,000</td><td style="text-align:right;">150 MPH</td><td style="text-align:right;">3.74 s</td></tr>
+        <tr><td style="padding:8px;">Strugatti Ettore (Bugatti Chiron)</td><td style="text-align:right;">$1,500,000</td><td style="text-align:right;">170 MPH</td><td style="text-align:right;">3.88 s</td></tr>
+        <tr><td style="padding:8px;">Stuttgart Landschaft</td><td style="text-align:right;">$249,000</td><td style="text-align:right;">124 MPH</td><td style="text-align:right;">5.67 s</td></tr>
+        <tr><td style="padding:8px;">Leland LTS5‑V Blackwing</td><td style="text-align:right;">$255,000</td><td style="text-align:right;">122 MPH</td><td style="text-align:right;">4.75 s</td></tr>
+        <tr><td style="padding:8px;">BKM Risen Roadster (EV Exotic)</td><td style="text-align:right;">$164,295</td><td style="text-align:right;">146 MPH</td><td style="text-align:right;">3.93 s</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Booster Guns Section -->
+  <section id="boosterguns" class="tab-content">
+    <h2>Booster Exclusive Guns</h2>
+    <p>The following firearms are exclusive to verified boosters:</p>
+
+    <table style="width:100%; border-collapse: collapse;">
+      <thead>
+        <tr style="background:#f0f0f0;">
+          <th style="text-align:left; padding:8px; border-bottom:1px solid #ccc;">Gun Name</th>
+          <th style="text-align:left; padding:8px; border-bottom:1px solid #ccc;">Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td style="padding:8px;">Remington 870</td><td style="padding:8px;">Pump-action shotgun</td></tr>
+        <tr><td style="padding:8px;">Remington MSR</td><td style="padding:8px;">Precision sniper rifle</td></tr>
+        <tr><td style="padding:8px;">M249</td><td style="padding:8px;">Light machine gun</td></tr>
+        <tr><td style="padding:8px;">Remington 700</td><td style="padding:8px;">Bolt-action sniper rifle</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Department Regulations Tab Content -->
+  <section id="department" class="tab-content">
+    <h2>Department Regulations</h2>
+    <p>Each department must adhere to the following rules to ensure proper roleplay standards:</p>
+    <ul>
+      <li>Departments must conduct roleplay professionally and realistically.</li>
+      <li>All members should wear approved department uniforms and follow chain-of-command protocols.</li>
+      <li>Use of department vehicles and equipment is restricted to roleplay purposes only.</li>
+      <li>Departments should regularly update their SOPs (Standard Operating Procedures) in coordination with administration.</li>
+    </ul>
+
+    <h3>Departments</h3>
+    <ul class="department-list">
+      <li>Fire Department (FD)
+        <ul>
+          <li>Firefighters</li>
+          <li>Paramedics</li>
+          <li>Rescue Units</li>
+        </ul>
+      </li>
+      <li>Police Department (PD)
+        <ul>
+          <li>Patrol Officers</li>
+          <li>Detectives</li>
+          <li>SWAT Team</li>
+        </ul>
+      </li>
+      <li>Department of Public Works (DPW)
+        <ul>
+          <li>Maintenance Crew</li>
+          <li>Road Repair Teams</li>
+        </ul>
+      </li>
+      <li>Department of Public Safety (DPS)
+        <ul>
+          <li>State Troopers</li>
+          <li>Traffic Enforcement</li>
+        </ul>
+      </li>
+      <li>Tarrant County Sheriff's Office (TCSO)
+        <ul>
+          <li>Deputies</li>
+          <li>Jail Staff</li>
+        </ul>
+      </li>
+      <li>Railroad (RR)
+        <ul>
+          <li>Engineers</li>
+          <li>Track Inspectors</li>
+        </ul>
+      </li>
+      <li>Department of Homeland Security (DHS)
+        <ul>
+          <li>Border Patrol</li>
+          <li>Security Analysts</li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+
+  <!-- RTO Regulations Tab Content -->
+  <section id="voice" class="tab-content">
+    <h2>RTO Regulations</h2>
+    <p>Rules and procedures related to Radio
